@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Records
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Records\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Records()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Records\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ starRecords()
+comment3.text=\r\n\ Inicia\ los\ records\ en\ pantalla\r\n
+comment4.params=
+comment4.target=void\ addRecordsToFile()
+comment4.text=\r\n\ Agrega\ Records\ a\ un\ archivo\r\n
+numComments=5
