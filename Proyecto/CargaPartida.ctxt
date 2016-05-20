@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=CargaPartida
+comment0.text=\r\n\ Esta\ clase\ se\ encargara\ de\ leer\ los\ archivos\ de\ un\ heroe\ guardado\ anteriomente.\ Si\ no\ existe\ alguno\ creara\ una\ nueva\ partida.\r\n\ Luego\ de\ leerlos\ pasara\ a\ un\ mundo\ Principal.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 0.1\r\n
+comment1.params=
+comment1.target=CargaPartida()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ CargaPartida.\r\n\ \r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ En\ este\ metodo\ se\ estara\ controlano\ que\ archivo\ se\ escogio\ para\ cargar\r\n
+numComments=3

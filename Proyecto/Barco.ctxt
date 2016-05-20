@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Barco
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Barco\ here.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.1\r\n
+comment1.params=nombre
+comment1.target=Barco(java.lang.String)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Barco\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=
+comment3.target=float\ getVelocidad()
+comment3.text=\r\n\ \ getVelocidad\ regresa\ la\ variable\ velocidad\r\n\ \ @return\ velocidad\r\n
+comment4.params=opc
+comment4.target=void\ mejoraVel(int)
+comment4.text=\r\n\ Metodo\ que\ aplica\ las\ diferentes\ mejoras\ de\ velocidad\r\n
+numComments=5

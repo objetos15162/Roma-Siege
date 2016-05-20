@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Inicio
+comment0.text=\r\n\ Esta\ clase\ es\ la\ pantalla\ con\ la\ que\ se\ inicia\ el\ juego\r\n\ \r\n\ @author\ Daniel\ Wong\r\n\ @version\ 1.2\r\n
+comment1.params=
+comment1.target=Inicio()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\r\n\ \r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ \ Espera\ a\ que\ el\ usuario\ presione\ la\ tecla\ Enter\ para\ continuar.\r\n
+numComments=3

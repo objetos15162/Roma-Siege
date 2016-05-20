@@ -1,0 +1,107 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Esta clase sera la base para todos los objetos que participaran como NPC y para el jugador. Tendra la informacion de los objetos tales como ataque, defensa, etc,
+ * asi como su posicion en el espacio.
+ * 
+ * @author Daniel Alejandro Wong Ramirez 
+ * @version 0.1
+ */
+public class Personaje extends Actor
+{
+    private int Nivel;       // Como es obvio es el nivel de la unidad
+    private float Atk;       // Es el daño basico que una unidad puede hacer. 
+    private float Def;       // Es la cantidad de resistencia que puede oponer al daño.
+    private float Aguante;   // Esta es la cantidad de daño que puede recibir una unidad antes que su vida empieze a reducir.
+    private int Vida;        // Es la cantidad de daño que puede recibir una unidad antes de quedar KO o muerta...
+    private int Exp;         // Esta variable, dependiendo de si es un enemigo  no, varia. Siendo asi que si es un enemigo, la cantidad de experiencia del enemigo se pasa a la unidad que la derroto. En caso contrario, 
+    private boolean isEnemy; // Indica si la unidad es enemiga.
+    private String Nombre;   // Es el Nombre de la unidad. Se asigna automaticamente si es una unidad no Jugador
+    /**
+     * 
+     */
+    public Personaje(int niv, String Nom, boolean Ene)
+    {
+        if(niv>0)
+         {
+            Nivel=niv;
+            Atk=niv*10+ Greenfoot.getRandomNumber(niv*10/2);
+            Def=niv*10+ Greenfoot.getRandomNumber(niv*10/1.5);
+            Aguante=niv*10+ Greenfoot.getRandomNumber(niv*10/1.25);
+            Vida=niv*100+ Greenfoot.getRandomNumber(niv*100);
+            Exp=(Atk+Def+Aguante+(Vida/10))/niv*5;
+            Nombre=Nom;
+            isEnemy=Ene;
+         }
+        else
+        {
+            
+        }
+    }
+    
+    /**
+     * Act - do whatever the Personaje wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+        // Add your action code here.
+        
+    }
+    
+    /**
+     * This method returns the level
+     * 
+     */
+    public int getNivel()
+    {return Nivel;}
+    
+    /**
+     * This method returns the Atk
+     * 
+     */
+    public float getAtk()
+    {return Atk;}
+    
+    /**
+     * This method returns the Def
+     * 
+     */
+     public float getDef()
+    {return Def;}
+    
+    /**
+     * This method returns the Aguante
+     * 
+     */
+     public float getAguante()
+    {return Aguante;}
+    
+    /**
+     * This method returns the Life
+     * 
+     */
+    public int getVida()
+    {return Vida;}
+    
+    /**
+     * This method returns the Experience
+     * 
+     */
+     public int getExp()
+    {return Exp;}
+    
+    /**
+     * This method returns if the object is Enemy
+     * 
+     */
+     public boolean getIsEnemy()
+    {return isEnemy;}
+    
+    /**
+     * This method returns the Name
+     * 
+     */
+    public String getName()
+    {return Nombre;}
+}

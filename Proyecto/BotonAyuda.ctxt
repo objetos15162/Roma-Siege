@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=BotonAyuda
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ BotonAyuda\ here.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.4\r\n
+comment1.params=
+comment1.target=BotonAyuda()
+comment1.text=\r\n\ Constructor\ de\ la\ clase\ BotonAyuda.\r\n
+comment2.params=
+comment2.target=void\ llamaNuevoEscenario()
+comment2.text=\r\n\ llamaNuevoEscenario-Ayuda-\ Carga\ una\ imagen\ y\ la\ muestra\ en\ pantalla\ con\ \r\n\ las\ instrucciones\ para\ jugar.\ En\ este\ caso\ solo\ pone\ un\ objeto\ ayuda\r\n\ en\ pantalla.\r\n
+comment3.params=
+comment3.target=void\ actII()
+comment3.text=\r\n\ Con\ este\ metodo\ se\ manda\ a\ actuar\ de\ manera\ sintetica\ al\ metodo\ act()\ de\ la\ clase\ ayuda\ para\r\n\ evitar\ que\ el\ usuario\ interactue\ con\ otros\ objetos\ que\ no\ sea\ el\ de\ ayuda.\r\n
+comment4.params=
+comment4.target=void\ elimina()
+comment4.text=\r\n\ Elimina\ el\ objeto\ ayuda\ de\ la\ esta\ clase.\ Solo\ lo\ aplica\ si\ este\ objeto\ es\ diferente\ de\ null.\r\n
+numComments=5

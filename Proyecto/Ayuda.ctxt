@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Ayuda
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Ayuda\ here.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.3\r\n
+comment1.params=
+comment1.target=Ayuda()
+comment1.text=\r\n\ Este\ es\ el\ constructor\ de\ la\ clase\ Ayuda.\ Solo\ inicia\ las\ tres\ cadenas\ con\r\n\ el\ nombre\ de\ las\ imagenes\ que\ necesita.\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Ayuda\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=numero
+comment3.target=void\ ponImagen(int)
+comment3.text=\r\n\ ponImagen\ -\ Cambia\ la\ imagen\ del\ objeto.\ Recibe\ un\ entero\ que\ le\ indica\r\n\ que\ imagen\ poner.\ El\ entero\ no\ tiene\ que\ ser\ superior\ a\ tres\ o\ inferior\ a\ 1.\r\n\ \r\n\ @param\ numero\ Un\ numero\ entero\ que\ varia\ de\ 1\ a\ 3.\r\n
+comment4.params=
+comment4.target=int\ getNum()
+comment4.text=\r\n\ getNum\ regresa\ el\ numero\ de\ imagen\ se\ esta\ mostrando.\r\n\ \r\n\ @return\ num\ Un\ entero\ que\ indica\ que\ imagen\ esta\ presente.\r\n
+numComments=5

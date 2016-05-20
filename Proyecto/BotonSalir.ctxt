@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=BotonSalir
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ BotonSalir\ here.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.0\r\n
+comment1.params=
+comment1.target=BotonSalir()
+comment1.text=\r\n\ Este\ es\ el\ constructor\ de\ la\ clase\ BotonSalir.\r\n
+comment2.params=
+comment2.target=void\ llamaNuevoEscenario()
+comment2.text=\r\n\ llamaNuevoEscenario-Salir-\ Termina\ el\ juego.\ No\ recive\ nada\ y\r\n\ no\ regresa\ nada.\ En\ este\ caso\ sale\ del\ juego.\ Por\ el\ momento\r\n
+numComments=3

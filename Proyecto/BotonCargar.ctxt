@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=BotonCargar
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ BotonCargar\ here.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.1\r\n
+comment1.params=
+comment1.target=BotonCargar()
+comment1.text=\r\n\ \r\n
+comment2.params=
+comment2.target=void\ llamaNuevoEscenario()
+comment2.text=\r\n\ llamaNuevoEscenario-Cargar-\ Genera\ un\ nuevo\ mundo\ donde\ cargara\r\n\ un\ archivo\ anteriormente\ guardado\r\n\ con\ todos\ los\ datos\ que\ pueda\ tener\ un\ jugador.\r\n
+numComments=3

@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=MenuInicio
+comment0.text=\r\n\ Esta\ clase\ tiene\ como\ responsabilidad\ llevar\ el\ control\ sobre\ \r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 3.1\r\n
+comment1.params=
+comment1.target=MenuInicio()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MenuInicio.\r\n\ \r\n
+comment2.params=
+comment2.target=void\ act()
+comment3.params=actividad
+comment3.target=void\ cambiaImagen(boolean)
+comment3.text=\r\n\ \ Con\ este\ metodo\ se\ manda\ a\ cambiar\ la\ imagen\ de\ cada\ boton\r\n\ \ \r\n\ \ @param\ actividad\ Esta\ variable\ indica\ si\ la\ imagen\ del\ boton\ va\ a\ pasar\ a\ activo\ \u00F3\ a\ no\ activo\r\n
+comment4.params=nuevo
+comment4.target=void\ cambiaOpc(int)
+comment4.text=\r\n\ Con\ este\ metodo\ se\ modifica\ la\ opcion\ del\ escenario\r\n\ \r\n\ @param\ \ \ nuevo\ La\ opcion\ por\ la\ que\ se\ va\ a\ cambiar\r\n
+numComments=5
