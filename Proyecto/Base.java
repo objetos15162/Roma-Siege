@@ -10,7 +10,7 @@ public class Base extends Personaje
 {
     public Base(int niv)
     {
-        super(niv, "??", true, "base", "", "", "", "" ,"");
+        super(niv, true, "base", "", "", "", "" ,"");
     }
     
     /**

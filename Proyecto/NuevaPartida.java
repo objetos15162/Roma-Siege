@@ -19,9 +19,16 @@ public class NuevaPartida extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(640, 480, 1); 
-        hero= new Heroe(1, 150);
+        hero= new Heroe(1, 150, false);
         addObject(hero, 150,350);
+        addObject(new Heroe(2, 150, true), 600, 350);
         //Crea una archivo
+    }
+    
+    public void act()
+    {
+        //do nothing now :c
+        ;
     }
     
 }

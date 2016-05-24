@@ -10,7 +10,7 @@ public class Catapulta extends Personaje
 {
     public Catapulta(int niv)
     {
-        super(niv, "???", false, "Catapulta", "", "", "", "", "");
+        super(niv, false, "Catapulta", "", "", "", "", "");
     } 
     
     /**

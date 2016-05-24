@@ -16,7 +16,7 @@ public class Barco extends Personaje
     
     public Barco(String nombre)
     {
-        super(1, nombre, false, "Barco", "", "", "", "", "");
+        super(1, false, "Barco", "", "", "", "", "");
         mejoraVelocidad1=false;
         mejoraVelocidad2=false;
         mejoraVelocidad3=false;

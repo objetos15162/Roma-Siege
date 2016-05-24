@@ -5,7 +5,7 @@ import java.util.List;
  * asi como su posicion en el espacio.
  * 
  * @author Daniel Alejandro Wong Ramirez 
- * @version 1.0
+ * @version 2.3
  */
 public class Personaje extends Actor
 {
@@ -13,12 +13,15 @@ public class Personaje extends Actor
     private float atk;       // Es el daño basico que una unidad puede hacer. 
     private float def;       // Es la cantidad de resistencia que puede oponer al daño.
     private float aguante;   // Esta es la cantidad de daño que puede recibir una unidad antes que su vida empieze a reducir.
+    private float maxAguante;// Varible auxiliar para el aguante
     private int vida;        // Es la cantidad de daño que puede recibir una unidad antes de quedar KO o muerta...
+    private int maxVida;     // Varible auxiliar para la vida
     private float exp;       // Esta variable, dependiendo de si es un enemigo  no, varia. Siendo asi que si es un enemigo, la cantidad de experiencia del enemigo se pasa a la unidad que la derroto. En caso contrario, 
     private float nextLevel; // Indica cuanto es necesario ganar de experiencia para aumentar el ni
     private boolean isEnemy; // Indica si la unidad es enemiga.
     private String nombre;   // Es el nombre de la unidad. Se asigna automaticamente si es una unidad no Jugador
     
+    private int control;     // Esta varible es para controlar las acciones automaticas de los personajes.
     private int direccion;   // Con esta varible se representa la direccion. 1 es a la derecha, -1 a la izquierda.
     private boolean inAtk;   // Esta varible indica si esta en medio de un ataque. Si es asi solo se apagara hasta que la animacion de ataque termine.
     private GifImage inmovilDerecha;
@@ -27,43 +30,34 @@ public class Personaje extends Actor
     private GifImage movimientoIzquierda;
     private GifImage ataqueImgD;
     private GifImage ataqueImgI;
-    private List<GreenfootImage> gif;
-    private int positionList;
+    private List<GreenfootImage> gif;  //Esta variable es para obtener la lista de imagenes que tiene un gif
+    private int positionList;  //  Esta varible entera sirve para identificar en que posicion del gif esta actualmente.
     /**
      * Esta funcion es el constructor. Inicia los valores del personaje dependiendo del nivel que se le mande.
      */
-    public Personaje(int niv, String nom, boolean ene, String inmovilD, String inmovilI, String movD, String movI, String ataqD, String ataqI)
+    public Personaje(int niv, boolean ene, String inmovilD, String inmovilI, String movD, String movI, String ataqD, String ataqI)
     {
-        if(niv != 1 && ene == false)
+        nivel = niv;
+        atk = nivel * 10 + Greenfoot.getRandomNumber(nivel * 10/ 2);
+        def = nivel * 10 + Greenfoot.getRandomNumber((int)(nivel * 10 / 1.5));
+        aguante = nivel * 10 + Greenfoot.getRandomNumber((int)(nivel * 10 / 1.25));
+        maxAguante = aguante;
+        vida = nivel * 100 + Greenfoot.getRandomNumber(nivel * 100);
+        maxVida = vida;
+        nombre = "???";
+        isEnemy = ene;
+        if(ene)
         {
-            nivel=niv;
-            //lee los datos desde un archivo.
+            exp = (atk+def+aguante+(vida/10))/nivel*5;
+            direccion = -1;
         }
         else
         {
-            if(niv <= 0)
-            {
-                niv = (-niv) + 1;
-            }
-            nivel = niv;
-            atk = niv * 10 + Greenfoot.getRandomNumber(niv * 10/ 2);
-            def = niv * 10 + Greenfoot.getRandomNumber((int)(niv * 10 / 1.5));
-            aguante = niv * 10 + Greenfoot.getRandomNumber((int)(niv * 10 / 1.25));
-            vida = niv * 100 + Greenfoot.getRandomNumber(niv * 100);
-            nombre = nom;
-            isEnemy = ene;
-            if(ene)
-            {
-                exp = (atk+def+aguante+(vida/10))/niv*5;
-                direccion = -1;
-            }
-            else
-            {
-                exp=0;
-                nextLevel= 100;
-                direccion=1;
-            }
+            exp=0;
+            nextLevel= 100;
+            direccion=1;
         }
+        
         inAtk=false;
         ataqueImgD= new GifImage(ataqD);
         ataqueImgI= new GifImage(ataqI);
@@ -72,7 +66,19 @@ public class Personaje extends Actor
         movimientoDerecha = new GifImage(movD);
         movimientoIzquierda= new GifImage(movI);
         gif=null;
-        positionList=0;
+        positionList=1;
+        control=0;
+    }
+    
+    /**
+     * Este otro constructor recibe el nombre de un archivo para leer los datos desde alli
+     * 
+     * @param tipoArchivo Es una cadena que indica el nombre del archivo, y el tipo de Personaje que se creara
+     */
+    public Personaje(String nomArchivo)
+    {
+        // aqui se leera el archivo
+        ;
     }
     
     /**
@@ -85,13 +91,15 @@ public class Personaje extends Actor
         if(inAtk==false)
         {
             String key;
-            if(isEnemy==false)
+            if(!isEnemy)
             {
-                key = Greenfoot.getKey();
-                if(key != null)
+                if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("n"))
                 {
-                    key.toLowerCase();
-                    otorgaDireccion(key);
+                    key = Greenfoot.getKey();
+                    if(key != null)
+                    {
+                        otorgaDireccion(key);
+                    }
                 }
                 else
                 {
@@ -100,7 +108,7 @@ public class Personaje extends Actor
             }
             else
             {
-                key = actAutomatico();
+                key=actAutomatico();
                 if(key != null)
                 {
                     otorgaDireccion(key);
@@ -147,7 +155,7 @@ public class Personaje extends Actor
                  direccion=-1;
                  mover();
                  break;
-                      
+           
              case "d":
                  direccion=1;
                  mover();
@@ -170,41 +178,61 @@ public class Personaje extends Actor
    
     /**
      *  Este metodo Es para ver donde hay enemigos, genera una accion si hay enemigos
-     *  cerca. Funciona tanto para Enemigos como amigo.
+     *  cerca. Funciona tanto para Enemigos como amigo. Limita el numero de ataques por personaje.
+     *  Funciona como para aliados asi como para enemigos.
      *  
-     *  @return String - Es null si no hay nada en un perimetro.
+     *  @return String - Es null si no hay nada en un perimetro, o si se esta controlando su cantidad de ataques.
      */
     private String actAutomatico()
     {
-        World world = getWorld();        
+        World world = getWorld();
+        
         if(isEnemy)
         {
-            List <Personaje> actores = getObjectsInRange(50, Personaje.class);
+            List <Personaje> actores = getObjectsInRange(400, Personaje.class);
             for( Personaje p: actores)
             {
                 if(p != null && !p.getisEnemy())
                 {
-                    if(p.getX() - this.getX() <=10)
+                    if(p.getX() - this.getX() >= -10)
                     {
+                        if(control< atk-2*nivel)
+                        {
+                            control++;
+                            return null;
+                        }
+                        else
+                        {
+                            control=0;
+                        }
                         direccion = -1;
                         return "n";                        
                     }
                     else
                     {
-                        if( p.getX() - this.getX() >10)
+                        if( p.getX() - this.getX() < -10)
                         {
                             return "a";
                         }
                     }
                     
-                    if( p.getX() - this.getX()>= -10)
+                    if( p.getX() - this.getX()<= 10)
                     {
+                        if(control<atk-2*nivel)
+                        {
+                            control++;
+                            return null;
+                        }
+                        else
+                        {
+                            control=0;
+                        }
                         direccion = 1;
                         return "n";
                     }
                     else
                     {
-                        if( p.getX() - this.getX()< -10)
+                        if( p.getX() - this.getX()> -10)
                         {
                             return "d";
                         }
@@ -219,27 +247,27 @@ public class Personaje extends Actor
             {
                 if(p != null && p.getisEnemy())
                 {
-                    if(p.getX() - this.getX() <=10)
+                    if(p.getX() - this.getX() >=10)
                     {
                         direccion = -1;
                         return "n";                        
                     }
                     else
                     {
-                        if( p.getX() - this.getX() >10)
+                        if( p.getX() - this.getX() <10)
                         {
                             return "a";
                         }
                     }
                     
-                    if( p.getX() - this.getX()>= -10)
+                    if( p.getX() - this.getX()<= -10)
                     {
                         direccion = 1;
                         return "n";
                     }
                     else
                     {
-                        if( p.getX() - this.getX()< -10)
+                        if( p.getX() - this.getX() > -10)
                         {
                             return "d";
                         }
@@ -256,7 +284,7 @@ public class Personaje extends Actor
      */
     private void atacar()
     {
-        if(gif.get(positionList) != null)
+        if(positionList<gif.size())
         {
             setImage(gif.get(positionList));
             positionList++;
@@ -308,7 +336,7 @@ public class Personaje extends Actor
         if(exp >= nextLevel)
         {
             monto = exp - nextLevel;
-            aumentaNivel();
+            aumentanivel();
             if(monto > 0)
             {
                 aumentaExp( monto );
@@ -319,13 +347,15 @@ public class Personaje extends Actor
     /**
      * En este metodo se suben las estadisticas del Personaje de manera semi-aleatoria.
      */
-    private void aumentaNivel()
+    private void aumentanivel()
     {
         nivel ++;
         atk += Greenfoot.getRandomNumber(9)+1;
         def += Greenfoot.getRandomNumber(9)+1;
-        aguante += Greenfoot.getRandomNumber(9)+1;
-        vida += Greenfoot.getRandomNumber(9)+1;
+        maxAguante += Greenfoot.getRandomNumber(9)+1;
+        maxVida += Greenfoot.getRandomNumber(9)+1;
+        vida=maxVida;
+        aguante=maxAguante;
         exp = 0;
         nextLevel += nextLevel *0.2;
     }
@@ -377,14 +407,14 @@ public class Personaje extends Actor
         {
             setImage(movimientoDerecha.getCurrentImage());
         }
-        move(direccion * 4);
+        move(direccion * 8);
     }
     
     /**
      * This method returns the level
      * 
      */
-    public int getNivel()
+    public int getnivel()
     {
         return nivel;
     }

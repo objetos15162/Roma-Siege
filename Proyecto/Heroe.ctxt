@@ -1,13 +1,15 @@
 #BlueJ class context
 comment0.target=Heroe
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Heroe\ here.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.2\r\n
-comment1.params=niv\ monedas
-comment1.target=Heroe(int,\ int)
-comment1.text=\r\n\ \ Constructor\ de\ la\ subclase\ Heroe.\r\n
-comment2.params=
-comment2.target=int\ getOro()
-comment2.text=\r\n\ This\ method\ returns\ the\ gold\ of\ the\ Hero\ already\ have;\r\n\ @return\ oro\r\n
-comment3.params=cantidad
-comment3.target=void\ setOro(int)
-comment3.text=\r\n\ \r\n
-numComments=4
+comment1.params=niv\ monedas\ ene
+comment1.target=Heroe(int,\ int,\ boolean)
+comment1.text=\r\n\ \ Constructor\ de\ la\ subclase\ Heroe.\ Este\ construtor\ manda\ \r\n
+comment2.params=archivo
+comment2.target=Heroe(java.lang.String)
+comment3.params=
+comment3.target=int\ getOro()
+comment3.text=\r\n\ This\ method\ returns\ the\ gold\ of\ the\ Hero\ already\ have;\r\n\ @return\ oro\r\n
+comment4.params=cantidad
+comment4.target=void\ setOro(int)
+comment4.text=\r\n\ \r\n
+numComments=5

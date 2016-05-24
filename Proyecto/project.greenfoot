@@ -1,8 +1,8 @@
 #Greenfoot properties
-#Thu May 19 19:09:42 CDT 2016
+#Mon May 23 23:47:17 CDT 2016
 target16.name=Tienda
 editor.swing.0.y=0
-editor.swing.0.x=2
+editor.swing.0.x=0
 class.Heroe.superclass=Personaje
 target2.name=Label
 target9.name=Base
@@ -19,7 +19,7 @@ target14.type=ClassTarget
 class.Ciudad.superclass=greenfoot.World
 simulation.speed=50
 target15.width=80
-class.Heroe.image=Drinker Inmovil.gif
+class.Heroe.image=Drinker InmovilD.gif
 target15.height=50
 target7.type=ClassTarget
 class.BotonNuevo.image=Boton Nuevo Inactivo.png

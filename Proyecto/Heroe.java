@@ -11,12 +11,18 @@ public class Heroe extends Personaje
     private int oro;
     
     /**
-     *  Constructor de la subclase Heroe.
+     *  Constructor de la subclase Heroe. Este construtor manda 
      */
-    public Heroe(int niv, int monedas)
+    public Heroe(int niv, int monedas, boolean ene)
     {
-        super(niv,"???" , false, "Drinker inmovilD.gif", "Drinker inmovilI.gif", "Drinker CorriendoD.gif", "Drinker CorriendoI.gif", "Drinker AtaqueD.gif", "Drinker AtaqueI.gif");
+        super(niv, ene, "Drinker inmovilD.gif", "Drinker inmovilI.gif", "Drinker CorriendoD.gif", "Drinker CorriendoI.gif", "Drinker AtaqueD.gif", "Drinker AtaqueI.gif");
         oro=monedas;
+    }
+    
+    public Heroe(String archivo)
+    {
+        super(archivo);
+        //monedas=leeArchivo(archivo);
     }
     
     /**
