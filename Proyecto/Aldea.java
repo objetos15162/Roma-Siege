@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Ciuadad here.
+ * Write a description of class Aldea here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Ciudad extends Actor
+public class Aldea extends Actor
 {
     /**
-     * Act - do whatever the Ciuadad wants to do. This method is called whenever
+     * Act - do whatever the Aldea wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 

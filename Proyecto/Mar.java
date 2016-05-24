@@ -1,22 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Mar here.
+ * Write a description of class MarScroll here.
  * 
- * @author Daniel Wong
- * @author Juan Partida 
- * @version 0.1
+ * @author (your name) 
+ * @version (a version number or a date)
  */
-public class Mar extends World
+public class Mar extends Actor
 {
-
     /**
-     * Constructor for objects of class Mar.
-     * 
+     * Act - do whatever the MarScroll wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Mar()
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(640, 480, 1); 
-    }
+    public void act() 
+    {
+        // Add your action code here.
+    }    
 }

@@ -3,32 +3,41 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Heroe here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Daniel Wong 
+ * @version 1.2
  */
 public class Heroe extends Personaje
 {
     private int oro;
-    protected String tipoAtk=new String();
+    
+    /**
+     *  Constructor de la subclase Heroe.
+     */
+    public Heroe(int niv, int monedas)
+    {
+        super(niv,"???" , false, "Drinker inmovilD.gif", "Drinker inmovilI.gif", "Drinker CorriendoD.gif", "Drinker CorriendoI.gif", "Drinker AtaqueD.gif", "Drinker AtaqueI.gif");
+        oro=monedas;
+    }
+    
+    /**
+     * This method returns the gold of the Hero already have;
+     * @return oro
+     */
+    public int getOro()
+    {
+        return oro;
+    }
     
     /**
      * 
      */
-    public Heroe()
+    public void setOro(int cantidad)
     {
-        String Nom= new String();
-        Nom="???";
-        super(1, Nom, false);
-        oro=150;
-        tipoAtk
+        if(cantidad<=oro)
+        {
+            oro= oro-cantidad;
+        }
+        else
+          ;
     }
-    
-    /**
-     * Act - do whatever the Heroe wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
 }

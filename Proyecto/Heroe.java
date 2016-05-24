@@ -15,7 +15,7 @@ public class Heroe extends Personaje
      */
     public Heroe(int niv, int monedas)
     {
-        super(niv,"???" , false, "Drinker inmovilD.gif", "Drinker inmovilI.gif", "Drinker CorriendoD.gif", "Drinker CorriendoI.gif", "Drinker AtaqueD.gif", "Drinker AtaqueI.gif");
+        super(niv,"???" , false);
         oro=monedas;
     }
     

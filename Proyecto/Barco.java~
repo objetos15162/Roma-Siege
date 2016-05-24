@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Barco here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Daniel Wong 
+ * @version 1.1
  */
 public class Barco extends Personaje
 {
@@ -14,7 +14,7 @@ public class Barco extends Personaje
     private boolean mejoraVelocidad2;
     private boolean mejoraVelocidad3;
     
-    public Barco(String nombre)
+    public Barco(String nombre, boolean enemy)
     {
         super(1, nombre, false);
         mejoraVelocidad1=false;
@@ -30,7 +30,14 @@ public class Barco extends Personaje
     public void act() 
     {
         // Add your action code here.
-        move((int)velocidad);
+       if ( Greenfoot.isKeyDown("left"))
+        {
+           // move(-1);
+        }
+       if(Greenfoot.isKeyDown("right"))
+        {
+          //  move(1);
+        }
     }
     
     /**
@@ -53,10 +60,11 @@ public class Barco extends Personaje
                 {
                     case 1: if(!mejoraVelocidad1)
                             {
-                                
+                                ;
                             }
                     break;
                 }
             }
     }
+    
 }

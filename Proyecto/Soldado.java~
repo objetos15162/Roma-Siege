@@ -3,15 +3,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Soldado here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Daniel Wong
+ * @version 0.1
  */
 public class Soldado extends Personaje
 {
-    public Soldado()
+    public Soldado(int niv, boolean enemy)
     {
-        super(1,"???", false);
+        super(niv , "???", enemy, "Soldado InmovilD.gif", "Soldado InmovilI.gif", "Soldado CorriendoD.gif", "Soldado CorriendoI.gif", "Soldado AtaqueD.gif", "Soldado AtaqueI.gif");
     }
+    
     
     /**
      * Act - do whatever the Soldado wants to do. This method is called whenever
@@ -19,6 +20,6 @@ public class Soldado extends Personaje
      */
     public void act() 
     {
-        // Add your action code here.
+        // se movera de manera automatica.
     }    
 }

@@ -5,6 +5,7 @@ import java.util.List;
  * asi como su posicion en el espacio.
  * 
  * @author Daniel Alejandro Wong Ramirez 
+ * @author Juan Carlos Partida V<quez
  * @version 1.0
  */
 public class Personaje extends Actor
@@ -32,7 +33,7 @@ public class Personaje extends Actor
     /**
      * Esta funcion es el constructor. Inicia los valores del personaje dependiendo del nivel que se le mande.
      */
-    public Personaje(int niv, String nom, boolean ene, String inmovilD, String inmovilI, String movD, String movI, String ataqD, String ataqI)
+    public Personaje(int niv, String nom, boolean ene)
     {
         if(niv != 1 && ene == false)
         {
@@ -65,12 +66,12 @@ public class Personaje extends Actor
             }
         }
         inAtk=false;
-        ataqueImgD= new GifImage(ataqD);
+     /*   ataqueImgD= new GifImage(ataqD);
         ataqueImgI= new GifImage(ataqI);
         inmovilDerecha = new GifImage(inmovilD);
         inmovilIzquierda = new GifImage(inmovilI);
         movimientoDerecha = new GifImage(movD);
-        movimientoIzquierda= new GifImage(movI);
+        movimientoIzquierda= new GifImage(movI);*/
         gif=null;
         positionList=0;
     }
@@ -82,39 +83,10 @@ public class Personaje extends Actor
     public void act() 
     {
         // Add your action code here.
-        if(inAtk==false)
-        {
-            String key;
-            if(isEnemy==false)
-            {
-                key = Greenfoot.getKey();
-                if(key != null)
-                {
-                    key.toLowerCase();
-                    otorgaDireccion(key);
-                }
-                else
-                {
-                    movEstandar();
-                }
-            }
-            else
-            {
-                key = actAutomatico();
-                if(key != null)
-                {
-                    otorgaDireccion(key);
-                }
-                else
-                {
-                    movEstandar();
-                }
-            }
-        }
-        else
-        {
-            atacar();
-        }
+       if(isEnemy != true)
+       {
+          // moveHero();
+       }
     }
     
     /**
@@ -138,34 +110,17 @@ public class Personaje extends Actor
      * 
      * @param key - Esta variable indica que tecla se presiono.
      */
-    private void otorgaDireccion(String key)
+    private void moveHero()
     {
-         switch(key)
-         {
-             case "a":
-                 //Aqui se cambia la imagen por el del gif corriedo
-                 direccion=-1;
-                 mover();
-                 break;
-                      
-             case "d":
-                 direccion=1;
-                 mover();
-                 break;
-                    
-             case "n":
-                 if(direccion == -1)
-                 {
-                     gif = ataqueImgI.getImages();
-                 }
-                 else
-                 {
-                     gif = ataqueImgD.getImages();
-                 }
-                 inAtk=true;
-                 break;
-             
-         }
+        if(Greenfoot.isKeyDown("right"))
+        {
+            move(5);
+        }
+        if(Greenfoot.isKeyDown("left"))
+        {
+            move(-5);
+        }
+         
     }
    
     /**

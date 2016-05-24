@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Personaje
-comment0.text=\r\n\ Esta\ clase\ sera\ la\ base\ para\ todos\ los\ objetos\ que\ participaran\ como\ NPC\ y\ para\ el\ jugador.\ Tendra\ la\ informacion\ de\ los\ objetos\ tales\ como\ ataque,\ defensa,\ etc,\r\n\ asi\ como\ su\ posicion\ en\ el\ espacio.\r\n\ \r\n\ @author\ Daniel\ Alejandro\ Wong\ Ramirez\ \r\n\ @version\ 1.0\r\n
-comment1.params=niv\ nom\ ene\ inmovilD\ inmovilI\ movD\ movI\ ataqD\ ataqI
-comment1.target=Personaje(int,\ java.lang.String,\ boolean,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment0.text=\r\n\ Esta\ clase\ sera\ la\ base\ para\ todos\ los\ objetos\ que\ participaran\ como\ NPC\ y\ para\ el\ jugador.\ Tendra\ la\ informacion\ de\ los\ objetos\ tales\ como\ ataque,\ defensa,\ etc,\r\n\ asi\ como\ su\ posicion\ en\ el\ espacio.\r\n\ \r\n\ @author\ Daniel\ Alejandro\ Wong\ Ramirez\ \r\n\ @author\ Juan\ Carlos\ Partida\ V<quez\r\n\ @version\ 1.0\r\n
+comment1.params=niv\ nom\ ene
+comment1.target=Personaje(int,\ java.lang.String,\ boolean)
 comment1.text=\r\n\ Esta\ funcion\ es\ el\ constructor.\ Inicia\ los\ valores\ del\ personaje\ dependiendo\ del\ nivel\ que\ se\ le\ mande.\r\n
 comment10.params=
 comment10.target=void\ mover()
@@ -28,8 +28,8 @@ comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Personaje\ wants\ to\ do.\ This\ 
 comment3.params=
 comment3.target=void\ movEstandar()
 comment3.text=\r\n\ Este\ metodo\ genera\ la\ animacion\ estandar\ mientras\ no\ se\ mueva\ hacia\ algun\ lado.\r\n\ \r\n
-comment4.params=key
-comment4.target=void\ otorgaDireccion(java.lang.String)
+comment4.params=
+comment4.target=void\ moveHero()
 comment4.text=\r\n\ Este\ metodo\ otorga\ la\ direccion\ a\ la\ que\ el\ usuario\ o\ computadora\ decidio\ apuntar\ y\ lo\ mueve\ en\ esa\ direccion.\r\n\ \r\n\ @param\ key\ -\ Esta\ variable\ indica\ que\ tecla\ se\ presiono.\r\n
 comment5.params=
 comment5.target=java.lang.String\ actAutomatico()
