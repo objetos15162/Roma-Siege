@@ -71,7 +71,7 @@ public class NuevaPartida extends SWorld
                 super.act();
                 repaint();
             }
-            Greenfoot.setWorld(new Principal(hero));
+            Greenfoot.setWorld(new Principal(hero, new Barco(1, false), new Catapulta(1)));
         }
     }
 }

@@ -14,21 +14,25 @@ public class Barco extends Personaje
     private boolean mejoraVelocidad2;
     private boolean mejoraVelocidad3;
     
-<<<<<<< HEAD
     public Barco(int nivel, boolean esEnemigo)
     {
         super(nivel, esEnemigo, "Barco", "", "", "", "", "");
-=======
-    public Barco(String nombre, boolean enemy)
-    {
-        super(1, nombre, enemy);
->>>>>>> origin/master
         mejoraVelocidad1=false;
         mejoraVelocidad2=false;
         mejoraVelocidad3=false;
         velocidad=10;
         capacidad=5 + Greenfoot.getRandomNumber(4+nivel);
     }
+    
+    /**
+     * Con este constructor podremos crear un objeto barco leyendo sus datos desde un archivo.
+     * @param archivo Es una cadena con el nombre del archivo donde se encuentra guardado.
+     */
+    public Barco(String archivo)
+    {
+        super(archivo);
+    }
+    
     /**
      * Act - do whatever the Barco wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -36,14 +40,7 @@ public class Barco extends Personaje
     public void act() 
     {
         // Add your action code here.
-       if ( Greenfoot.isKeyDown("left"))
-        {
-           // move(-1);
-        }
-       if(Greenfoot.isKeyDown("right"))
-        {
-          //  move(1);
-        }
+        move((int)velocidad);
     }
     
     /**
@@ -72,5 +69,4 @@ public class Barco extends Personaje
                 }
             }
     }
-    
 }

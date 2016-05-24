@@ -8,13 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Base extends Personaje
 {
-    public Base(int niv,boolean enemy)
+    public Base(int niv)
     {
-<<<<<<< HEAD
         super(niv, true, "base", "", "", "", "" ,"");
-=======
-        super(niv, "??", enemy);
->>>>>>> origin/master
     }
     
     /**

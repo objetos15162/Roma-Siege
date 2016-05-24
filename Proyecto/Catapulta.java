@@ -8,17 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Catapulta extends Personaje
 {
-    private boolean shooting;
-    private boolean sentido;
-    public Catapulta(int niv,boolean enemy)
+    public Catapulta(int niv)
     {
-<<<<<<< HEAD
         super(niv, false, "Catapulta InmovilD.gif", "Catapulta InmovilD.gif", "Catapulta MovimientoD.gif", "Catapulta MovimientoD.gif", "Catapulta AtaqueD.gif", "Catapulta AtaqueD.gif");
-=======
-        super(niv, "???", enemy);
-        shooting = false;
-        sentido = false;
->>>>>>> origin/master
     } 
     
     /**
@@ -26,31 +18,6 @@ public class Catapulta extends Personaje
      */
     private void atacar()
     {
-        getWorld().addObject(new Bala(sentido),this.getX(),this.getY());
-    }
-    public void act()
-    {
-          if(Greenfoot.isKeyDown("right"))
-        {
-            setImage("catapulta.png");
-            sentido = false;
-            
-        }
-         if(Greenfoot.isKeyDown("left"))
-        {
-            setImage("catapultaIzq.png");
-            sentido = true;
-        }
-         if(Greenfoot.isKeyDown("z") && !shooting)
-        {
-            atacar();
-         //   Greenfoot.playSound("cañon.mp3");
-            shooting=true;
-        }
-       
-       if(!Greenfoot.isKeyDown("z"))
-       {
-          shooting = false;
-        }
+        ;
     }
 }

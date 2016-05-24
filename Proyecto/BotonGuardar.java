@@ -16,6 +16,6 @@ public class BotonGuardar extends Boton
     
     public void llamaNuevoEscenario()
     {
-        
+        World world= getWorld();
     }
 }

@@ -1,14 +1,8 @@
 #BlueJ class context
 comment0.target=Personaje
-<<<<<<< HEAD
 comment0.text=\r\n\ Esta\ clase\ sera\ la\ base\ para\ todos\ los\ objetos\ que\ participaran\ como\ NPC\ y\ para\ el\ jugador.\ Tendra\ la\ informacion\ de\ los\ objetos\ tales\ como\ ataque,\ defensa,\ etc,\r\n\ asi\ como\ su\ posicion\ en\ el\ espacio.\r\n\ \r\n\ @author\ Daniel\ Alejandro\ Wong\ Ramirez\ \r\n\ @version\ 2.3\r\n
 comment1.params=niv\ ene\ inmovilD\ inmovilI\ movD\ movI\ ataqD\ ataqI
 comment1.target=Personaje(int,\ boolean,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
-=======
-comment0.text=\r\n\ Esta\ clase\ sera\ la\ base\ para\ todos\ los\ objetos\ que\ participaran\ como\ NPC\ y\ para\ el\ jugador.\ Tendra\ la\ informacion\ de\ los\ objetos\ tales\ como\ ataque,\ defensa,\ etc,\r\n\ asi\ como\ su\ posicion\ en\ el\ espacio.\r\n\ \r\n\ @author\ Daniel\ Alejandro\ Wong\ Ramirez\ \r\n\ @author\ Juan\ Carlos\ Partida\ V<quez\r\n\ @version\ 1.0\r\n
-comment1.params=niv\ nom\ ene
-comment1.target=Personaje(int,\ java.lang.String,\ boolean)
->>>>>>> origin/master
 comment1.text=\r\n\ Esta\ funcion\ es\ el\ constructor.\ Inicia\ los\ valores\ del\ personaje\ dependiendo\ del\ nivel\ que\ se\ le\ mande.\r\n
 comment10.params=da\u00F1o
 comment10.target=void\ reduceVida(float)
@@ -36,9 +30,8 @@ comment17.target=void\ setName()
 comment17.text=\r\n\ Este\ metodo\ cambia\ el\ nombre\ del\ personaje\r\n
 comment2.params=nomArchivo
 comment2.target=Personaje(java.lang.String)
-comment2.text=\r\n\ Este\ otro\ constructor\ recibe\ el\ nombre\ de\ un\ archivo\ para\ leer\ los\ datos\ desde\ alli\r\n\ \r\n\ @param\ tipoArchivo\ Es\ una\ cadena\ que\ indica\ el\ nombre\ del\ archivo,\ y\ el\ tipo\ de\ Personaje\ que\ se\ creara\r\n
+comment2.text=\r\n\ Este\ otro\ constructor\ recibe\ el\ nombre\ de\ un\ archivo\ para\ leer\ los\ datos\ desde\ alli\r\n\ \r\n\ @param\ nomArchivo\ Es\ una\ cadena\ que\ indica\ el\ nombre\ del\ archivo,\ y\ el\ tipo\ de\ Personaje\ que\ se\ creara\r\n
 comment3.params=
-<<<<<<< HEAD
 comment3.target=void\ act()
 comment3.text=\r\n\ Act\ -\ do\ whatever\ the\ Personaje\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment4.params=
@@ -47,16 +40,6 @@ comment4.text=\r\n\ Este\ metodo\ genera\ la\ animacion\ estandar\ mientras\ no\
 comment5.params=key
 comment5.target=void\ otorgaDireccion(java.lang.String)
 comment5.text=\r\n\ Este\ metodo\ otorga\ la\ direccion\ a\ la\ que\ el\ usuario\ o\ computadora\ decidio\ apuntar\ y\ lo\ mueve\ en\ esa\ direccion.\r\n\ \r\n\ @param\ key\ -\ Esta\ variable\ indica\ que\ tecla\ se\ presiono.\r\n
-=======
-comment3.target=void\ movEstandar()
-comment3.text=\r\n\ Este\ metodo\ genera\ la\ animacion\ estandar\ mientras\ no\ se\ mueva\ hacia\ algun\ lado.\r\n\ \r\n
-comment4.params=
-comment4.target=void\ moveHero()
-comment4.text=\r\n\ Este\ metodo\ otorga\ la\ direccion\ a\ la\ que\ el\ usuario\ o\ computadora\ decidio\ apuntar\ y\ lo\ mueve\ en\ esa\ direccion.\r\n\ \r\n\ @param\ key\ -\ Esta\ variable\ indica\ que\ tecla\ se\ presiono.\r\n
-comment5.params=
-comment5.target=java.lang.String\ actAutomatico()
-comment5.text=\r\n\ \ Este\ metodo\ Es\ para\ ver\ donde\ hay\ enemigos,\ genera\ una\ accion\ si\ hay\ enemigos\r\n\ \ cerca.\ Funciona\ tanto\ para\ Enemigos\ como\ amigo.\r\n\ \ \r\n\ \ @return\ String\ -\ Es\ null\ si\ no\ hay\ nada\ en\ un\ perimetro.\r\n
->>>>>>> origin/master
 comment6.params=
 comment6.target=java.lang.String\ actAutomatico()
 comment6.text=\r\n\ \ Este\ metodo\ Es\ para\ ver\ donde\ hay\ enemigos,\ genera\ una\ accion\ si\ hay\ enemigos\r\n\ \ cerca.\ Funciona\ tanto\ para\ Enemigos\ como\ amigo.\ Limita\ el\ numero\ de\ ataques\ por\ personaje.\r\n\ \ Funciona\ como\ para\ aliados\ asi\ como\ para\ enemigos.\r\n\ \ \r\n\ \ @return\ String\ -\ Es\ null\ si\ no\ hay\ nada\ en\ un\ perimetro,\ o\ si\ se\ esta\ controlando\ su\ cantidad\ de\ ataques.\r\n
