@@ -40,12 +40,12 @@ public class NuevaPartida extends SWorld
         mainActor.setLocation(20, 295);
         setScrollingBackground(new GreenfootImage("Inicio.png"));
         addObject(new Ground("Ground.png"), 320, 420);
-        
+        addObject(new Heroe(2, 100, true), 100, 300);
         cont=0;
         actividad=false;
         dialogos= new ArrayList();
-        dialogos.add(0, new Label(hero.getName() + ": pero que... ¿pasó?", 38));
-        dialogos.add(1, new Label(hero.getName() + ": toda mi familia... ¿muerta?", 38));
+        dialogos.add(0, new Label(hero.getName() + ": pero que... ¿pasó?", 24));
+        dialogos.add(1, new Label(hero.getName() + ": toda mi familia... ¿muerta?", 28));
         dialogos.add(2, new Label(hero.getName() + ": ¡Juro que encontrare al responsable!, si no, mi nombre dejara de ser...", 20));
         
     }
@@ -58,7 +58,7 @@ public class NuevaPartida extends SWorld
         super.act();
         if(hero.getX()>= this.getWidth()/2-20+cont*50 && hero.getX()<= this.getWidth()/2+20+cont*50 && !actividad && cont<dialogos.size())
         {
-            addObject(dialogos.get(cont), hero.getX(), hero.getY()+30);
+            addObject(dialogos.get(cont), hero.getX(), hero.getY()-50);
             actividad=true;
         }
         else

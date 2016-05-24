@@ -21,7 +21,7 @@ public class Barco extends Personaje
         mejoraVelocidad2=false;
         mejoraVelocidad3=false;
         velocidad=10;
-        capacidad=20;
+        capacidad=5;
     }
     /**
      * Act - do whatever the Barco wants to do. This method is called whenever

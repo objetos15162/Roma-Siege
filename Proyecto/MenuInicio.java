@@ -12,27 +12,48 @@ public class MenuInicio extends World
    BotonCargar cargar;
    BotonAyuda ayuda;
    BotonSalir salir;
+   private BotonGuardar guardar;
+   private BotonJugar jugar;
+   private BotonTienda tienda;
+   
    private int opcion;
+   private int activacion;
    
     /**
      * Constructor for objects of class MenuInicio.
      * 
      */
-    public MenuInicio()
+    public MenuInicio(int escenarioAct)
     {    
         super(640, 480, 1); 
+        activacion=escenarioAct;
+        if(escenarioAct==0)
+        {
+            nuevo  = new BotonNuevo();
+            cargar = new BotonCargar();
+            ayuda  = new BotonAyuda();
+            salir  = new BotonSalir();
+            opcion = 1;
+            cambiaImagen(true);
         
-        nuevo  = new BotonNuevo();
-        cargar = new BotonCargar();
-        ayuda  = new BotonAyuda();
-        salir  = new BotonSalir();
-        opcion = 1;
-        cambiaImagen(true);
-        
-        addObject(nuevo,  165, 185);
-        addObject(cargar, 465, 185);
-        addObject(ayuda,  165, 305);
-        addObject(salir,  465, 305);
+            addObject(nuevo,  165, 185);
+            addObject(cargar, 465, 185);
+            addObject(ayuda,  165, 305);
+            addObject(salir,  465, 305);
+        }
+        else
+        {
+            jugar = new BotonJugar();
+            guardar = new BotonGuardar();
+            tienda = new BotonTienda();
+            salir = new BotonSalir();
+            
+            opcion=1;
+            addObject(jugar,  165, 185);
+            addObject(guardar, 465, 185);
+            addObject(tienda,  165, 305);
+            addObject(salir,  465, 305);
+        }
     }
     
     public void act()
@@ -74,25 +95,47 @@ public class MenuInicio extends World
                     break;
                     
                 case "enter":
-                    switch(opcion)
+                    switch(activacion)
                     {
-                        case 1: 
-                            nuevo.llamaNuevoEscenario();
-                            break;
+                        case 0:
+                            switch(opcion)
+                            { 
+                                case 1: 
+                                    nuevo.llamaNuevoEscenario();
+                                    break;
                             
-                        case 2:
-                            cargar.llamaNuevoEscenario();
-                            break;
+                                case 2:
+                                    cargar.llamaNuevoEscenario();
+                                    break;
                             
-                        case 3:
-                            ayuda.llamaNuevoEscenario();
-                            break;
+                                case 3:
+                                    ayuda.llamaNuevoEscenario();
+                                    break;
                             
-                        case 4:
-                            salir.llamaNuevoEscenario();
+                                case 4:
+                                    salir.llamaNuevoEscenario();
+                                    break;
+                            }
                             break;
-                    }
-                    break;
+                        
+                        case 1:
+                            switch(opcion)
+                            {
+                                case 1:
+                                    jugar.llamaNuevoEscenario();
+                                    break;
+                                case 2:
+                                    guardar.llamaNuevoEscenario();
+                                    break;
+                                case 3:
+                                    tienda.llamaNuevoEscenario();
+                                    break;
+                                case 4:
+                                    salir.llamaNuevoEscenario();
+                                    break;
+                            }
+                            break;
+                }
             }
         }
     }
@@ -104,19 +147,41 @@ public class MenuInicio extends World
      */
     private void cambiaImagen(boolean actividad)
     {
-        switch(opcion)
+        switch(activacion)
         {
-            case 1: 
-                nuevo.cambia(actividad);
+            case 0:
+                switch(opcion)
+                {
+                    case 1: 
+                        nuevo.cambia(actividad);
+                        break;
+                    case 2:
+                        cargar.cambia(actividad);
+                        break;
+                    case 3:
+                        ayuda.cambia(actividad);
+                        break;
+                    case 4:
+                        salir.cambia(actividad);
+                        break;
+                }
                 break;
-            case 2:
-                cargar.cambia(actividad);
-                break;
-            case 3:
-                ayuda.cambia(actividad);
-                break;
-            case 4:
-                salir.cambia(actividad);
+            case 1:
+                switch(opcion)
+                {
+                    case 1: 
+                        jugar.cambia(actividad);
+                        break;
+                    case 2:
+                        guardar.cambia(actividad);
+                        break;
+                    case 3:
+                        tienda.cambia(actividad);
+                        break;
+                    case 4:
+                        salir.cambia(actividad);
+                        break;
+                }
                 break;
         }
     }
