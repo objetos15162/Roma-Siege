@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Ground
+comment0.text=\r\n\ A\ surface\ for\ the\ main\ actor\ to\ gravitate\ toward.\r\n
+comment1.params=esn
+comment1.target=Ground(java.lang.String)
+comment1.text=\r\n\ Creates\ a\ long\ platform\ for\ the\ main\ actor.\r\n
+numComments=2

@@ -146,7 +146,7 @@ public class Personaje extends Actor
      * 
      * @param key - Esta variable indica que tecla se presiono.
      */
-    private void otorgaDireccion(String key)
+    public void otorgaDireccion(String key)
     {
          switch(key)
          {
@@ -455,5 +455,13 @@ public class Personaje extends Actor
     public float getExp()
     {
         return exp;
+    }
+    
+    /**
+     * Este metodo cambia el nombre del personaje
+     */
+    public void setName()
+    {
+        nombre= Greenfoot.ask("Nombre: "); 
     }
 }
