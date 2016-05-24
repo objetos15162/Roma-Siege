@@ -3,21 +3,50 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Catapulta here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Daniel Wong
+ * @version 0.1
  */
 public class Catapulta extends Personaje
 {
-    public Catapulta()
+    private boolean shooting;
+    private boolean sentido;
+    public Catapulta(int niv,boolean enemy)
     {
-        
-    }
+        super(niv, "???", enemy);
+        shooting = false;
+        sentido = false;
+    } 
+    
     /**
-     * Act - do whatever the Catapulta wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Este metodo atacar es exclusivamente para la catapulta.
      */
-    public void act() 
+    private void atacar()
     {
-        // Add your action code here.
-    }    
+        getWorld().addObject(new Bala(sentido),this.getX(),this.getY());
+    }
+    public void act()
+    {
+          if(Greenfoot.isKeyDown("right"))
+        {
+            setImage("catapulta.png");
+            sentido = false;
+            
+        }
+         if(Greenfoot.isKeyDown("left"))
+        {
+            setImage("catapultaIzq.png");
+            
+        }
+         if(Greenfoot.isKeyDown("z") && !shooting)
+        {
+            atacar();
+         //   Greenfoot.playSound("cañon.mp3");
+            shooting=true;
+        }
+       
+       if(!Greenfoot.isKeyDown("z"))
+       {
+          shooting = false;
+        }
+    }
 }

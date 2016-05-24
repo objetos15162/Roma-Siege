@@ -1,9 +1,11 @@
 #BlueJ class context
 comment0.target=Catapulta
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Catapulta\ here.\r\n\ \r\n\ @author\ Daniel\ Wong\r\n\ @version\ 0.1\r\n
-comment1.params=niv
-comment1.target=Catapulta(int)
+comment1.params=niv\ enemy
+comment1.target=Catapulta(int,\ boolean)
 comment2.params=
 comment2.target=void\ atacar()
 comment2.text=\r\n\ Este\ metodo\ atacar\ es\ exclusivamente\ para\ la\ catapulta.\r\n
-numComments=3
+comment3.params=
+comment3.target=void\ act()
+numComments=4

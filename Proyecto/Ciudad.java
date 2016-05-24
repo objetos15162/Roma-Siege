@@ -1,11 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
+<<<<<<< HEAD
  * Write a description of class Ciudad here.
+=======
+ * Write a description of class Ciuadad here.
+>>>>>>> origin/master
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
+<<<<<<< HEAD
 public class Ciudad extends SWorld
 {
     /*
@@ -25,12 +30,23 @@ public class Ciudad extends SWorld
         addObject(new Score(), 40, 390, false);
      */
     
+=======
+public class Ciudad extends Actor
+{
+>>>>>>> origin/master
     /**
-     * Constructor for objects of class Ciudad.
-     * 
+     * Act - do whatever the Ciuadad wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
      */
+<<<<<<< HEAD
     public Ciudad()
     {
         super(640, 480, 1, 600);
     }
+=======
+    public void act() 
+    {
+        // Add your action code here.
+    }    
+>>>>>>> origin/master
 }

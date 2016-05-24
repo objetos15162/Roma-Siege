@@ -14,9 +14,15 @@ public class Barco extends Personaje
     private boolean mejoraVelocidad2;
     private boolean mejoraVelocidad3;
     
+<<<<<<< HEAD
     public Barco(int nivel, boolean esEnemigo)
     {
         super(nivel, esEnemigo, "Barco", "", "", "", "", "");
+=======
+    public Barco(String nombre, boolean enemy)
+    {
+        super(1, nombre, enemy);
+>>>>>>> origin/master
         mejoraVelocidad1=false;
         mejoraVelocidad2=false;
         mejoraVelocidad3=false;
@@ -30,7 +36,14 @@ public class Barco extends Personaje
     public void act() 
     {
         // Add your action code here.
-        move((int)velocidad);
+       if ( Greenfoot.isKeyDown("left"))
+        {
+           // move(-1);
+        }
+       if(Greenfoot.isKeyDown("right"))
+        {
+          //  move(1);
+        }
     }
     
     /**
@@ -59,4 +72,5 @@ public class Barco extends Personaje
                 }
             }
     }
+    
 }

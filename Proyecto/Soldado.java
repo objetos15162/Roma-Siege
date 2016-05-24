@@ -10,7 +10,11 @@ public class Soldado extends Personaje
 {
     public Soldado(int niv, boolean enemy)
     {
+<<<<<<< HEAD
         super(niv, enemy, "Soldado InmovilD.gif", "Soldado InmovilI.gif", "Soldado CorriendoD.gif", "Soldado CorriendoI.gif", "Soldado AtaqueD.gif", "Soldado AtaqueI.gif");
+=======
+        super(niv , "???", enemy);
+>>>>>>> origin/master
     }
     
     

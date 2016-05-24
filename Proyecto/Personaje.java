@@ -5,7 +5,12 @@ import java.util.List;
  * asi como su posicion en el espacio.
  * 
  * @author Daniel Alejandro Wong Ramirez 
+<<<<<<< HEAD
  * @version 2.3
+=======
+ * @author Juan Carlos Partida V<quez
+ * @version 1.0
+>>>>>>> origin/master
  */
 public class Personaje extends Actor
 {
@@ -35,7 +40,11 @@ public class Personaje extends Actor
     /**
      * Esta funcion es el constructor. Inicia los valores del personaje dependiendo del nivel que se le mande.
      */
+<<<<<<< HEAD
     public Personaje(int niv, boolean ene, String inmovilD, String inmovilI, String movD, String movI, String ataqD, String ataqI)
+=======
+    public Personaje(int niv, String nom, boolean ene)
+>>>>>>> origin/master
     {
         nivel = niv;
         atk = nivel * 10 + Greenfoot.getRandomNumber(nivel * 10/ 2);
@@ -59,12 +68,12 @@ public class Personaje extends Actor
         }
         
         inAtk=false;
-        ataqueImgD= new GifImage(ataqD);
+     /*   ataqueImgD= new GifImage(ataqD);
         ataqueImgI= new GifImage(ataqI);
         inmovilDerecha = new GifImage(inmovilD);
         inmovilIzquierda = new GifImage(inmovilI);
         movimientoDerecha = new GifImage(movD);
-        movimientoIzquierda= new GifImage(movI);
+        movimientoIzquierda= new GifImage(movI);*/
         gif=null;
         positionList=1;
         control=0;
@@ -88,6 +97,7 @@ public class Personaje extends Actor
     public void act() 
     {
         // Add your action code here.
+<<<<<<< HEAD
         if(inAtk==false)
         {
             String key;
@@ -123,6 +133,12 @@ public class Personaje extends Actor
         {
             atacar();
         }
+=======
+       if(isEnemy != true)
+       {
+          // moveHero();
+       }
+>>>>>>> origin/master
     }
     
     /**
@@ -146,6 +162,7 @@ public class Personaje extends Actor
      * 
      * @param key - Esta variable indica que tecla se presiono.
      */
+<<<<<<< HEAD
     public void otorgaDireccion(String key)
     {
          switch(key)
@@ -174,6 +191,19 @@ public class Personaje extends Actor
                  break;
              
          }
+=======
+    private void moveHero()
+    {
+        if(Greenfoot.isKeyDown("right"))
+        {
+            move(5);
+        }
+        if(Greenfoot.isKeyDown("left"))
+        {
+            move(-5);
+        }
+         
+>>>>>>> origin/master
     }
    
     /**
