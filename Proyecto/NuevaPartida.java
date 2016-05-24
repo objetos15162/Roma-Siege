@@ -56,16 +56,16 @@ public class NuevaPartida extends SWorld
     public void act()
     {
         super.act();
-        if(hero.getX()>= this.getWidth()/2-10+cont*200 && hero.getX()<= this.getWidth()/2+10+cont*200 && cont < dialogos.size())
+        if(hero.getX()>= super.getWidth() / 2 - 10 + cont * 70 && hero.getX() <= super.getWidth() / 2 + 10 + cont * 70 && cont < dialogos.size())
         {
-            addObject(dialogos.get(cont), hero.getX(), hero.getY()-50);
+            addObject(dialogos.get(cont), hero.getX()- (30 * cont), hero.getY()-100 - (20 * cont));
             cont++;
         }
         
         if( cont >= dialogos.size())
         {
             hero.setName();
-            while(hero.getX()<=1600)
+            while(hero.getX() <= getWidth() - 10)
             {
                 hero.otorgaDireccion("d");
                 super.act();

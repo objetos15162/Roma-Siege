@@ -23,7 +23,7 @@ public class BotonSalir extends Boton
     public void llamaNuevoEscenario()
     {
         //Aqui se supone que sale del juego :v
-        Greenfoot.stop();
+        Greenfoot.setWorld(new Inicio());
     }
     
 }
