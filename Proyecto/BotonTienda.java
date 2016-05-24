@@ -10,15 +10,7 @@ public class BotonTienda extends Boton
 {
     public BotonTienda()
     {
-        super("Boton Tienda Activo","Boton Tienda Inactivo", 3);
-    }
-    /**
-     * Act - do whatever the BotonTienda wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
+        super("Boton Tienda Activo.png","Boton Tienda Inactivo.png", 3);
     }
     
     public void llamaNuevoEscenario()

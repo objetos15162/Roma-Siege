@@ -13,14 +13,6 @@ public class BotonGuardar extends Boton
         super("Boton Guardar Activo.png", "Boton Guardar Inactivo.png", 2);
     }
     
-    /**
-     * Act - do whatever the BotonGuardar wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }
     
     public void llamaNuevoEscenario()
     {

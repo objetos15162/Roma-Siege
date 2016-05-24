@@ -14,14 +14,14 @@ public class Barco extends Personaje
     private boolean mejoraVelocidad2;
     private boolean mejoraVelocidad3;
     
-    public Barco(String nombre)
+    public Barco(int nivel, boolean esEnemigo)
     {
-        super(1, false, "Barco", "", "", "", "", "");
+        super(nivel, esEnemigo, "Barco", "", "", "", "", "");
         mejoraVelocidad1=false;
         mejoraVelocidad2=false;
         mejoraVelocidad3=false;
         velocidad=10;
-        capacidad=5;
+        capacidad=5 + Greenfoot.getRandomNumber(4+nivel);
     }
     /**
      * Act - do whatever the Barco wants to do. This method is called whenever
