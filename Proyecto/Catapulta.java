@@ -10,7 +10,7 @@ public class Catapulta extends Personaje
 {
     public Catapulta(int niv)
     {
-        super(niv, false, "Catapulta", "", "", "", "", "");
+        super(niv, false, "Catapulta InmovilD.gif", "Catapulta InmovilD.gif", "Catapulta MovimientoD.gif", "Catapulta MovimientoD.gif", "Catapulta AtaqueD.gif", "Catapulta AtaqueD.gif");
     } 
     
     /**
