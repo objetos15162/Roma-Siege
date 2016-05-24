@@ -1,21 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Esta clase sera el menu principal para iniciar una partida de juego, accesar a la tienda y guardar los datos.
+ * Write a description of class Principio here.
  * 
- * @author Daniel Wong
- * @author Juan Partida 
- * @version 0.1
+ * @author (your name) 
+ * @version (a version number or a date)
  */
-public class Principal extends World
+public class Principal extends MenuInicio
 {
+    Heroe hero;
     /**
-     * Constructor for objects of class Principal.
+     * Constructor for objects of class Principio.
      * 
      */
-    public Principal(Heroe heroe)
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(640, 480, 1); 
+    public Principal(Heroe actor)
+    {
+        super(1);
+        hero=actor;
     }
 }

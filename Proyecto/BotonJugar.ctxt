@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=BotonJugar
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ BotonJugar\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=BotonJugar()
+comment1.text=\r\n\ \r\n
+comment2.params=
+comment2.target=void\ llamaNuevoEscenario()
+comment2.text=\r\n\ \r\n
+numComments=3

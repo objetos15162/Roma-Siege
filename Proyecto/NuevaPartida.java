@@ -40,7 +40,7 @@ public class NuevaPartida extends SWorld
         mainActor.setLocation(20, 295);
         setScrollingBackground(new GreenfootImage("Inicio.png"));
         addObject(new Ground("Ground.png"), 320, 420);
-        addObject(new Heroe(2, 100, true), 100, 300);
+        //addObject(new Heroe(2, 100, true), 100, 300);
         cont=0;
         actividad=false;
         dialogos= new ArrayList();
@@ -56,33 +56,22 @@ public class NuevaPartida extends SWorld
     public void act()
     {
         super.act();
-        if(hero.getX()>= this.getWidth()/2-20+cont*50 && hero.getX()<= this.getWidth()/2+20+cont*50 && !actividad && cont<dialogos.size())
+        if(hero.getX()>= this.getWidth()/2-10+cont*200 && hero.getX()<= this.getWidth()/2+10+cont*200 && cont < dialogos.size())
         {
             addObject(dialogos.get(cont), hero.getX(), hero.getY()-50);
-            actividad=true;
+            cont++;
         }
-        else
+        
+        if( cont >= dialogos.size())
         {
-            if(hero.getX()<= this.getWidth()/2-20+cont*50 && hero.getX()>= this.getWidth()/2+20+cont*500 &&  cont<dialogos.size())
+            hero.setName();
+            while(hero.getX()<=1600)
             {
-                removeObject(dialogos.get(cont));
-                cont++;
-                actividad=false;
+                hero.otorgaDireccion("d");
+                super.act();
+                repaint();
             }
-            else
-            {
-                if( cont>=dialogos.size())
-                {
-                    hero.setName();
-                    while(hero.getX()<1800)
-                    {
-                        hero.otorgaDireccion("d");
-                        super.act();
-                        repaint();
-                    }
-                    Greenfoot.setWorld(new Principal(hero));
-                }
-            }
+            Greenfoot.setWorld(new Principal(hero));
         }
     }
 }

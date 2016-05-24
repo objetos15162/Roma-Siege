@@ -13,7 +13,7 @@ public class BotonJugar extends Boton
      */
     public BotonJugar()
     {
-        super("Boton Jugar Activo.png","Boton Jugar Inactivo.png", 1)
+        super("Boton Jugar Activo.png","Boton Jugar Inactivo.png", 1);
     }
     
     /**

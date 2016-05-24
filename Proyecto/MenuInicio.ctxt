@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=MenuInicio
 comment0.text=\r\n\ Esta\ clase\ tiene\ como\ responsabilidad\ llevar\ el\ control\ sobre\ \r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 3.1\r\n
-comment1.params=
-comment1.target=MenuInicio()
+comment1.params=escenarioAct
+comment1.target=MenuInicio(int)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MenuInicio.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ act()

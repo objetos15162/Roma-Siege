@@ -26,7 +26,7 @@ public class Inicio extends World
     {       
            if(Greenfoot.getKey()=="enter")
            {
-               Greenfoot.setWorld(new MenuInicio());
+               Greenfoot.setWorld(new MenuInicio(0));
            }
            else
            {
