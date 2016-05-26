@@ -16,7 +16,7 @@ public class Barco extends Personaje
     
     public Barco(int nivel, boolean esEnemigo)
     {
-        super(nivel, esEnemigo, "Barco InmovilD.gif", null, "Barco MovimientoD.gif", null, "Barco AtaqueD.gif", null);
+        super(nivel, esEnemigo, "Barco InmovilD.gif","Barco InmovilD.gif", "Barco MovimientoD.gif", "Barco MovimientoD.gif", "Barco AtaqueD.gif", "Barco AtaqueD.gif");
         mejoraVelocidad1=false;
         mejoraVelocidad2=false;
         mejoraVelocidad3=false;

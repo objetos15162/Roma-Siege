@@ -35,16 +35,43 @@ public abstract class Boton extends Actor
      */
     public void act()
     {
-        if(Greenfoot.mouseMoved(this) && !bandera)
+        if(numero!=0)
         {
-            MenuInicio world=(MenuInicio)getWorld();
-            world.cambiaOpc(numero);
-            cambia(true);
-        }
+            if(Greenfoot.mouseMoved(this) && !bandera)
+            {
+                MenuInicio world=(MenuInicio)getWorld();
+                world.cambiaOpc(numero);
+                cambia(true);
+            }
         
-        if(Greenfoot.mouseClicked(this))
+            if(Greenfoot.mouseClicked(this))
+            {
+                llamaNuevoEscenario();
+            }
+        }
+        else
         {
-            llamaNuevoEscenario();
+            if(Greenfoot.mouseMoved(this) && !bandera )
+            {
+                cambia(true);
+            }
+            else
+            {
+                if(bandera)
+                {
+                    bandera=false;
+                }
+                else
+                {
+                    cambia(false);
+                }
+            }
+            
+            if(Greenfoot.mouseClicked(this))
+            {
+                llamaNuevoEscenario();
+            }
+            
         }
     }
     
@@ -80,6 +107,7 @@ public abstract class Boton extends Actor
     {
         return bandera;
     }
+    
     /**
      * Este metodo abstracto permite poder invocar a las diferentes acciones e las subclases.
      */

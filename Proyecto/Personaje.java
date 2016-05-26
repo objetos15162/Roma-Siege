@@ -5,7 +5,7 @@ import java.util.List;
  * asi como su posicion en el espacio.
  * 
  * @author Daniel Alejandro Wong Ramirez 
- * @version 2.3
+ * @version 2.7
  */
 public class Personaje extends Actor
 {
@@ -412,11 +412,26 @@ public class Personaje extends Actor
     
     /**
      * This method returns the level
-     * 
      */
     public int getnivel()
     {
         return nivel;
+    }
+    
+    /**
+     * SE ENCARGA DE MODIFICAR LA VARIBLE DE ATAQUE EN CIERTA CANTIDAD
+     */
+    public void setAtk()
+    {
+        atk= atk*(float)1.1;
+    }
+    
+    /**
+     * SE ENCARGA DE MODIFICAR LA VARIBLE DE DEFENSA EN CIERTA CANTIDAD
+     */
+    public void setDef()
+    {
+        def = def*(float)1.1;
     }
     
     /**
@@ -427,6 +442,25 @@ public class Personaje extends Actor
     {
         return vida;
     }
+    
+    /**
+     * Modifica la cantidad de vida maxima
+     */
+    public void setVida()
+    {
+        maxVida = (int)(maxVida*1.05);
+        vida=maxVida;
+    }
+    
+    /**
+     * Modifica el monto de aguante maximo.
+     */
+    public void setAguante()
+    {
+        maxAguante = (int)(maxAguante*1.2);
+        aguante = maxAguante;
+    }
+    
     
     /**
      * This method returns if the object is enemy

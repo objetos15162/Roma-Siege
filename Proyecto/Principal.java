@@ -11,16 +11,18 @@ public class Principal extends MenuInicio
     Heroe hero;
     Barco barco;
     Catapulta catapulta;
+    Tienda tienda;
     
     /**
      * Constructor for objects of class Principio.
      * 
      */
-    public Principal(Heroe actor, Barco balsa, Catapulta lanzador)
+    public Principal(Heroe actor, Barco balsa, Catapulta lanzador, Tienda tendedero)
     {
         super(1);
         hero = actor;
         barco = balsa;
         catapulta = lanzador;
+        tienda=tendedero;
     }
 }

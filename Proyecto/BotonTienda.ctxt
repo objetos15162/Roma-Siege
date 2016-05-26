@@ -1,8 +1,9 @@
 #BlueJ class context
 comment0.target=BotonTienda
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ BotonTienda\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Esta\ clase\ tiene\ como\ objetivo\ imponer\ en\ pantalla\ un\ objeto\ Tienda,\ y\ controlarlo.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.0\r\n
 comment1.params=
 comment1.target=BotonTienda()
 comment2.params=
 comment2.target=void\ llamaNuevoEscenario()
+comment2.text=\r\n\ En\ este\ metodo\ se\ invoca\ un\ objeto\ Tienda,\ y\ se\ volvera\ el\ ciclo\ principal\ hasta\ que\ el\ usuario\ \r\n\ salga\ de\ la\ tienda.\r\n
 numComments=3

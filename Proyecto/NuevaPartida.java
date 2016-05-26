@@ -65,13 +65,13 @@ public class NuevaPartida extends SWorld
         if( cont >= dialogos.size())
         {
             hero.setName();
-            while(hero.getX() <= getWidth() - 10)
+            while(hero.getX() <= getWidth() - 100)
             {
                 hero.otorgaDireccion("d");
                 super.act();
                 repaint();
             }
-            Greenfoot.setWorld(new Principal(hero, new Barco(1, false), new Catapulta(1)));
+            Greenfoot.setWorld(new Principal(hero, new Barco(1, false), new Catapulta(1), new Tienda()));
         }
     }
 }

@@ -1,219 +1,137 @@
 #Greenfoot properties
-<<<<<<< HEAD
-#Tue May 24 13:25:49 CDT 2016
-=======
-#Tue May 24 11:11:59 CDT 2016
->>>>>>> origin/master
-target16.name=BotonCargar
+#Thu May 26 01:41:59 CDT 2016
+target16.name=SWorld
 editor.swing.0.y=0
 editor.swing.0.x=0
 class.Heroe.superclass=Personaje
-<<<<<<< HEAD
 target26.width=80
 target2.name=BotonGuardar
-target9.name=Inicio
+target9.name=Boton
 class.Principal.superclass=MenuInicio
 target27.y=370
-target27.x=120
-target23.name=BotonJugar
+target27.x=10
+target23.name=BotonTienda
 dependency11.type=UsesDependency
-target23.y=670
-target23.x=10
+target23.y=730
+target23.x=100
 dependency18.type=UsesDependency
-dependency15.from=BotonNuevo
+dependency15.from=Principal
 target21.showInterface=false
 target19.width=80
-dependency8.to=BotonAyuda
-target20.naviview.expanded=true
-target14.type=ClassTarget
-class.Ciudad.superclass=SWorld
-simulation.speed=50
-dependency22.from=NuevaPartida
-target15.width=90
-class.Heroe.image=Drinker InmovilD.gif
-=======
-target26.width=90
-target2.name=MundoCiuadad
-target9.name=Aldea
-class.Principal.superclass=greenfoot.World
-target27.y=550
-target27.x=100
-target23.name=Tienda
-dependency11.type=UsesDependency
-target23.y=490
-target23.x=190
-dependency18.type=UsesDependency
-dependency15.from=NuevaPartida
-target21.showInterface=false
-target19.width=80
-target5.naviview.expanded=true
 dependency8.to=BotonCargar
+target5.naviview.expanded=true
 target20.naviview.expanded=true
 target14.type=ClassTarget
 target19.naviview.expanded=true
-class.Ciudad.superclass=greenfoot.Actor
+class.Ciudad.superclass=SWorld
 simulation.speed=50
 dependency25.type=UsesDependency
-dependency22.from=MundoCiuadad
-target15.width=90
+dependency22.from=NuevaPartida
+target15.width=80
 class.Heroe.image=Drinker Inmovil.gif
->>>>>>> origin/master
 target15.height=50
 target7.type=ClassTarget
 class.BotonNuevo.image=Boton Nuevo Inactivo.png
 target15.typeParameters=
 target11.width=80
 target21.type=ClassTarget
-<<<<<<< HEAD
+dependency25.to=Barco
 target28.type=ClassTarget
-target1.typeParameters=
-target20.showInterface=false
-dependency2.to=CargaPartida
-=======
-dependency25.to=Bala
 target1.typeParameters=
 target20.showInterface=false
 dependency2.to=NuevaPartida
 target6.naviview.expanded=true
 target21.naviview.expanded=true
->>>>>>> origin/master
 dependency1.type=UsesDependency
-target16.y=250
-target16.x=100
+target30.type=ClassTarget
+target16.y=730
+target16.x=10
+target30.typeParameters=
 dependency8.type=UsesDependency
 dependency5.from=Ayuda
 target24.height=50
-<<<<<<< HEAD
-target12.y=130
-target12.x=190
-=======
-target12.y=430
-target12.x=120
->>>>>>> origin/master
+target12.y=490
+target12.x=100
 target27.typeParameters=
 target27.showInterface=false
-target18.width=90
+target18.width=100
 editor.fx.0.height=700
 project.charset=UTF-8
 target12.typeParameters=
-<<<<<<< HEAD
-dependency15.to=NuevaPartida
-target15.name=MenuInicio
+dependency15.to=Heroe
+target15.name=Catapulta
 target5.height=50
 target1.name=Ground
-=======
-dependency15.to=Heroe
-target5.height=50
-target15.name=MenuInicio
-target1.name=Label
->>>>>>> origin/master
-version=2.8.0
 target11.naviview.expanded=true
+version=2.8.0
 class.Barco.image=Barco 10rm.png
-target8.name=Boton
-<<<<<<< HEAD
-target22.name=GifImage
+target8.name=Barco
+target22.name=Base
 class.BotonCargar.superclass=Boton
 dependency10.type=UsesDependency
+target29.name=BotonNuevo
 dependency17.type=UsesDependency
-dependency14.from=Label
-package.numTargets=28
+dependency14.from=NuevaPartida
+package.numTargets=30
 target26.showInterface=false
 target13.type=ClassTarget
 dependency24.type=UsesDependency
-dependency21.from=MenuInicio
-dependency9.to=BotonSalir
-=======
-target22.name=MundoMar
-class.BotonCargar.superclass=Boton
-dependency10.type=UsesDependency
-dependency17.type=UsesDependency
-dependency14.from=Personaje
-package.numTargets=27
-target26.showInterface=false
-target13.type=ClassTarget
-dependency24.type=UsesDependency
-dependency21.from=MundoCiuadad
-class.MundoCiuadad.superclass=greenfoot.World
+dependency21.from=BotonTienda
+dependency28.from=Tienda
+target30.width=80
 target12.naviview.expanded=true
-dependency9.to=BotonAyuda
->>>>>>> origin/master
+dependency9.to=BotonSalir
 target24.typeParameters=
 target6.type=ClassTarget
 target27.height=50
 target19.height=50
 class.MenuInicio.image=Pantalla Menu Inicio.png
-target7.y=130
+target7.y=430
 target7.x=10
 target20.type=ClassTarget
 target27.type=ClassTarget
-<<<<<<< HEAD
 target3.y=490
 target3.x=10
+>>>>>>>=origin/master
 target7.typeParameters=
 class.BotonSalir.image=Boton Salir Inactivo.png
 class.Mar.superclass=SWorld
 target25.showInterface=false
-=======
-target3.y=250
-target3.x=10
-target7.typeParameters=
-class.BotonSalir.image=Boton Salir Inactivo.png
-class.Mar.superclass=greenfoot.Actor
->>>>>>> origin/master
+dependency26.to=Catapulta
 target8.height=50
-target25.showInterface=false
-dependency26.to=MundoCiudad
-mainWindow.y=-8
-mainWindow.x=-8
-target3.showInterface=false
+mainWindow.y=0
+mainWindow.x=0
+target26.naviview.expanded=true
 target12.showInterface=false
+target3.showInterface=false
 target17.typeParameters=
-<<<<<<< HEAD
-dependency3.to=Ayuda
-target1.width=80
-dependency7.type=UsesDependency
-dependency4.from=Ayuda
-target28.height=50
-class.BotonTienda.image=Boton Tienda Inactivo.png
-target26.y=550
-target26.x=10
-dependency20.to=BotonJugar
-class.Barco.superclass=Personaje
-target22.y=310
-target22.x=200
-target14.name=SWorld
-=======
 dependency3.to=CargaPartida
+class.BotonAtk.superclass=Boton
 target1.width=80
 dependency7.type=UsesDependency
 dependency4.from=BotonAyuda
-target26.y=370
-target26.x=120
-dependency20.to=Mar
+target28.height=50
+class.BotonTienda.image=Boton Tienda Inactivo.png
+target26.y=490
+target26.x=190
+dependency20.to=Tienda
 class.Barco.superclass=Personaje
-target22.y=10
-target22.x=160
-class.MundoMar.superclass=greenfoot.World
-target14.name=Catapulta
->>>>>>> origin/master
+target22.y=190
+target22.x=10
+target14.name=Soldado
 class.BotonCargar.image=Boton Cargar Inactivo.png
-target9.height=50
 target2.naviview.expanded=true
+target9.height=50
 target11.showInterface=false
 target2.showInterface=false
-target7.name=Barco
-dependency16.to=Heroe
+target7.name=CargaPartida
+dependency16.to=Inicio
 target16.naviview.expanded=true
 class.Ayuda.superclass=greenfoot.Actor
-<<<<<<< HEAD
-target21.name=BotonTienda
-target28.name=Mar
+target29.typeParameters=
+target21.name=Heroe
+target28.name=Principal
 dependency13.from=Personaje
-=======
-target21.name=GifImage
-dependency13.from=Boton
->>>>>>> origin/master
 class.CargaPartida.superclass=greenfoot.World
 dependency16.type=UsesDependency
 target14.typeParameters=
@@ -223,425 +141,279 @@ target12.type=ClassTarget
 target21.height=50
 target13.height=50
 dependency23.type=UsesDependency
-<<<<<<< HEAD
-dependency20.from=MenuInicio
+dependency20.from=Principal
 target19.type=ClassTarget
 target4.width=80
 class.SWorld.superclass=greenfoot.World
+dependency27.from=NuevaPartida
 target18.showInterface=false
-=======
-dependency20.from=MundoCiuadad
-target19.type=ClassTarget
-target4.width=80
->>>>>>> origin/master
 target9.showInterface=false
-dependency27.from=Catapulta
-target18.showInterface=false
 target10.showInterface=false
 target1.showInterface=false
-target5.type=ClassTarget
-<<<<<<< HEAD
-dependency10.to=Ayuda
-target19.y=70
-target19.x=160
-=======
 class.BotonAyuda.superclass=Boton
-dependency10.to=BotonSalir
-target19.y=70
-target19.x=160
+target5.type=ClassTarget
+target30.name=Mar
+dependency10.to=GifImage
+target17.naviview.expanded=true
+target19.y=610
+target19.x=130
 class.Bala.superclass=greenfoot.Actor
->>>>>>> origin/master
 target26.type=ClassTarget
 target2.height=50
-target15.y=190
-target15.x=190
+target15.y=130
+target15.x=100
 class.Soldado.superclass=Personaje
-<<<<<<< HEAD
-class.Catapulta.image=Catapulta InmovilD.gif
-target11.y=430
-target11.x=120
-readme.height=58
-target26.typeParameters=
-target17.showInterface=false
-target8.showInterface=false
-dependency3.from=BotonAyuda
-=======
 class.Catapulta.image=catapulta.png
-target11.y=490
-target11.x=100
+target11.y=10
+target11.x=70
 readme.height=58
 target26.typeParameters=
-target8.showInterface=false
 target17.showInterface=false
-dependency27.to=Bala
+target8.showInterface=false
+dependency27.to=Tienda
+target30.height=50
+target29.width=90
 dependency3.from=BotonCargar
->>>>>>> origin/master
 target11.typeParameters=
 dependency6.type=UsesDependency
 class.BotonTienda.superclass=Boton
 dependency4.to=Boton
 target9.typeParameters=
 class.BotonNuevo.superclass=Boton
-<<<<<<< HEAD
-target25.width=100
+target25.width=90
 target16.height=50
-target7.width=80
-target13.name=Catapulta
-target21.width=100
-dependency21.to=BotonTienda
-target6.name=CargaPartida
+target7.width=100
+<<<<<<<=HEAD
+target13.name=Ayuda
+target21.width=80
+dependency21.to=Principal
+target7.naviview.expanded=true
+target6.name=Personaje
 target16.showInterface=false
 target22.naviview.expanded=true
-target20.name=Base
+target20.name=BotonAyuda
 class.Inicio.image=Pantalla Inicio POO0.png
-target27.name=BotonNuevo
-=======
-target25.width=80
-target16.height=50
-target7.width=80
-target13.name=Soldado
-target21.width=80
-dependency21.to=Barco
-target7.naviview.expanded=true
-target6.name=CargaPartida
-target16.showInterface=false
-target20.name=Base
-class.Inicio.image=Pantalla Inicio POO0.png
-target27.name=Mar
->>>>>>> origin/master
+target27.name=NuevaPartida
 class.Inicio.superclass=greenfoot.World
 dependency15.type=UsesDependency
 dependency12.from=Boton
 target14.width=80
 target23.typeParameters=
-<<<<<<< HEAD
-dependency17.to=Ground
-dependency19.from=MenuInicio
-target6.y=430
-=======
-dependency17.to=Barco
-target6.y=430
-dependency19.from=MundoMar
->>>>>>> origin/master
-target6.x=10
+dependency17.to=Bala
+dependency19.from=Principal
+target6.y=70
+target6.x=70
 class.Base.superclass=Personaje
 target10.width=80
-target2.y=610
+target2.y=670
 target11.type=ClassTarget
-target2.x=10
+target2.x=100
 dependency22.type=UsesDependency
 target25.height=50
 target18.type=ClassTarget
 target17.height=50
+dependency26.from=NuevaPartida
 target6.typeParameters=
-dependency26.from=Bala
 target4.type=ClassTarget
-<<<<<<< HEAD
 target28.width=80
 target25.type=ClassTarget
-=======
-target25.type=ClassTarget
 class.Aldea.image=aldea.png
->>>>>>> origin/master
 editor.fx.0.y=0
 editor.fx.0.x=0
-dependency11.to=GifImage
+dependency11.to=MenuInicio
 target6.height=50
 editor.fx.0.width=700
 class.BotonSalir.superclass=Boton
-<<<<<<< HEAD
+target29.y=370
+target29.x=120
 target24.width=80
-target25.y=370
-target25.x=10
-class.Catapulta.superclass=Personaje
-target21.y=610
-target21.x=120
-=======
-target24.width=100
-target25.y=550
-target25.x=10
+target25.y=790
 class.Aldea.superclass=greenfoot.Actor
+target25.x=10
 class.Catapulta.superclass=Personaje
-target21.y=310
-target21.x=200
->>>>>>> origin/master
+target21.y=70
+target21.x=160
 target20.typeParameters=
 dependency5.type=UsesDependency
 dependency2.from=BotonCargar
-target17.width=80
+target17.width=90
 dependency9.from=MenuInicio
 class.Ground.superclass=greenfoot.Actor
 target10.height=50
+dependency28.to=Label
 target13.naviview.expanded=true
 class.BotonAyuda.image=Boton Ayuda Inactivo.png
 class.Boton.superclass=greenfoot.Actor
+class.BotonAguante.superclass=Boton
 target3.typeParameters=
 target13.width=80
-<<<<<<< HEAD
-dependency5.to=BotonAyuda
-target12.name=Soldado
-=======
 class.Mar.image=Mar.png
 dependency5.to=Boton
-target12.name=Ayuda
->>>>>>> origin/master
-target19.name=Heroe
+target12.name=Playa
+target19.name=Ciudad
 target13.typeParameters=
-target5.name=Personaje
+target5.name=Bala
 target24.showInterface=false
-<<<<<<< HEAD
-dependency22.to=Principal
-target26.name=Principal
-=======
-dependency22.to=Catapulta
-target26.name=BotonNuevo
->>>>>>> origin/master
+dependency22.to=Label
+target26.name=Tienda
 class.Label.superclass=greenfoot.Actor
 dependency14.type=UsesDependency
-dependency11.from=Heroe
+dependency11.from=Boton
 target14.naviview.expanded=true
 class.MenuInicio.superclass=greenfoot.World
-target18.y=310
-<<<<<<< HEAD
-dependency18.from=NuevaPartida
-target18.x=10
-target14.y=10
-target14.x=160
-target10.type=ClassTarget
-dependency18.to=Label
-dependency21.type=UsesDependency
-package.numDependencies=24
-target17.type=ClassTarget
-target10.y=190
-target3.type=ClassTarget
-target10.x=100
-target23.showInterface=false
-class.BotonJugar.superclass=Boton
-=======
-dependency18.from=MundoMar
-target18.x=10
+target18.y=250
+dependency18.from=Principal
+target18.x=100
 class.NuevaPartida.image=PEsn.png
 target14.y=130
-target14.x=100
+target14.x=190
 target10.type=ClassTarget
-dependency18.to=MundoMar
+dependency18.to=Barco
 dependency21.type=UsesDependency
-package.numDependencies=25
+package.numDependencies=28
 target17.type=ClassTarget
-dependency25.from=Catapulta
-target10.y=10
+dependency28.type=UsesDependency
+dependency25.from=NuevaPartida
+target29.height=50
+target10.y=550
 target3.type=ClassTarget
-target10.x=70
+target10.x=190
 target23.showInterface=false
->>>>>>> origin/master
+class.BotonJugar.superclass=Boton
 target25.typeParameters=
 target3.naviview.expanded=true
-target24.type=ClassTarget
 readme.name=@README
-<<<<<<< HEAD
 target24.type=ClassTarget
-target16.width=100
+target16.width=80
 class.BotonGuardar.superclass=Boton
-=======
-target16.width=100
->>>>>>> origin/master
 class.Personaje.superclass=greenfoot.Actor
 target10.typeParameters=
+dependency12.to=GifImage
 target8.typeParameters=
-dependency12.to=MenuInicio
-dependency4.type=UsesDependency
 dependency1.from=Inicio
+dependency4.type=UsesDependency
 target22.showInterface=false
 dependency8.from=MenuInicio
 target4.naviview.expanded=true
 target22.height=50
 target14.height=50
-<<<<<<< HEAD
-target9.y=10
-target9.x=70
-target11.name=Ayuda
-=======
 target18.naviview.expanded=true
-target9.y=550
-target9.x=190
-target11.name=Playa
->>>>>>> origin/master
-target5.y=70
-target5.x=70
-target18.name=BotonAyuda
+target9.y=310
+target9.x=110
+target11.name=Inicio
+target5.y=190
+target5.x=100
+target18.name=BotonCargar
 target22.typeParameters=
 target3.height=50
-<<<<<<< HEAD
-dependency6.to=BotonNuevo
-target4.name=BotonSalir
-target1.y=550
-target1.x=190
-target19.typeParameters=
-target25.name=NuevaPartida
-=======
 dependency6.to=BotonAyuda
-target4.name=Bala
-target1.y=490
-target1.x=10
+target4.name=BotonSalir
+target1.y=670
 target19.typeParameters=
-target25.name=Principal
->>>>>>> origin/master
-target5.typeParameters=
+target1.x=10
+target29.showInterface=false
+target25.name=BotonJugar
+dependency10.from=Heroe
 dependency13.type=UsesDependency
-dependency10.from=MenuInicio
+target5.typeParameters=
 target7.showInterface=false
 target3.width=80
-<<<<<<< HEAD
-dependency17.from=NuevaPartida
-dependency23.to=Heroe
+dependency17.from=Catapulta
+dependency23.to=Ground
 target23.height=50
 dependency20.type=UsesDependency
-target28.y=490
+target28.y=550
 target16.type=ClassTarget
-target28.x=100
-dependency24.from=BotonSalir
-target2.type=ClassTarget
-target24.y=490
-target24.x=190
-target9.type=ClassTarget
-dependency19.to=BotonGuardar
-target28.showInterface=false
-=======
-dependency17.from=MundoMar
-dependency23.to=Ciudad
-target23.height=50
-dependency20.type=UsesDependency
-target16.type=ClassTarget
+target28.x=10
+dependency24.from=NuevaPartida
 dependency27.type=UsesDependency
-dependency24.from=Bala
 target2.type=ClassTarget
-target24.y=370
-target9.type=ClassTarget
-target24.x=10
-dependency19.to=Mar
->>>>>>> origin/master
+target24.y=310
+target24.x=200
+target9.type=AbstractTarget
+dependency19.to=Catapulta
+target28.showInterface=false
 target4.height=50
 target23.type=ClassTarget
-target20.y=190
+target20.y=310
 target20.x=10
-<<<<<<< HEAD
-editor.swing.0.height=0
-target8.naviview.expanded=true
-target15.showInterface=false
-=======
 editor.swing.0.height=700
 target8.naviview.expanded=true
->>>>>>> origin/master
-target6.showInterface=false
 target15.showInterface=false
+target6.showInterface=false
 target23.naviview.expanded=true
 readme.y=10
 readme.x=10
 target10.naviview.expanded=true
 target16.typeParameters=
 class.Playa.superclass=SWorld
+class.BotonDef.superclass=Boton
 target2.typeParameters=
 class.BotonGuardar.image=Boton Guardar Inactivo.png
 dependency13.to=GifImage
 dependency3.type=UsesDependency
+target30.showInterface=false
 dependency7.from=MenuInicio
-target6.width=100
+target6.width=80
 readme.width=47
-target20.width=80
-<<<<<<< HEAD
-mainWindow.height=768
+target20.width=90
+mainWindow.height=744
 target9.naviview.expanded=true
-editor.swing.0.width=0
+editor.swing.0.width=700
 target14.showInterface=false
+target24.naviview.expanded=true
 target5.showInterface=false
 target26.height=50
 target18.height=50
 target2.width=100
+class.Bala.image=rock.png
 class.GifImage.superclass=
-target10.name=Playa
-target17.y=550
-target17.x=100
-target17.name=Ciudad
+target10.name=Aldea
+target17.y=190
+target17.x=190
+target17.name=MenuInicio
 target28.typeParameters=
 target3.name=Label
-target13.y=130
+target13.y=430
 target7.height=50
-target13.x=100
-target24.name=Tienda
-dependency7.to=BotonCargar
+target13.x=120
+target24.name=GifImage
+dependency7.to=BotonNuevo
 dependency12.type=UsesDependency
-dependency16.from=NuevaPartida
+dependency16.from=Bala
 dependency19.type=UsesDependency
+class.Tienda.image=Tienda.png
 target13.showInterface=false
 target4.showInterface=false
 class.BotonJugar.image=Boton Jugar Inactivo.png
-target27.width=90
+target27.width=100
 target15.type=ClassTarget
-dependency23.from=Principal
-=======
-mainWindow.height=744
-target9.naviview.expanded=true
-editor.swing.0.width=701
-target5.showInterface=false
-target14.showInterface=false
-target26.height=50
-target18.height=50
-target2.width=110
-class.Bala.image=rock.png
-class.GifImage.superclass=
-target10.name=Inicio
-target17.y=610
-target17.x=130
-target17.name=Ciudad
-target3.name=BotonSalir
-target7.height=50
-target13.y=130
-target13.x=190
-target24.name=NuevaPartida
-dependency7.to=BotonNuevo
-dependency12.type=UsesDependency
-dependency19.type=UsesDependency
-dependency16.from=Principal
-target4.showInterface=false
-target13.showInterface=false
-target27.width=80
 class.Ciudad.image=ciudad.jpg
-target15.type=ClassTarget
-dependency23.from=MundoCiuadad
 dependency26.type=UsesDependency
->>>>>>> origin/master
+dependency23.from=NuevaPartida
 target11.height=50
-dependency24.to=Ciudad
 target1.type=ClassTarget
-dependency24.to=Inicio
+dependency24.to=Principal
 target9.width=80
-target8.type=AbstractTarget
-<<<<<<< HEAD
-target23.width=90
-=======
-target23.width=80
->>>>>>> origin/master
+target8.type=ClassTarget
+target23.width=100
 class.MundoAyuda.superclass=greenfoot.World
 dependency1.to=MenuInicio
 target22.type=ClassTarget
+target29.type=ClassTarget
 target5.width=80
-<<<<<<< HEAD
-=======
 target1.naviview.expanded=true
->>>>>>> origin/master
+target30.y=550
+target30.x=100
 target15.naviview.expanded=true
 class.Tienda.superclass=greenfoot.Actor
-target8.y=310
-target8.x=110
+class.BotonSalud.superclass=Boton
+target8.y=130
+target8.x=10
 target12.width=80
 dependency2.type=UsesDependency
-<<<<<<< HEAD
 target4.y=250
 target4.x=10
-=======
-target4.y=190
-target4.x=100
->>>>>>> origin/master
 target20.height=50
 target12.height=50
 dependency6.from=MenuInicio
@@ -649,19 +421,12 @@ dependency9.type=UsesDependency
 class.Ayuda.image=Ayuda 1.png
 class.NuevaPartida.superclass=SWorld
 target21.typeParameters=
-<<<<<<< HEAD
 world.lastInstantiated=Inicio
-dependency14.to=Personaje
-=======
-world.lastInstantiated=MundoCiuadad
-dependency14.to=GifImage
->>>>>>> origin/master
+dependency14.to=Heroe
 target18.typeParameters=
 target19.showInterface=false
 target1.height=50
+mainWindow.width=1366
 target4.typeParameters=
-<<<<<<< HEAD
 class.Principal.image=Principal.png
-=======
-mainWindow.width=1370
->>>>>>> origin/master
+=\=\=\=\=\=\=
