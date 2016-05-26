@@ -1,11 +1,12 @@
 #Greenfoot properties
-#Thu May 26 01:41:59 CDT 2016
+#Thu May 26 09:57:57 CDT 2016
 target16.name=SWorld
 editor.swing.0.y=0
 editor.swing.0.x=0
 class.Heroe.superclass=Personaje
 target26.width=80
 target2.name=BotonGuardar
+class.BotonAtk.image=Boton Atk Inactivo.png
 target9.name=Boton
 class.Principal.superclass=MenuInicio
 target27.y=370
@@ -68,10 +69,12 @@ class.Barco.image=Barco 10rm.png
 target8.name=Barco
 target22.name=Base
 class.BotonCargar.superclass=Boton
+class.BotonDef.image=Boton Def Inactivo.png
 dependency10.type=UsesDependency
 target29.name=BotonNuevo
 dependency17.type=UsesDependency
 dependency14.from=NuevaPartida
+class.BotonAguante.image=Boton Aguante Inactivo.png
 package.numTargets=30
 target26.showInterface=false
 target13.type=ClassTarget
@@ -355,6 +358,7 @@ dependency3.type=UsesDependency
 target30.showInterface=false
 dependency7.from=MenuInicio
 target6.width=80
+class.BotonSalud.image=Boton Vida Inactivo.png
 readme.width=47
 target20.width=90
 mainWindow.height=744

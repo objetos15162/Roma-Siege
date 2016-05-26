@@ -49,30 +49,6 @@ public abstract class Boton extends Actor
                 llamaNuevoEscenario();
             }
         }
-        else
-        {
-            if(Greenfoot.mouseMoved(this) && !bandera )
-            {
-                cambia(true);
-            }
-            else
-            {
-                if(bandera)
-                {
-                    bandera=false;
-                }
-                else
-                {
-                    cambia(false);
-                }
-            }
-            
-            if(Greenfoot.mouseClicked(this))
-            {
-                llamaNuevoEscenario();
-            }
-            
-        }
     }
     
     /**

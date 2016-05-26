@@ -23,6 +23,6 @@ public class Principal extends MenuInicio
         hero = actor;
         barco = balsa;
         catapulta = lanzador;
-        tienda=tendedero;
+        tienda = tendedero;
     }
 }

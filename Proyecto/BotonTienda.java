@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Esta clase tiene como objetivo imponer en pantalla un objeto Tienda, y controlarlo.
+ * Esta clase tiene como objetivo imponer en pantalla un objeto Tienda, y controlarlo, ademas de implantar en pantalla 
+ * diferentes botones, respectivos de la tienda.
  * 
  * @author Daniel Wong 
- * @version 1.0
+ * @version 1.1
  */
 public class BotonTienda extends Boton
 {
@@ -20,6 +21,6 @@ public class BotonTienda extends Boton
     public void llamaNuevoEscenario()
     {
         Principal world= (Principal)getWorld();
-        world.addObject(world.tienda,320, 240);
+        world.tienda.actII();
     }
 }
