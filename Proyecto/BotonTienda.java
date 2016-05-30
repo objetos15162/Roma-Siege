@@ -21,6 +21,6 @@ public class BotonTienda extends Boton
     public void llamaNuevoEscenario()
     {
         Principal actual = (Principal) getWorld();
-        Greenfoot.setWorld(actual.tienda);
+        Greenfoot.setWorld(actual.getTienda());
     }
 }

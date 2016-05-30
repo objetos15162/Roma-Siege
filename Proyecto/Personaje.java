@@ -487,6 +487,7 @@ public class Personaje extends Actor
             setImage(inmovilIzquierda.getCurrentImage());
         }
     }
+    
     /**
      * este metodo regresa el ataque del personaje
      * @return atk- La varible que indica el ataque del Personaje
@@ -611,6 +612,19 @@ public class Personaje extends Actor
     }
     
     /**
+     * Metodo para cambiar los gifs de los soldados
+     */
+    public void setGifs(String atkI, String atkD, String movI, String movD, String inmI, String inmD)
+    {
+        ataqueImgD= new GifImage(atkD);
+        ataqueImgI= new GifImage(atkI);
+        inmovilDerecha = new GifImage(inmD);
+        inmovilIzquierda = new GifImage(inmI);
+        movimientoDerecha = new GifImage(movD);
+        movimientoIzquierda= new GifImage(movI);
+    }
+    
+    /**
      * Este metodo es para la base. Cambia todos los stats del personaje y deja en 0 el ataque. En cambio aumenta la defensa, la vida, y el aguante.
      */
     public void cambiaStats()
@@ -619,5 +633,32 @@ public class Personaje extends Actor
         aguante += atk*(nivel+1);
         vida+= atk*(nivel);
         atk=0;
+    }
+    
+    /**
+     * Regresa la direccion
+     * @return direccion - Entero que va de -1 a 1.
+     */
+    public int getDireccion()
+    {
+        return direccion;
+    }
+    
+    /**
+     * Coloca la direccion
+     * @param dir- NUevo valor para la direccion. Debe ser -1 o 1.
+     */
+    public void setDireccion(int dir)
+    {
+        direccion=dir;
+    }
+    
+    /**
+     * Resetea los valores del personaje
+     */
+    public void reset()
+    {
+        vida=maxVida;
+        aguante=maxAguante;
     }
 }

@@ -53,7 +53,7 @@ public class MTienda extends World
         {
             if(key == "escape" || key == "enter")
             {                
-                principal.tienda=this;
+                principal.setTienda(this);
                 Greenfoot.setWorld(principal);
             }
         }
@@ -97,17 +97,17 @@ public class MTienda extends World
     
     public void compraAtk()
     {
-        if(precioAtk <= principal.hero.getOro())
+        if(precioAtk <= principal.getHero().getOro())
         {
-            principal.hero.setOro(precioAtk);
+            principal.getHero().setOro(precioAtk);
             precioAtk = (int) (precioAtk * 1.2);
-            principal.hero.setAtk();
+            principal.getHero().setAtk();
             Label exito = new Label("¡Buen entrenamiento! pareces mas fuerte", 28);
             addObject(exito, 100, 400);
         }
         else
         {
-            Label error = new Label("No tienes suficiente con que pagar\n Tienes: "+principal.hero.getOro(), 20);
+            Label error = new Label("No tienes suficiente con que pagar\n Tienes: "+ principal.getHero().getOro(), 20);
             addObject(error, 100, 50);
         }
         contador = 0;
@@ -115,17 +115,17 @@ public class MTienda extends World
     
     public void compraDef()
     {
-        if(precioDef <= principal.hero.getOro())
+        if(precioDef <= principal.getHero().getOro())
         {
-            principal.hero.setOro(precioDef);
+            principal.getHero().setOro(precioDef);
             precioDef = (int) (precioDef * 1.2);
-            principal.hero.setDef();
+            principal.getHero().setDef();
             Label exito = new Label("¡Buen entrenamiento! pareces mas fuerte", 28);
             addObject(exito, 100, 400);
         }
         else
         {
-            Label error = new Label("No tienes suficiente con que pagar\n Tienes: "+principal.hero.getOro(), 20);
+            Label error = new Label("No tienes suficiente con que pagar\n Tienes: "+ principal.getHero().getOro(), 20);
             addObject(error, 100, 50);
         }
         contador = 0;
@@ -133,17 +133,17 @@ public class MTienda extends World
     
     public void compraVida()
     {
-         if(precioVida <= principal.hero.getOro())
+         if(precioVida <= principal.getHero().getOro())
         {
-            principal.hero.setOro(precioVida);
+            principal.getHero().setOro(precioVida);
             precioVida = (int) (precioVida*1.2);
-            principal.hero.setVida();
+            principal.getHero().setVida();
             Label exito = new Label("¡Buen entrenamiento! pareces mas fuerte", 28);
             addObject(exito, 100, 400);
         }
         else
         {
-            Label error = new Label("No tienes suficiente con que pagar\n Tienes: "+principal.hero.getOro(), 20);
+            Label error = new Label("No tienes suficiente con que pagar\n Tienes: "+ principal.getHero().getOro(), 20);
             addObject(error, 100, 50);
             
         }
@@ -152,18 +152,18 @@ public class MTienda extends World
     
     public void compraAguante()
     {
-         if(precioAguante <= principal.hero.getOro())
+         if(precioAguante <= principal.getHero().getOro())
         {
-            principal.hero.setOro(precioAguante);
+            principal.getHero().setOro(precioAguante);
             precioAguante = (int) (precioAguante * 1.2);
-            principal.hero.setAguante();
+            principal.getHero().setAguante();
             Label exito = new Label("¡Buen entrenamiento! pareces mas fuerte", 28);
             addObject(exito, 100, 400);
             
         }
         else
         {
-            Label error = new Label("No tienes suficiente con que pagar\n Tienes: "+principal.hero.getOro(), 20);
+            Label error = new Label("No tienes suficiente con que pagar\n Tienes: "+ principal.getHero().getOro(), 20);
             addObject(error, 100, 50);
             
         }

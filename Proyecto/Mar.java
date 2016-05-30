@@ -18,15 +18,15 @@ public class Mar extends SWorld
     {
         super(640, 480, 1, 3400);
         principal = princ;
-        setMainActor(principal.barco, 20, 240);
+        setMainActor(principal.getBarco(), 20, 240);
         mainActor.setLocation(0, 342);
         setScrollingBackground(new GreenfootImage("Mar.png"));
-        numBarcosEnemigos = principal.barco.getnivel()+2;
+        numBarcosEnemigos = principal.getBarco().getnivel()+2;
         enemigos = new ArrayList<Barco>();
         int i;
         for(i = 0; i < numBarcosEnemigos; i++)
         {
-            enemigos.add(i, new Barco(principal.barco.getnivel(), true));
+            enemigos.add(i, new Barco(principal.getBarco().getnivel(), true));
             addObject(enemigos.get(i), 500 + (i * 15), 342);
         }
         addObject(new Ground("Olas.png"), 320, 430);
@@ -40,17 +40,29 @@ public class Mar extends SWorld
        controlaBalas();
        controlaEnemigos();
        
-       if(principal.barco.getVida()==0)
+       if(principal.getBarco().getVida()==0)
        {
+           int i=0;
+           addObject(new Label("Has perdido \n Regresando al menu Principal", 30), getHeight()/2, getWidth()/2, false);
+           while(i<200) 
+           {
+               i++;
+           }
            Greenfoot.setWorld(principal);
        }
        
        if(acceso)
        {
-           while(principal.barco.getX() < 620)
+           while(principal.getBarco().getX() < 620)
            {
-               principal.barco.mover(5);
+               principal.getBarco().mover(5);
                super.act();
+           }
+           int i=0;
+           addObject(new Label("Pasando al siguiente Nivel", 30), getHeight()/2, getWidth()/2, false);
+           while(i<200) 
+           {
+               i++;
            }
            Greenfoot.setWorld(new Playa(principal));
        }
@@ -109,7 +121,7 @@ public class Mar extends SWorld
             enemigos.get(i).move(i*(int)(1700/numBarcosEnemigos)-20);
         }
         
-        principal.barco.move(-(1700-330));
+        principal.getBarco().move(-(1700-330));
         super.act();
         //elimina pantalla de carga;
     }

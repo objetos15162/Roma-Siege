@@ -8,9 +8,15 @@ import java.util.List;
  */
 public class Soldado extends Personaje
 {
+    private int control;
+    
     public Soldado(int niv, boolean enemy)
     {
         super(niv, enemy, "Soldado InmovilD.gif", "Soldado InmovilI.gif", "Soldado CorriendoD.gif", "Soldado CorriendoI.gif", "Soldado AtaqueD.gif", "Soldado AtaqueI.gif");
+        if(enemy)
+        {
+            setGifs("SoldadoE InmovilD.gif", "SoldadoE InmovilI.gif", "SoldadoE CorriendoD.gif", "SoldadoE CorriendoI.gif", "SoldadoE AtaqueD.gif", "SoldadoE AtaqueI.gif");
+        }
     }
     
     /**
@@ -26,6 +32,14 @@ public class Soldado extends Personaje
             añadido=true;
         }
         String key = actAutomatico();
+        if(key != null)
+        {
+            otorgaDireccion(key);
+        }
+        else
+        {
+            movEstandar();
+        }
     }
     
     private String actAutomatico()
@@ -35,7 +49,52 @@ public class Soldado extends Personaje
         {
             for( Personaje p: actores)
             {
-                
+                if(p != null && p.getisEnemy() != this.getisEnemy())
+                {
+                    if(p.getX() - this.getX() >= -10)
+                    {
+                        if(control< getAtk()*2-4*getnivel())
+                        {
+                            control++;
+                            return null;
+                        }
+                        else
+                        {
+                            control=0;
+                        }
+                        setDireccion(-1);
+                        return "n";                        
+                    }
+                    else
+                    {
+                        if( p.getX() - this.getX() < -10)
+                        {
+                            return "a";
+                        }
+                    }
+                    
+                    if( p.getX() - this.getX()<= 10)
+                    {
+                        if(control<getAtk()*2-4*getnivel())
+                        {
+                            control++;
+                            return null;
+                        }
+                        else
+                        {
+                            control=0;
+                        }
+                        setDireccion(1);
+                        return "n";
+                    }
+                    else
+                    {
+                        if(p.getX() - this.getX() > 10)
+                        {
+                            return "d";
+                        }
+                    }
+                }
             }
         }
         return null;
