@@ -21,7 +21,8 @@ public class BotonJugar extends Boton
      */
     public void llamaNuevoEscenario()
     {
-        ;
+        Principal auxiliar = (Principal) getWorld();
+        auxiliar.iniciarPartida();
     }
     
 }

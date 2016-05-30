@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Write a description of class Boton here.
  * 
  * @author Daniel Wong 
- * @version 2.0
+ * @version 2.1
  */
 public abstract class Boton extends Actor
 {
@@ -12,6 +12,7 @@ public abstract class Boton extends Actor
     private String activo;
     private String inactivo;
     private int numero;
+    private int cont;
     /**
      * Este es el Constructor. Inicializa las varibles de instancia del objeto.
      * 
@@ -25,13 +26,14 @@ public abstract class Boton extends Actor
         inactivo=ina;
         bandera=false;
         numero=num;
+        cont=0;
     }
     
     /**
      * Este metodo contiene las instrucciones con las que actuara cada boton. Primero verifica si el usuario 
      * a pasado el puntero por el objeto, y de ser asi, cambia la opcion del mundo a la del objeto y luego cambia 
      * la imagen de este objeto por la imagen en la que esta "encendido". Y si se da click sobre este objeto se manda
-     * a llamar un nuevo escenario.
+     * a llamar un nuevo escenario. No se activa si no son la clase de Boton esperado.
      */
     public void act()
     {
@@ -49,12 +51,36 @@ public abstract class Boton extends Actor
                 llamaNuevoEscenario();
             }
         }
+        else
+        {
+            actIII();
+        }
+    }
+    
+    /**
+     * Este metodo actIII solo funciona con ciertos tipos de botones. Manda a cambiar la imagen activa si se a pasado el puntero por encima de este objeto
+     */
+    public void actIII()
+    {
+        if(Greenfoot.mouseMoved(this) && !bandera)
+        {
+            cambia(true);
+        }
+        else
+        {
+            cambia(false);
+        }
+        
+        if(Greenfoot.mouseClicked(this))
+        {
+            llamaNuevoEscenario();
+        }
     }
     
     /**
      *  Con este Metodo se cambia la imagen que se muestra.
      *  
-     *  @param auxiliar Esta variable booleana indica si se quiere "apagar" o "encender" la imagen
+     *  @param -auxiliar- Esta variable booleana indica si se quiere "apagar" o "encender" la imagen.
      */
     public void cambia(boolean auxiliar)
     {

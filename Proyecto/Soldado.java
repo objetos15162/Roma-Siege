@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 /**
  * Write a description of class Soldado here.
  * 
@@ -20,5 +20,24 @@ public class Soldado extends Personaje
     public void act() 
     {
         // se movera de manera automatica.
-    }    
+        if(!añadido)
+        {
+            añadeConts();
+            añadido=true;
+        }
+        String key = actAutomatico();
+    }
+    
+    private String actAutomatico()
+    {
+        List <Personaje> actores = getObjectsInRange(600, Personaje.class);
+        if(actores!=null)
+        {
+            for( Personaje p: actores)
+            {
+                
+            }
+        }
+        return null;
+    }
 }

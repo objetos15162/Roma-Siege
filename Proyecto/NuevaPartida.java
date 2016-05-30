@@ -12,22 +12,7 @@ public class NuevaPartida extends SWorld
     private ArrayList<Label> dialogos;
     private int cont;
     private boolean actividad;
-    /*
-     * super(400, 400, 1, 1000); // scroll world constructor call; last parameter is scroll width
-        // in the following statement, the main actor is placed in the center of the window
-        setMainActor(new Wombat(), 250, 300); // the int parameters are centered window x and y ranges
-        // to start the main actor elsewhere
-        mainActor.setLocation(100, 342);
-        GreenfootImage bg = new GreenfootImage("scene.jpg");
-        setScrollingBackground(bg); // set the scolling background image
-        // add other scrollable objects normally
-        addObject(new Ground(), 200, 390);
-        addObject(new Box(), 20, 345);
-        // use of the following also adds scrollable objects
-        addObject(new Box(), 380, 345, true); // the boolean determines scrollable state
-        // use the following for non-scrollable objects
-        addObject(new Score(), 40, 390, false);
-     */
+    
     /**
      * Constructor for objects of class NuevaPartida.
      * 
@@ -35,7 +20,7 @@ public class NuevaPartida extends SWorld
     public NuevaPartida()
     {
         super(640, 480, 1, 1920);
-        hero= new Heroe(1, 150, false);
+        hero= new Heroe(1, 200, false);
         setMainActor(hero, 120, 220);
         mainActor.setLocation(20, 295);
         setScrollingBackground(new GreenfootImage("Inicio.png"));
@@ -46,7 +31,7 @@ public class NuevaPartida extends SWorld
         dialogos= new ArrayList();
         dialogos.add(0, new Label(hero.getName() + ": pero que... ¿pasó?", 24));
         dialogos.add(1, new Label(hero.getName() + ": toda mi familia... ¿muerta?", 28));
-        dialogos.add(2, new Label(hero.getName() + ": ¡Juro que encontrare al responsable!, si no, mi nombre dejara de ser...", 20));
+        dialogos.add(2, new Label(hero.getName() + ": ¡Juro que encontrare al responsable¡", 28));
         
     }
     
@@ -71,7 +56,8 @@ public class NuevaPartida extends SWorld
                 super.act();
                 repaint();
             }
-            Greenfoot.setWorld(new Principal(hero, new Barco(1, false), new Catapulta(1), new Tienda()));
+            Principal nuevo = new Principal(hero, new Barco(1, false), new Catapulta(1), new MTienda());
+            Greenfoot.setWorld(nuevo);
         }
     }
 }

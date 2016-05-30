@@ -43,7 +43,5 @@ public class Heroe extends Personaje
         {
             oro= oro-cantidad;
         }
-        else
-          ;
     }
 }

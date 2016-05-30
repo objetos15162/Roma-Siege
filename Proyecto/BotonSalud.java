@@ -13,18 +13,13 @@ public class BotonSalud extends Boton
      */
     public BotonSalud()
     {
-        super("Boton Salud Activo.png", "Boton Salud Inactivo.png", 0);
+        super("Boton Vida Activo.png", "Boton Vida Inactivo.png", 0);
     }
     
     public void llamaNuevoEscenario()
     {
-        Principal world = (Principal)getWorld();
-        
-        if(world.tienda.getMejoraSalud() <= world.hero.getOro())
-        {
-            world.hero.setOro(world.tienda.getMejoraSalud());
-            world.hero.setVida();
-            world.tienda.setMejoraSalud();
-        }
+        MTienda auxiliar= (MTienda) getWorld();
+        auxiliar.compraVida();
     }
+    
 }

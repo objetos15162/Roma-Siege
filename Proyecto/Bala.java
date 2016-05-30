@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 /**
  * Write a description of class Bala here.
  * 
@@ -8,51 +8,97 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bala extends Actor
 {
+    private Personaje origen;
+    private int direction;
+    private int daño;
+    private int velX;
+    private int velY;
+    private int tiempo;
+    private boolean volando;
+    private int controlador;
+    /**
+     * El constructor de la bala
+     */
+    public Bala(int dir, int velXbase, int velYbase, int atkBarco, Personaje ori)
+    {
+      origen = ori;
+      direction = dir;
+      velX= dir * 10 + velXbase;
+      velY=10 + velYbase;
+      daño = (int)(atkBarco * 1.5);
+      if(!origen.getisEnemy())
+      {
+          daño = daño * 2;
+      }
+      tiempo=velY;
+      volando=true;
+      controlador=0;
+    }
+    
     /**
      * Act - do whatever the Bala wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private boolean direction;
-    public Bala(boolean dir)
-    {
-      direction = dir;
-    }
     public void act() 
     {
-        World mundo = getWorld();
-      //  MundoCiudad c = (MundoCiudad)mundo;
-       // int x=0;
-      // ShipEnemy s =(ShipEnemy)getOneIntersectingObject(ShipEnemy.class);
-      if(direction != false)
-      {
-        move(-5);
-      }
-      else{
-          move(5);
-        }
-       // draw();
-        if(this.getX()== (getWorld().getWidth()-1))
+        if(volando)
         {
-            getWorld().removeObject(this);
+            if(controlador >= 5)
+            {
+                setLocation(getX() + velX, getY() - velY);
+                efectoGravedad();
+                controlador=0;
+            }
+            else
+            {
+                controlador++;
+            }
         }
-       /* else{
-              if(s != null){
-                  //s.destroy();
-                  c.removeObject(this);
-                  
+        
+        if(isTouching(Personaje.class))
+        {
+            List<Personaje> afectados = getIntersectingObjects(Personaje.class);
+            for(Personaje b : afectados)
+            {
+                if(!b.equals(origen))
+                {
+                    b.reduceVida(daño);
+                    if(b.getVida()==0 && !origen.getisEnemy())
+                    {
+                        origen.aumentaExp(b.getExp());
+                    }
+                    volando=false;
                 }
-        }*/
-       
+            }
+        }
+        
+        if(getY() >= getWorld().getHeight()-50)
+        {
+            volando = false;
+        }
+        
     }    
-    /*/**
-     * Dibuja un circulo relleno de color negro
+   
+    /**
+     * En este metodo se simula la gravedad para reducir la velocidad en y
      */
-    /*public void draw()
-     {
-         image.setColor(Color.BLACK);
-         image.fillOval(x, y, x+height, y+width);
-         
-         setImage(image);
-       
-        } */
+    private void efectoGravedad()
+    {
+        velY-= 2;
+        if(velY <= (int)(-tiempo*1.5))
+        {
+            velY=0;
+            velX=0;
+            volando=false;
+        }
+    }
+    
+    /**
+     * Este metodo regresa la varible que indica si aun esta en el aire este objeto
+     * @return volando- VARIBALE BOOLEANA QUE INDICA SI LA BALA AUN TIENE ALTURA.
+     */
+    public boolean getVolando()
+    {
+        return volando;
+    }
 }

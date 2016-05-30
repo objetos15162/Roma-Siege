@@ -21,9 +21,13 @@ public class Personaje extends Actor
     private boolean isEnemy; // Indica si la unidad es enemiga.
     private String nombre;   // Es el nombre de la unidad. Se asigna automaticamente si es una unidad no Jugador
     
+    private Counter vitalidad;
+    private Counter resistencia;
+    public boolean añadido;
+    
     private int control;     // Esta varible es para controlar las acciones automaticas de los personajes.
     private int direccion;   // Con esta varible se representa la direccion. 1 es a la derecha, -1 a la izquierda.
-    private boolean inAtk;   // Esta varible indica si esta en medio de un ataque. Si es asi solo se apagara hasta que la animacion de ataque termine.
+    public boolean inAtk;   // Esta varible indica si esta en medio de un ataque. Si es asi solo se apagara hasta que la animacion de ataque termine.
     private GifImage inmovilDerecha;
     private GifImage inmovilIzquierda;
     private GifImage movimientoDerecha;
@@ -59,15 +63,24 @@ public class Personaje extends Actor
         }
         
         inAtk=false;
-        ataqueImgD= new GifImage(ataqD);
-        ataqueImgI= new GifImage(ataqI);
-        inmovilDerecha = new GifImage(inmovilD);
-        inmovilIzquierda = new GifImage(inmovilI);
-        movimientoDerecha = new GifImage(movD);
-        movimientoIzquierda= new GifImage(movI);
+        if(ataqD != null)
+        {
+            ataqueImgD= new GifImage(ataqD);
+            ataqueImgI= new GifImage(ataqI);
+            inmovilDerecha = new GifImage(inmovilD);
+            inmovilIzquierda = new GifImage(inmovilI);
+            movimientoDerecha = new GifImage(movD);
+            movimientoIzquierda= new GifImage(movI);
+        }
         gif=null;
         positionList=1;
         control=0;
+        
+        resistencia = new Counter("Aguante: ");
+        resistencia.setValue((int)aguante);
+        vitalidad = new Counter("Vida: ");
+        vitalidad.setValue((int)vida);
+        añadido=false;
     }
     
     /**
@@ -88,6 +101,12 @@ public class Personaje extends Actor
     public void act() 
     {
         // Add your action code here.
+        if(!añadido)
+        {
+            añadeConts();
+            añadido=true;
+        }
+        
         if(inAtk==false)
         {
             String key;
@@ -126,10 +145,29 @@ public class Personaje extends Actor
     }
     
     /**
+     * Este metodo invoca a los dos contadores que indican la vida y resistencia de cada jugador.
+     */
+    public void añadeConts()
+    {
+        World world = getWorld();
+        world.addObject(vitalidad, this.getX(), this.getY()-100);
+        world.addObject(resistencia, this.getX(), this.getY()-120);
+    }
+    
+    /**
+     * este metodo mueve los dos contadores justo hacia donde el jugador
+     */
+    public void mueveConts(int movimiento)
+    {
+        vitalidad.move(movimiento);
+        resistencia.move(movimiento);
+    }
+    
+    /**
      * Este metodo genera la animacion estandar mientras no se mueva hacia algun lado.
      * 
      */
-    private void movEstandar()
+    public void movEstandar()
     {
         if(direccion==1)
         {
@@ -180,13 +218,11 @@ public class Personaje extends Actor
      *  Este metodo Es para ver donde hay enemigos, genera una accion si hay enemigos
      *  cerca. Funciona tanto para Enemigos como amigo. Limita el numero de ataques por personaje.
      *  Funciona como para aliados asi como para enemigos.
-     *  
+     *  NOTA: Falta optimizarse.
      *  @return String - Es null si no hay nada en un perimetro, o si se esta controlando su cantidad de ataques.
      */
     private String actAutomatico()
-    {
-        World world = getWorld();
-        
+    {        
         if(isEnemy)
         {
             List <Personaje> actores = getObjectsInRange(400, Personaje.class);
@@ -196,7 +232,7 @@ public class Personaje extends Actor
                 {
                     if(p.getX() - this.getX() >= -10)
                     {
-                        if(control< atk-2*nivel)
+                        if(control< atk*2-4*nivel)
                         {
                             control++;
                             return null;
@@ -218,7 +254,7 @@ public class Personaje extends Actor
                     
                     if( p.getX() - this.getX()<= 10)
                     {
-                        if(control<atk-2*nivel)
+                        if(control<atk*2-4*nivel)
                         {
                             control++;
                             return null;
@@ -232,7 +268,7 @@ public class Personaje extends Actor
                     }
                     else
                     {
-                        if( p.getX() - this.getX()> -10)
+                        if(p.getX() - this.getX() > 10)
                         {
                             return "d";
                         }
@@ -283,7 +319,7 @@ public class Personaje extends Actor
      * Al acabar, verifica que actores esta tocando. Si alguno es enemigo, le reduce la vida.
      */
     private void atacar()
-    {
+    { 
         if(positionList<gif.size())
         {
             setImage(gif.get(positionList));
@@ -291,6 +327,7 @@ public class Personaje extends Actor
         }
         else
         {
+            gif=null;
             World world = getWorld();
             List<Personaje> actores = getIntersectingObjects(Personaje.class);
             for(Personaje p: actores)
@@ -324,13 +361,29 @@ public class Personaje extends Actor
         }
     }
     
+    public boolean atacar(int identificador)
+    {   
+        gif = ataqueImgI.getImages();
+        
+        if(positionList<gif.size())
+        {
+            setImage(gif.get(positionList));
+            positionList++;
+            return true;
+        }
+        else
+        {
+            positionList=0;
+            return false;
+        }
+    }
     
     /**
      * Este Metodo Aumenta la experiencia. Si sobrepasa el limite, manda a aumentar todas las caracteristicas del personaje. Si aun despues de aumentar
      * las estadisticas aun queda experiencia, se llama de manera recursiva hasta que el monto sea negativo.
      * @param monto Esta varible representa Cuanto se va a aumentar la experiencia.
      */
-    private void aumentaExp(float monto)
+    public void aumentaExp(float monto)
     {
         exp += monto;
         if(exp >= nextLevel)
@@ -365,7 +418,7 @@ public class Personaje extends Actor
      * 
      * @param daño Esta varible indica cuanto daño se le va a hacer a la unidad
      */
-    private void reduceVida(float daño)
+    public void reduceVida(float daño)
     {
         if(daño - def <= 0)
         {
@@ -379,17 +432,24 @@ public class Personaje extends Actor
         if(aguante>0)
         {
             aguante -= daño;
-            if(aguante<0)
+            resistencia.add((int)-daño);
+            if(aguante<=0)
             {
                 aguante=0;
+                resistencia.setValue((int)aguante);
+                getWorld().removeObject(resistencia);
             }
+            
         }
         else
         {
             vida -= daño;
-            if(vida<0)
+            vitalidad.add(-(int)daño);
+            if(vida<=0)
             {
                 vida=0;
+                vitalidad.setValue(vida);
+                getWorld().removeObject(vitalidad);
             }
         }
     }
@@ -397,7 +457,7 @@ public class Personaje extends Actor
     /**
      * Este metodo se encarga de cargar la imagen correspondiente para que el personaje se mueva.
      */
-    private void mover()
+    public void mover()
     {
         if(direccion==-1)
         {
@@ -408,6 +468,32 @@ public class Personaje extends Actor
             setImage(movimientoDerecha.getCurrentImage());
         }
         move(direccion * 8);
+        mueveConts(direccion*8);
+    }
+    
+    /**
+     * este metodo mover solo funciona para el barco y la catapulta
+     */
+    public void mover(int vel)
+    {
+        if(vel != 0)
+        {
+            setImage(movimientoIzquierda.getCurrentImage());
+            move(vel);
+            mueveConts(vel);
+        }
+        else
+        {
+            setImage(inmovilIzquierda.getCurrentImage());
+        }
+    }
+    /**
+     * este metodo regresa el ataque del personaje
+     * @return atk- La varible que indica el ataque del Personaje
+     */
+    public float getAtk()
+    {
+        return atk;
     }
     
     /**
@@ -441,6 +527,14 @@ public class Personaje extends Actor
     public int getVida()
     {
         return vida;
+    }
+    
+    /**
+     * En este metodo se regresa el valor de la variable que indica la vida maxima
+     */
+    public int getMaxVida()
+    {
+        return maxVida;
     }
     
     /**
@@ -497,5 +591,33 @@ public class Personaje extends Actor
     public void setName()
     {
         nombre= Greenfoot.ask("Nombre: "); 
+    }
+    
+    /**
+     * En este metodo se cambian las imagenes del personaje. Esta diseñado solo para los barcos y la catapulta.
+     * 
+     * @param atkGif String que contiene el nombre de la imagen nueva de ataque a poner.
+     * @param movGif String que contiene el nombre de la imagen nueva de movimiento.
+     * @param inmGif String que contiene el nombre de la imagen nueva sin movimiento.
+     */
+    public void setGifs(String atkGif, String movGif, String inmGif)
+    {
+        ataqueImgD= new GifImage(atkGif);
+        ataqueImgI= new GifImage(atkGif);
+        inmovilDerecha = new GifImage(inmGif);
+        inmovilIzquierda = new GifImage(inmGif);
+        movimientoDerecha = new GifImage(movGif);
+        movimientoIzquierda= new GifImage(movGif);
+    }
+    
+    /**
+     * Este metodo es para la base. Cambia todos los stats del personaje y deja en 0 el ataque. En cambio aumenta la defensa, la vida, y el aguante.
+     */
+    public void cambiaStats()
+    {
+        def += atk*(nivel+2);
+        aguante += atk*(nivel+1);
+        vida+= atk*(nivel);
+        atk=0;
     }
 }

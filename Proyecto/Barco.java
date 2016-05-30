@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 /**
  * Write a description of class Barco here.
  * 
@@ -8,20 +8,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Barco extends Personaje
 {
-    private float velocidad;
     private int capacidad;
-    private boolean mejoraVelocidad1;
-    private boolean mejoraVelocidad2;
-    private boolean mejoraVelocidad3;
-    
+    private int vel;
+    private int cont;
     public Barco(int nivel, boolean esEnemigo)
     {
         super(nivel, esEnemigo, "Barco InmovilD.gif","Barco InmovilD.gif", "Barco MovimientoD.gif", "Barco MovimientoD.gif", "Barco AtaqueD.gif", "Barco AtaqueD.gif");
-        mejoraVelocidad1=false;
-        mejoraVelocidad2=false;
-        mejoraVelocidad3=false;
-        velocidad=10;
-        capacidad=5 + Greenfoot.getRandomNumber(4+nivel);
+        capacidad = 5 + Greenfoot.getRandomNumber(4+nivel);
+        vel = 0;
+        cont = 0;
+        if(esEnemigo)
+        {
+            setGifs("Barco AtaqueI.gif","Barco MovimientoI.gif", "Barco InmovilI.gif");
+        }
     }
     
     /**
@@ -39,34 +38,138 @@ public class Barco extends Personaje
      */
     public void act() 
     {
-        // Add your action code here.
-        move((int)velocidad);
-    }
-    
-    /**
-     *  getVelocidad regresa la variable velocidad
-     *  @return velocidad
-     */
-    public float getVelocidad()
-    {
-        return velocidad;
-    }
-    
-    /**
-     * Metodo que aplica las diferentes mejoras de velocidad
-     */
-    public void mejoraVel(int opc)
-    {
-        if(opc>0 && opc<4)
+        if(!añadido)
+        {
+            añadeConts();
+            añadido=true;
+        }
+        
+        if(!getisEnemy())
+        {
+            if(!inAtk)
             {
-                switch(opc)
+                String key = Greenfoot.getKey();
+                if(key != null)
                 {
-                    case 1: if(!mejoraVelocidad1)
+                    key.toLowerCase();
+                    switch(key)
+                    {
+                        case "d":
+                            if(vel < 10)
                             {
-                                ;
+                                vel++;
                             }
-                    break;
+                            break;
+                        case "a":
+                            if(vel > -10)
+                            {
+                                vel--;
+                            }
+                            break;
+                        case "n":
+                            inAtk=true;
+                            break;
+                    }
+                }
+                
+                if(cont <= 5)
+                {
+                    cont++;
+                }
+                else
+                {
+                    cont=0;
+                    mover(vel);
                 }
             }
+            else
+            {
+                completeAtk();
+            }
+        }
+        else
+        {
+            actAutomatico();
+        }
+    }
+    
+    /**
+     * 
+     */
+    private void actAutomatico()
+    {
+        if(!inAtk) 
+        {
+            if(cont<=50)
+            {
+                cont++;
+                mover(0);
+            }
+            else
+            {
+                List <Personaje> actores = getObjectsInRange(400, Personaje.class);
+                for( Personaje p: actores)
+                {
+                    if(p != null && !p.getisEnemy())
+                    {
+                        if(p.getX() - this.getX() < -80)
+                        {
+                            inAtk=true;                       
+                        }
+                        else
+                        {
+                            mover(10);
+                        }
+                    }
+                }
+                cont=0;
+            }
+        }
+        else
+        {
+            completeAtk();
+        }
+    }
+    
+    /**
+     * Este metodo es invocado justo cuando se esta en proceso un ataque;
+     */
+    private void completeAtk()
+    {
+        inAtk=atacar(1);
+        if(!inAtk)
+        {
+            int dir;
+            if(!getisEnemy())
+            {
+                dir = 1;
+            }
+            else
+            {
+                dir = -1;
+            }
+            Bala nueva = new Bala(dir, vel, (int)(getAtk()/3), (int)getAtk(), this);
+            getWorld().addObject(nueva, this.getX()+dir*80, this.getY()-80);
+            if(vel > 4)
+            {
+                vel-=5;
+            }
+            else
+            {
+                if(vel < 0 && vel > -10)
+                {
+                    vel -=2 ;
+                }
+            }
+        }
+    }
+    
+    
+    /**
+     * este metodo regresa la capacidad maxima de soldados que posee
+     */
+    public int getCapacidad()
+    {
+        return capacidad;
     }
 }

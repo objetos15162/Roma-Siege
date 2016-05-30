@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=BotonTienda
-comment0.text=\r\n\ Esta\ clase\ tiene\ como\ objetivo\ imponer\ en\ pantalla\ un\ objeto\ Tienda,\ y\ controlarlo,\ ademas\ de\ implantar\ en\ pantalla\ \r\n\ diferentes\ botones,\ respectivos\ de\ la\ tienda.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.1\r\n
+comment0.text=\r\n\ Esta\ clase\ tiene\ como\ objetivo\ imponer\ en\ pantalla\ un\ objeto\ Tienda,\ y\ controlarlo,\ ademas\ de\ implantar\ en\ pantalla\ \r\n\ diferentes\ botones,\ respectivos\ de\ la\ tienda.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.2\r\n
 comment1.params=
 comment1.target=BotonTienda()
 comment2.params=

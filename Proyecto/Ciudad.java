@@ -1,52 +1,43 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
+import java.util.ArrayList;
 
 /**
-<<<<<<< HEAD
- * Write a description of class Ciudad here.
-=======
- * Write a description of class Ciuadad here.
->>>>>>> origin/master
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Daniel Wong
+ * @version 1.2
  */
-<<<<<<< HEAD
 public class Ciudad extends SWorld
 {
-    /*
-     * super(400, 400, 1, 1000); // scroll world constructor call; last parameter is scroll width
-        // in the following statement, the main actor is placed in the center of the window
-        setMainActor(new Wombat(), 250, 300); // the int parameters are centered window x and y ranges
-        // to start the main actor elsewhere
-        mainActor.setLocation(100, 342);
-        GreenfootImage bg = new GreenfootImage("scene.jpg");
-        setScrollingBackground(bg); // set the scolling background image
-        // add other scrollable objects normally
-        addObject(new Ground(), 200, 390);
-        addObject(new Box(), 20, 345);
-        // use of the following also adds scrollable objects
-        addObject(new Box(), 380, 345, true); // the boolean determines scrollable state
-        // use the following for non-scrollable objects
-        addObject(new Score(), 40, 390, false);
-     */
     
-=======
-public class Ciudad extends Actor
-{
->>>>>>> origin/master
-    /**
-     * Act - do whatever the Ciuadad wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-<<<<<<< HEAD
-    public Ciudad()
+    public Principal principal;
+    private int numEnemigos;
+    private List<Soldado> enemigos;
+    private Heroe enemigo;
+    
+    public Ciudad(Principal princ)
     {
         super(640, 480, 1, 600);
+        principal = princ;
+        enemigo = new Heroe(principal.hero.getnivel()+4, 400, true);
+        enemigos = new ArrayList<Soldado>();
+        numEnemigos = principal.barco. getCapacidad() + 2;
+        
+        setMainActor(principal.hero, 20, 240);
+        mainActor.setLocation(0, 342);
+        setScrollingBackground(new GreenfootImage("Ciudad.png"));
+        addObject(new Ground("Olas.png"), 320, 430);
+        int i;
+        for(i=0 ; i< numEnemigos; i++)
+        {
+            enemigos.add(i, new Soldado(principal.hero.getnivel(), true));
+            addObject(enemigos.get(i), 320+ 10*i,  342);
+        }
     }
-=======
+
     public void act() 
     {
         // Add your action code here.
     }    
->>>>>>> origin/master
+
 }

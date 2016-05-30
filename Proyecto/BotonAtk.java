@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BotonAtk here.
+ * Este tipo de boton esta diseñado para hacer los calculos referentes a la compra de la mejora para el ataque del personaje.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Daniel Wong 
+ * @version 1.2
  */
 public class BotonAtk extends Boton
 {
@@ -13,15 +13,13 @@ public class BotonAtk extends Boton
         super("Boton Atk Activo.png", "Boton Atk Inactivo.png", 0);
     }
     
+    /**
+     * En este metodo se verifica que el heroe posea suficiente oro para comprar la mejoraAtk de la tienda. 
+     * De ser asi, procede con hacer los calculos. Pone un mensaje en pantalla sobre la transaccion.
+     */
     public void llamaNuevoEscenario()
     {
-        Principal world = (Principal)getWorld();
-        
-        if(world.tienda.getMejoraAtk() <= world.hero.getOro())
-        {
-            world.hero.setOro(world.tienda.getMejoraSalud());
-            world.hero.setAtk();
-            world.tienda.setMejoraAtk();
-        }
+        MTienda auxiliar= (MTienda) getWorld();
+        auxiliar.compraAtk();
     }
 }

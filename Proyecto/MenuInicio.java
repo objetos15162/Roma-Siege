@@ -8,10 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MenuInicio extends World
 {
-   BotonNuevo nuevo;
-   BotonCargar cargar;
-   BotonAyuda ayuda;
-   BotonSalir salir;
+   private BotonNuevo nuevo;
+   private BotonCargar cargar;
+   private BotonAyuda ayuda;
+   private BotonSalir salir;
    private BotonGuardar guardar;
    private BotonJugar jugar;
    private BotonTienda tienda;

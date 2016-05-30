@@ -15,13 +15,7 @@ public class BotonDef extends Boton
     
     public void llamaNuevoEscenario()
     {
-        Principal world = (Principal)getWorld();
-        
-        if(world.tienda.getMejoraDef() <= world.hero.getOro())
-        {
-            world.hero.setOro(world.tienda.getMejoraDef());
-            world.hero.setDef();
-            world.tienda.setMejoraDef();
-        }
+        MTienda auxiliar= (MTienda) getWorld();
+        auxiliar.compraDef();
     }
 }

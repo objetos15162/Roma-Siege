@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * diferentes botones, respectivos de la tienda.
  * 
  * @author Daniel Wong 
- * @version 1.1
+ * @version 1.2
  */
 public class BotonTienda extends Boton
 {
@@ -20,7 +20,7 @@ public class BotonTienda extends Boton
      */
     public void llamaNuevoEscenario()
     {
-        Principal world= (Principal)getWorld();
-        world.tienda.actII();
+        Principal actual = (Principal) getWorld();
+        Greenfoot.setWorld(actual.tienda);
     }
 }

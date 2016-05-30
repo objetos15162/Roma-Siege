@@ -15,6 +15,7 @@ public class BotonAguante extends Boton
     
     public void llamaNuevoEscenario()
     {
-        ;
+        MTienda auxiliar= (MTienda) getWorld();
+        auxiliar.compraAguante();
     }
 }

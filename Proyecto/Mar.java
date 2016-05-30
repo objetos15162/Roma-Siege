@@ -1,47 +1,135 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
+import java.util.ArrayList;
 /**
  * Write a description of class MarScroll here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-<<<<<<< HEAD
+
 public class Mar extends SWorld
 {
-    /*
-     * super(400, 400, 1, 1000); // scroll world constructor call; last parameter is scroll width
-        // in the following statement, the main actor is placed in the center of the window
-        setMainActor(new Wombat(), 250, 300); // the int parameters are centered window x and y ranges
-        // to start the main actor elsewhere
-        mainActor.setLocation(100, 342);
-        GreenfootImage bg = new GreenfootImage("scene.jpg");
-        setScrollingBackground(bg); // set the scolling background image
-        // add other scrollable objects normally
-        addObject(new Ground(), 200, 390);
-        addObject(new Box(), 20, 345);
-        // use of the following also adds scrollable objects
-        addObject(new Box(), 380, 345, true); // the boolean determines scrollable state
-        // use the following for non-scrollable objects
-        addObject(new Score(), 40, 390, false);
-     */
-=======
-public class Mar extends Actor
-{
->>>>>>> origin/master
-    /**
-     * Act - do whatever the MarScroll wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-<<<<<<< HEAD
-    public Mar()
+    public Principal principal;
+    private int numBarcosEnemigos;
+    private List<Barco> enemigos;
+    private boolean acceso;
+    public Mar(Principal princ)
     {
-        super(640, 480, 1, 600);
+        super(640, 480, 1, 3400);
+        principal = princ;
+        setMainActor(principal.barco, 20, 240);
+        mainActor.setLocation(0, 342);
+        setScrollingBackground(new GreenfootImage("Mar.png"));
+        numBarcosEnemigos = principal.barco.getnivel()+2;
+        enemigos = new ArrayList<Barco>();
+        int i;
+        for(i = 0; i < numBarcosEnemigos; i++)
+        {
+            enemigos.add(i, new Barco(principal.barco.getnivel(), true));
+            addObject(enemigos.get(i), 500 + (i * 15), 342);
+        }
+        addObject(new Ground("Olas.png"), 320, 430);
+        posicionamiento();
+        acceso = false;
     }
-=======
+
     public void act() 
     {
-        // Add your action code here.
+       super.act();
+       controlaBalas();
+       controlaEnemigos();
+       
+       if(principal.barco.getVida()==0)
+       {
+           Greenfoot.setWorld(principal);
+       }
+       
+       if(acceso)
+       {
+           while(principal.barco.getX() < 620)
+           {
+               principal.barco.mover(5);
+               super.act();
+           }
+           Greenfoot.setWorld(new Playa(principal));
+       }
     }    
->>>>>>> origin/master
+    
+    /**Este metodo detecta si existen balas en el mundo, y de ser asi
+     * controla que aun sigan en movimiento, si no las elimina
+     */
+    private void controlaBalas()
+    {
+       List<Bala> balas = getObjects(Bala.class);
+       if(balas != null)
+       {
+           for(Bala bal : balas)
+           {
+               if(bal != null && !bal.getVolando())
+               {
+                  removeObject(bal);
+               }
+           }
+       }
+    }
+    
+    /**
+     * Este metodo verifica que aun quedan enemigos en el mapa, si no, da autorizacion para entrar en el siguiente escenario.
+     */
+    private void controlaEnemigos()
+    {
+        int i=0;
+        if(enemigos.isEmpty())
+        {
+            acceso=true;
+        }
+        
+        Barco auxiliar;
+        for(i=0; i<enemigos.size(); i++)
+        {
+            if(enemigos.get(i).getVida()==0)
+            {
+                auxiliar=enemigos.get(i);
+                enemigos.remove(auxiliar);
+                removeObject(auxiliar);
+            }
+        }
+    }
+    
+    /**
+     * Este metodo movera a todos los personajes a sus posiciones iniciales, y mostrara una pantalla de cargar... por fines graficos..
+     */
+    private void posicionamiento()
+    {
+        //añade pantalla de carga;
+        int i;
+        for(i=0; i<numBarcosEnemigos; i++)
+        {
+            enemigos.get(i).move(i*(int)(1700/numBarcosEnemigos)-20);
+        }
+        
+        principal.barco.move(-(1700-330));
+        super.act();
+        //elimina pantalla de carga;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
