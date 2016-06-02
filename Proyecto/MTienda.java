@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 /**
- * Write a description of class MTienda here.
+ * La clase tienda comprende 4 tipos de botones. Los cuales controla. Para salir de esta clase Tienes que presionar esc o enter.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Daniel Wong 
+ * @version 2.1
  */
 public class MTienda extends World
 {
@@ -22,7 +22,8 @@ public class MTienda extends World
     
     private int contador;
     /**
-     * Constructor for objects of class MTienda.
+     * Constructor for objects of class MTienda. Otorga valores iniciales predefinidos.
+     * Solo se llama cuando se genera una nueva partida.
      * 
      */
     public MTienda()
@@ -46,6 +47,9 @@ public class MTienda extends World
         contador=0;
     }
     
+    /**
+     * Controla tanto el teclado como de actualizar los precios de pantalla
+     */
     public void act()
     {
         String key = Greenfoot.getKey();
@@ -58,7 +62,7 @@ public class MTienda extends World
             }
         }
         
-        if(contador >= 50)
+        if(contador >= 500)
         {
             List <Label> lista = getObjects(Label.class);
             if(lista != null)
@@ -69,11 +73,13 @@ public class MTienda extends World
                }
             }
             contador = 0;
-            Label mensaje = new Label(" Bienvenido Guerrero, \n ¿Que te Gustaria Entrenar?", 24);
+            Label mensaje = new Label(" Bienvenido Guerrero, \n ¿Que te Gustaria Entrenar?", 30);
             Label precAtk = new Label(precioAtk+" Monedas", 24);
             Label precAgu = new Label(precioAguante + " Monedas", 24);
             Label precDef = new Label(precioDef + " Monedas", 24);
             Label precVid = new Label(precioVida + " Monedas", 24);
+            addObject(new Label("Para salir presiona 'ESC' ó 'ENTER'", 30), 580, 100);
+            addObject(mensaje, 200, 400);
             addObject(precAtk,ataque.getX()-120, ataque.getY());
             addObject(precAgu,aguante.getX()-120, aguante.getY());
             addObject(precDef,defensa.getX()-120, defensa.getY());
@@ -94,7 +100,9 @@ public class MTienda extends World
         principal=auxiliar;
     }
     
-    
+    /**
+     * Hace los calculos para mejorar el ataque y reducir el oro
+     */
     public void compraAtk()
     {
         if(precioAtk <= principal.getHero().getOro())
@@ -113,6 +121,9 @@ public class MTienda extends World
         contador = 0;
     }
     
+    /**
+     * Hace los calculos para mejorar la defensa y reducir el oro
+     */
     public void compraDef()
     {
         if(precioDef <= principal.getHero().getOro())
@@ -131,6 +142,10 @@ public class MTienda extends World
         contador = 0;
     }
     
+    
+    /**
+     * Hace los calculos para mejorar la vida y reducir el oro
+     */
     public void compraVida()
     {
          if(precioVida <= principal.getHero().getOro())
@@ -150,6 +165,9 @@ public class MTienda extends World
         contador = 0;
     }
     
+    /**
+     * Hace los calculos para mejorar el aguante y reducir el oro
+     */
     public void compraAguante()
     {
          if(precioAguante <= principal.getHero().getOro())

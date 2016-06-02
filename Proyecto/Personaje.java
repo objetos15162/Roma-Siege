@@ -5,7 +5,7 @@ import java.util.List;
  * asi como su posicion en el espacio.
  * 
  * @author Daniel Alejandro Wong Ramirez 
- * @version 2.7
+ * @version 3.5
  */
 public class Personaje extends Actor
 {
@@ -46,7 +46,7 @@ public class Personaje extends Actor
         def = nivel * 10 + Greenfoot.getRandomNumber((int)(nivel * 10 / 1.5));
         aguante = nivel * 10 + Greenfoot.getRandomNumber((int)(nivel * 10 / 1.25));
         maxAguante = aguante;
-        vida = nivel * 100 + Greenfoot.getRandomNumber(nivel * 100);
+        vida = nivel * 25 + Greenfoot.getRandomNumber(nivel * 10);
         maxVida = vida;
         nombre = "???";
         isEnemy = ene;
@@ -142,6 +142,7 @@ public class Personaje extends Actor
         {
             atacar();
         }
+        mueveConts();
     }
     
     /**
@@ -151,14 +152,26 @@ public class Personaje extends Actor
     {
         World world = getWorld();
         world.addObject(vitalidad, this.getX(), this.getY()-100);
-        world.addObject(resistencia, this.getX(), this.getY()-120);
+        world.addObject(resistencia, this.getX(), this.getY()-140);
+    }
+    
+    /**
+     * En este metodo tambien se invoca a pantalla dos contadores. pero en las coordenadas dadas.
+     * Es usado por la clase base.
+     */
+    public void añadeConts(int x, int y)
+    {
+        SWorld world = (SWorld)getWorld();
+        world.addObject(vitalidad, x, y-100, false);
+        world.addObject(resistencia, x, y-140, false);
     }
     
     /**
      * este metodo mueve los dos contadores justo hacia donde el jugador
      */
-    public void mueveConts(int movimiento)
+    public void mueveConts()
     {
+        int movimiento = this.getX() - vitalidad.getX(); 
         vitalidad.move(movimiento);
         resistencia.move(movimiento);
     }
@@ -210,7 +223,6 @@ public class Personaje extends Actor
                  }
                  inAtk=true;
                  break;
-             
          }
     }
    
@@ -230,7 +242,7 @@ public class Personaje extends Actor
             {
                 if(p != null && !p.getisEnemy())
                 {
-                    if(p.getX() - this.getX() >= -10)
+                    if(p.getX() - this.getX() >= -30 && p.getX() - this.getX() <= 0)
                     {
                         if(control< atk*2-4*nivel)
                         {
@@ -252,7 +264,7 @@ public class Personaje extends Actor
                         }
                     }
                     
-                    if( p.getX() - this.getX()<= 10)
+                    if( p.getX() - this.getX()<= 30 && p.getX() - this.getX() >= 0)
                     {
                         if(control<atk*2-4*nivel)
                         {
@@ -268,7 +280,7 @@ public class Personaje extends Actor
                     }
                     else
                     {
-                        if(p.getX() - this.getX() > 10)
+                        if(p.getX() - this.getX() > 30)
                         {
                             return "d";
                         }
@@ -276,41 +288,7 @@ public class Personaje extends Actor
                 }
             }
         }
-        else
-        {
-            List <Personaje> actores = getObjectsInRange(50, Personaje.class);
-            for( Personaje p: actores)
-            {
-                if(p != null && p.getisEnemy())
-                {
-                    if(p.getX() - this.getX() >=10)
-                    {
-                        direccion = -1;
-                        return "n";                        
-                    }
-                    else
-                    {
-                        if( p.getX() - this.getX() <10)
-                        {
-                            return "a";
-                        }
-                    }
-                    
-                    if( p.getX() - this.getX()<= -10)
-                    {
-                        direccion = 1;
-                        return "n";
-                    }
-                    else
-                    {
-                        if( p.getX() - this.getX() > -10)
-                        {
-                            return "d";
-                        }
-                    }
-                }
-            }
-        }
+        
         return null;
     }
     
@@ -318,8 +296,20 @@ public class Personaje extends Actor
      * Este metodo se encarga de poner la animacion de ataque hasta que acabe la animacion.
      * Al acabar, verifica que actores esta tocando. Si alguno es enemigo, le reduce la vida.
      */
-    private void atacar()
+    public void atacar()
     { 
+        if(gif== null)
+        {
+            if(direccion== -1)
+            {
+                gif = ataqueImgI.getImages();
+            }
+            else
+            {
+                gif = ataqueImgD.getImages();
+            }   
+        }
+        
         if(positionList<gif.size())
         {
             setImage(gif.get(positionList));
@@ -411,6 +401,17 @@ public class Personaje extends Actor
         aguante=maxAguante;
         exp = 0;
         nextLevel += nextLevel *0.2;
+        if(resistencia==null)
+        {
+            resistencia = new Counter("Aguante: ");
+            resistencia.setValue((int)aguante); 
+            getWorld().addObject(resistencia, this.getX(), this.getY()-120);
+        }
+        else
+        {
+           resistencia.setValue((int)aguante);
+        }
+        vitalidad.setValue(vida);
     }
     
     /**
@@ -420,14 +421,6 @@ public class Personaje extends Actor
      */
     public void reduceVida(float daño)
     {
-        if(daño - def <= 0)
-        {
-            daño=1;
-        }
-        else
-        {
-            daño -= def;
-        }
         
         if(aguante>0)
         {
@@ -443,6 +436,14 @@ public class Personaje extends Actor
         }
         else
         {
+            if(daño - def <= 0)
+            {
+                daño=1;
+            }
+            else
+            {
+                daño -= def;
+            }
             vida -= daño;
             vitalidad.add(-(int)daño);
             if(vida<=0)
@@ -468,7 +469,6 @@ public class Personaje extends Actor
             setImage(movimientoDerecha.getCurrentImage());
         }
         move(direccion * 8);
-        mueveConts(direccion*8);
     }
     
     /**
@@ -480,7 +480,7 @@ public class Personaje extends Actor
         {
             setImage(movimientoIzquierda.getCurrentImage());
             move(vel);
-            mueveConts(vel);
+            mueveConts();
         }
         else
         {
@@ -660,5 +660,34 @@ public class Personaje extends Actor
     {
         vida=maxVida;
         aguante=maxAguante;
+        añadido=false;
+    }
+    
+    /**
+     * Regresa la defensa de este personaje.
+     * @return def- Variable flotante que representa la cantidad de daño en la que se va a reducir el daño.
+     */
+    public float getDef()
+    {
+        return def;
+    }
+    
+    /**
+     * regresa el aguante del personaje
+     * @return aguante- Flotante que representa cuanto puede aguantar antes de que empieze a sufrir en vida
+     */
+    public float getAguante()
+    {
+        return aguante;
+    }
+    
+    /**
+     * Se pasan las caracteristicas del personaje a un String en el Siguiente Orden:
+     * Nombre, Nivel, Ataque, Defensa, Vida Maxima y Aguante Maximo, todos separados con espacios.
+     * @override toString
+     */
+    public String toString()
+    {
+        return nombre+ " " + nivel + " " + atk + " " + def + " " + maxVida + " " + maxAguante;
     }
 }

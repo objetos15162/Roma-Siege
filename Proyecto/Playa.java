@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 /**
- * Write a description of class Playa here.
+ * LA CLASE PLAYA TIENE COMO OBJETIVO PREPARAR EL ESCENARIONPARA USAR LA CATAPULTA DEL JUGADOR
+ * ADEMAS, SI EL JUGADOR LOGRA PASAR, SE ASIGNA DINERO AL MONTO DEL OBJETO PRINCIPAL.
  * 
  * @author Daniel Wong
- * @version (a version number or a date)
+ * @version 2.0
  */
 public class Playa extends SWorld
 {
@@ -16,7 +17,7 @@ public class Playa extends SWorld
     private Counter contador;
     /**
      * Constructor for objects of class Playa.
-     * No solo de manera logica, si no tambien de manera grafica.
+     * No solo de manera logica, si no tambien de manera grafica. Aqui mismo se preparan ambas cosas.
      */
     public Playa(Principal prin)
     {
@@ -36,8 +37,13 @@ public class Playa extends SWorld
         addObject(contador, 100, 100, false);
         acceso=false;
         reloj.mark();
+        addObject(new Label("Tienes 45s para destruir \nla base. Suerte.", 30), 200, 150);
     }
     
+    /**
+     * En este metodo se procura actualizar y controlar el entorno; es decir
+     * las balas, el jugador, y el contador del tiempo.
+     */
     public void act()
     {
        actualizaContador();
@@ -59,22 +65,28 @@ public class Playa extends SWorld
        }
        else
        {
+           
            setMainActor(principal.getHero(), 0, 0);
            mainActor.setLocation(0, 500);
            addObject(new Label("Bien hecho", 24), 120, 500, false);
            while(principal.getHero().getX()<700)
            {
-               principal.getHero().mover();
-               super.act();
-               repaint();
+               if(reloj.millisElapsed()>=25)
+               {
+                   principal.getHero().mover();
+                   super.act();
+                   repaint();
+                   reloj.mark();
+                }
            }
+           principal.reset();
            Greenfoot.setWorld(new Ciudad(principal));
        }
        
     }
     
     /**
-     * 
+     * Actualiza cada segundo que pasa el contador.
      */
     private void actualizaContador()
     {

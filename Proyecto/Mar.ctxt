@@ -1,10 +1,12 @@
 #BlueJ class context
 comment0.target=Mar
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ MarScroll\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Hace\ que\ el\ entorno\ sea\ como\ un\ mar.\ Prepara\ el\ entonrno\ para\ que\ dependiendo\ del\ nivel\ del\ usuario,\ tenga\ mas\ barcos\ a\ los\ cuales\ vencer.\r\n\ \r\n\ @author\ Daniel\ Wong\r\n\ @version\ 1.8\r\n
 comment1.params=princ
 comment1.target=Mar(Principal)
+comment1.text=\r\n\ Constructor\ principal\ de\ la\ clase\ Mar\r\n\ @param\ princ-\ Es\ un\ mundo\ principal\ del\ cual\ se\ mando\ a\ llamar\ este\ escenario\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Como\ los\ demas\ mundos,\ este\ tiene\ la\ obligacion\ de\ controlar\ el\ entorno,\ los\ proyectiles\ y\ los\ enemigos.\r\n\ Ademas\ de\ darse\ cuenta\ si\ se\ ha\ llegado\ a\ un\ fin.\r\n
 comment3.params=
 comment3.target=void\ controlaBalas()
 comment3.text=Este\ metodo\ detecta\ si\ existen\ balas\ en\ el\ mundo,\ y\ de\ ser\ asi\r\n\ controla\ que\ aun\ sigan\ en\ movimiento,\ si\ no\ las\ elimina\r\n

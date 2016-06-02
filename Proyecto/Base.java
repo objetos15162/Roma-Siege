@@ -35,6 +35,11 @@ public class Base extends Personaje
      */
     public void act()
     {
+        if(!añadido)
+        {
+            añadeConts(200, 150);
+        }
+        
         if(getVida() != anterior)
         {
             actualizaImg();

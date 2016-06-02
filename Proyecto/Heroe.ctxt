@@ -1,15 +1,19 @@
 #BlueJ class context
 comment0.target=Heroe
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Heroe\ here.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.2\r\n
+comment0.text=\r\n\ Esta\ clase\ es\ exclusiva\ para\ el\ personaje\ principal.\ Guarda\ una\ cantidad\ de\ oro\ ademas\r\n\ de\ los\ atributos\ de\ la\ superclase.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.3\r\n
 comment1.params=niv\ monedas\ ene
 comment1.target=Heroe(int,\ int,\ boolean)
 comment1.text=\r\n\ \ Constructor\ de\ la\ subclase\ Heroe.\ Este\ construtor\ manda\ \r\n
 comment2.params=archivo
 comment2.target=Heroe(java.lang.String)
+comment2.text=\r\n\ Constructor\ que\ lee\ un\ archivo\ y\ otorga\ los\ valores\ a\ partir\ de\ el.\r\n\ @param\ archivo-\ El\ nombre\ del\ archivo\ del\ cual\ se\ piensan\ leer\ los\ datos.\r\n
 comment3.params=
 comment3.target=int\ getOro()
 comment3.text=\r\n\ This\ method\ returns\ the\ gold\ of\ the\ Hero\ already\ have;\r\n\ @return\ oro\r\n
 comment4.params=cantidad
 comment4.target=void\ setOro(int)
-comment4.text=\r\n\ \r\n
-numComments=5
+comment4.text=\r\n\ Este\ metodo\ revisa\ si\ la\ cantidad\ de\ oro\ que\ se\ le\ va\ a\ restar\ es\ enor\ o\ igual,\ y\ de\ no\ serlo\ no\ aplica\ nada.\r\n\ Si\ la\ cantidad\ es\ negativa\ significa\ que\ el\ usuario\ gano\ oro.\r\n\ \r\n\ @para\ \ cantidad-\ es\ un\ entero\ que\ indica\ cuanta\ cantidad\ se\ va\ a\ modificar\ el\ oro.\r\n
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment5.text=\r\n\ En\ este\ metodo\ se\ llama\ al\ toString\ de\ la\ superclase,\ ademas\ de\ agrefarle\ los\ atributos\ del\ heroe\r\n\ al\ final.\ El\ orden\ de\ los\ datod\ quedaria\ en\ el\ siguiente\:\r\n\ Nombre,\ nivel,\ ataque,\ defensa,\ Vida\ Maxima,\ Aguante\ Maximo,\ Oro.\r\n\ @override\r\n\ @return\ caracteristicas\ Es\ la\ compilacion\ de\ cada\ atributo,\ separado\ por\ espacios,\ de\ la\ clase\ Heroe.\r\n
+numComments=6

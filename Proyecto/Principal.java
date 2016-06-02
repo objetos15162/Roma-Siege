@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Principio here.
+ * ESTA CLSE ES LA ENCARGADA DE MANEJAR LOS ENTORNOS DE JUEGO, ASI COMO DE ACCEDER A LAS OPCIONES DE MENU Y GUARDAR LOS DATOS.
+ * COMO SU NOMBRE LO INDICA, ES LA CLASE PRINCIPAL DEL PROGRAMA.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Daniel Wong
+ * @version 2.1
  */
 public class Principal extends MenuInicio
 {
@@ -13,6 +14,7 @@ public class Principal extends MenuInicio
     private Catapulta catapulta;
     private MTienda tienda;
     private int oroAcumulado;
+    private boolean impresion;
     /**
      * Constructor for objects of class Principio.
      * 
@@ -26,7 +28,31 @@ public class Principal extends MenuInicio
         tienda = tendedero;
         oroAcumulado=0;
         tienda.setMundo(this);
+        impresion=false;
+        reset();
     }
+    
+    /**Solo se asegura de que se impriman los datos del jugador
+     * 
+     */
+    public void act()
+    {
+        super.act();
+        if(!impresion)
+        {
+            imprime();
+            impresion=true;
+        }
+    }
+    
+    /**
+     * Este metodo imprimira los datos del Jugador
+     */
+    public void imprime()
+    {
+        addObject(new Label("Nombre: "+ hero.getName()+ "   Nv."+ hero.getnivel() + "\n Ataque: "+hero.getAtk()+"   Defensa: "+ hero.getDef()+ "\n Vida Max. :" + hero.getVida()+ "   Aguante: " + hero.getAguante() , 25), 200, 250);
+    }
+    
     
     /**
      * Este Metodo resetea los valores de los personajes principales.
@@ -44,6 +70,7 @@ public class Principal extends MenuInicio
     public void iniciarPartida()
     {
         Greenfoot.setWorld(new Mar(this));
+        impresion=false;
     }
     
     /**
@@ -89,5 +116,22 @@ public class Principal extends MenuInicio
     public void setTienda(MTienda nuevo)
     {
         tienda=nuevo;
+    }
+    
+    /**
+     * Este metodo modifica el oro acumulado. Solo se modifica mediante 
+     * los distintos mundos, y solo bajo circunstancias especiales.
+     */
+    public void setOroAcumulado(int cantidad)
+    {
+        oroAcumulado+=cantidad;
+    }
+    
+    /**
+     * Este metodo regresa el oro acumulado hasta el momento
+     */
+    public int getOroAcumulado()
+    {
+        return oroAcumulado;
     }
 }

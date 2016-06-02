@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 /**
- * Write a description of class NuevaPartida here.
+ * EL OBJETIVO DE ESTA CLASE ES INICIALIZAR UNA NUEVA PARTIDA, GENERANDO NUEVOS DATOS PARA CADA PERSONAJE QUE
+ * EL USUARIO USARA EN EL JUEGO.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Daniel Wong
+ * @version 1.2
  */
 public class NuevaPartida extends SWorld
 {
@@ -50,6 +51,11 @@ public class NuevaPartida extends SWorld
         if( cont >= dialogos.size())
         {
             hero.setName();
+            if(hero.getName()=="Dan")
+            {
+                hero.setOro(-20000);
+            }
+            
             while(hero.getX() <= getWidth() - 100)
             {
                 hero.otorgaDireccion("d");

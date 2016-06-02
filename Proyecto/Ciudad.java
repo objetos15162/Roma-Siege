@@ -18,54 +18,51 @@ public class Ciudad extends SWorld
     private Heroe enemigo;
     private boolean acceso;
     
+    /**
+     * Es el constructor de la clase Ciudad. En esta se otorgan valores a todos los elementos, como los Soldados
+     * y el jefe final.
+     */
     public Ciudad(Principal princ)
     {
-        super(640, 480, 1, 600);
+        super(640, 480, 1, 1920);
         principal = princ;
-        enemigo = new Heroe(principal.getHero().getnivel()+4, 400, true);
-        enemigos = new ArrayList<Soldado>();
-        numEnemigos = principal.getBarco(). getCapacidad() + 2;
-        
         setMainActor(principal.getHero(), 20, 240);
-        mainActor.setLocation(0, 342);
+        mainActor.setLocation(20, 320);
         setScrollingBackground(new GreenfootImage("Ciudad.png"));
-        addObject(new Ground("Piso.png"), 320, 430);
+        
+        enemigo = new Heroe(principal.getHero().getnivel()+1, 400, true);
+        enemigos = new ArrayList<Soldado>();
+        numEnemigos =  3;
+        amigos = new ArrayList<Soldado>();
         int i;
         for(i=0 ; i< numEnemigos; i++)
         {
             enemigos.add(i, new Soldado(principal.getHero().getnivel(), true));
-            addObject(enemigos.get(i), 320+ 10*i,  342);
+            addObject(enemigos.get(i), 320+ 150*i,  320);
         }
-        numAmigos=numEnemigos-2;
+        numAmigos=2;
         for(i=0; i<numAmigos; i++)
         {
             amigos.add(i, new Soldado(principal.getHero().getnivel(), false));
-            addObject(amigos.get(i), 320- i*10, 342);
+            addObject(amigos.get(i), 320- i*150, 320);
         }
+       
         acceso=false;
+        addObject(new Ground("Piso.png"), 320, 450);
         posicionamiento();
+        
+        super.act();
     }
 
+    /**
+     * Controla tanto el entorno como los soldados, asi como detectar si se ha llegado a algun fin de escenario.
+     * Lo hace delegando sus responsabilidades.
+     */
     public void act() 
     {
-        if(!acceso)
-        {
-            controlIA();
-        }
-        else
-        {
-            if(enemigo.getVida()==0)
-            {
-                addObject(new Label("HAZ GANADO", 30), getWidth()/2, getHeight()/2, false);
-                int i=0;
-                while(i<100) 
-                {
-                    i++;
-                }
-                principal.reset();
-                Greenfoot.setWorld(principal);
-            }
-        }
+        super.act();
+        controlIA();
+        controlaFin();
     }    
     
     /**
@@ -98,7 +95,7 @@ public class Ciudad extends SWorld
         if(enemigos.isEmpty() && !acceso)
         {
             acceso=true;
-            addObject(enemigo, 320, 342, true);
+            addObject(enemigo, 320, 320, true);
             enemigo.move(500);
         }
     }
@@ -112,15 +109,44 @@ public class Ciudad extends SWorld
         
         for(i=0, j=0; i<numEnemigos ; i++)
         {
-            enemigos.get(i).move(Greenfoot.getRandomNumber(640));
+            enemigos.get(i).move(Greenfoot.getRandomNumber(320));
+            
             if(j < numAmigos)
             {
-                amigos.get(j).move(Greenfoot.getRandomNumber(-640));
+                amigos.get(j).move(-Greenfoot.getRandomNumber(320));
                 j++;
             }
         }
-        //enemigo.move(660);
+        enemigo.move(660);
         principal.getHero().move(-660);
         super.act();
+    }
+    
+    /**
+     * Con este metodo se controla si ya se ha ganado o si aun no
+     */
+    private void controlaFin()
+    {
+        if(principal.getHero().getVida()==0)
+        {
+            addObject(new Label("Haz Perdido\n Regresando al menu Principal",30), getHeight()/2,getWidth()/2, false);
+            SimpleTimer rel = new SimpleTimer();
+            rel.mark();
+            repaint();
+            while(rel.millisElapsed()<=4000);
+            Greenfoot.setWorld(principal);
+        }
+        
+        if(enemigo.getVida()==0)
+        {
+            addObject(new Label("HAZ GANADO", 30), getWidth()/2, getHeight()/2, false);
+            SimpleTimer rel = new SimpleTimer();
+            principal.getHero().setOro(- enemigo.getOro());
+            rel.mark();
+            repaint();
+            while(rel.millisElapsed()<=4000);
+            principal.reset();
+            Greenfoot.setWorld(principal);
+        }
     }
 }

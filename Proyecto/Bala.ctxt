@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.target=Bala
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Bala\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Es\ un\ proyectil,\ el\ cual\ se\ encarga\ de\ simular\ su\ caida\ con\ gravedad.\r\n\ \r\n\ @author\ Carlos\ Partida\r\n\ @author\ Daniel\ Wong\r\n\ \r\n\ @version\ 2.1\r\n
 comment1.params=dir\ velXbase\ velYbase\ atkBarco\ ori
 comment1.target=Bala(int,\ int,\ int,\ int,\ Personaje)
 comment1.text=\r\n\ El\ constructor\ de\ la\ bala\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Bala\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\r\n\ Se\ da\ cuenta\ en\ este\ metodo\ si\ el\ proyectil\ sige\ en\ el\ aire\ y\ de\ serlo\ asi,\ le\ otorga\ nuevos\ valores\ de\ velocidad\ en\ x\ y\ y.\r\n
 comment3.params=
 comment3.target=void\ efectoGravedad()
 comment3.text=\r\n\ En\ este\ metodo\ se\ simula\ la\ gravedad\ para\ reducir\ la\ velocidad\ en\ y\r\n

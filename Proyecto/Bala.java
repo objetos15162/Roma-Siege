@@ -1,10 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 /**
- * Write a description of class Bala here.
+ * Es un proyectil, el cual se encarga de simular su caida con gravedad.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Carlos Partida
+ * @author Daniel Wong
+ * 
+ * @version 2.1
  */
 public class Bala extends Actor
 {
@@ -36,8 +38,7 @@ public class Bala extends Actor
     }
     
     /**
-     * Act - do whatever the Bala wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Se da cuenta en este metodo si el proyectil sige en el aire y de serlo asi, le otorga nuevos valores de velocidad en x y y.
      */
     public void act() 
     {

@@ -56,6 +56,10 @@ public class MenuInicio extends World
         }
     }
     
+    /**
+     * LLEVA CONTROL TOTAL POR TECLADO DE LOS BOTONES DE ALGUNO DE LOS MUNDOS.
+     * SE ACTUALIZA CADA BOTON SI ES SELECCIONADO POR EL PUNTERO.
+     */
     public void act()
     {
         String key = Greenfoot.getKey();

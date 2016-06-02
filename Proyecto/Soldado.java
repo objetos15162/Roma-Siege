@@ -8,7 +8,8 @@ import java.util.List;
  */
 public class Soldado extends Personaje
 {
-    private int control;
+    
+    private SimpleTimer timer;
     
     public Soldado(int niv, boolean enemy)
     {
@@ -17,6 +18,8 @@ public class Soldado extends Personaje
         {
             setGifs("SoldadoE InmovilD.gif", "SoldadoE InmovilI.gif", "SoldadoE CorriendoD.gif", "SoldadoE CorriendoI.gif", "SoldadoE AtaqueD.gif", "SoldadoE AtaqueI.gif");
         }
+        timer= new SimpleTimer();
+        timer.mark();
     }
     
     /**
@@ -32,65 +35,65 @@ public class Soldado extends Personaje
             añadido=true;
         }
         String key = actAutomatico();
-        if(key != null)
+        if(!inAtk)
         {
-            otorgaDireccion(key);
+            if(key != null)
+            {
+                otorgaDireccion(key);
+            }
+            else
+            {
+                movEstandar();
+            }
         }
         else
         {
-            movEstandar();
+            atacar();
         }
+        mueveConts();
     }
     
     private String actAutomatico()
     {
-        List <Personaje> actores = getObjectsInRange(600, Personaje.class);
+        List <Personaje> actores = getObjectsInRange(500, Personaje.class);
         if(actores!=null)
         {
             for( Personaje p: actores)
             {
-                if(p != null && p.getisEnemy() != this.getisEnemy())
+                if(p != null && p.getisEnemy() != this.getisEnemy() && !p.equals(this))
                 {
-                    if(p.getX() - this.getX() >= -10)
+                    if(p.getX() - this.getX() >= -20 && p.getX() - this.getX()<=0)
                     {
-                        if(control< getAtk()*2-4*getnivel())
+                        if(timer.millisElapsed()>=2000)
                         {
-                            control++;
-                            return null;
+                            setDireccion(1);
+                            timer.mark();
+                            return "n"; 
                         }
-                        else
-                        {
-                            control=0;
-                        }
-                        setDireccion(-1);
-                        return "n";                        
                     }
                     else
                     {
-                        if( p.getX() - this.getX() < -10)
+                        if( p.getX() - this.getX() <= -20)
                         {
+                            timer.mark();
                             return "a";
                         }
                     }
                     
-                    if( p.getX() - this.getX()<= 10)
+                    if( p.getX() - this.getX()<= 20 && p.getX() - this.getX()>= 0)
                     {
-                        if(control<getAtk()*2-4*getnivel())
+                        if(timer.millisElapsed()>=2000)
                         {
-                            control++;
-                            return null;
+                            timer.mark();
+                            setDireccion(-1);
+                            return "n";
                         }
-                        else
-                        {
-                            control=0;
-                        }
-                        setDireccion(1);
-                        return "n";
                     }
                     else
                     {
-                        if(p.getX() - this.getX() > 10)
+                        if(p.getX() - this.getX() >= 10)
                         {
+                            timer.mark();
                             return "d";
                         }
                     }
@@ -100,3 +103,4 @@ public class Soldado extends Personaje
         return null;
     }
 }
+

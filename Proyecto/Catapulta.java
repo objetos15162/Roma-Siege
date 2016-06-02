@@ -8,12 +8,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Catapulta extends Personaje
 {
-    
+    /**
+     * Constructor de la clase catapulta. Solo pasa el NOmbre de sus animaciones. Ademas del nivel que recive.
+     * @param niv- nivel con el que se inicia la catapulta.
+     */
     public Catapulta(int niv)
     {
         super(niv, false, "Catapulta InmovilD.gif", "Catapulta InmovilD.gif", "Catapulta MovimientoD.gif", "Catapulta MovimientoD.gif", "Catapulta AtaqueD.gif", "Catapulta AtaqueD.gif");
     } 
     
+    
+    /**
+     * En este metodo es el control de la catapulta por el usuario, ademas de agregar los contadores de salud.
+     */
     public void act()
     {
         if(!añadido)
@@ -61,7 +68,7 @@ public class Catapulta extends Personaje
         if(!inAtk)
         {
             int dir=1;
-            Bala nueva = new Bala(dir, (int)(getAtk()*2), (int)(getAtk()*3), (int)getAtk(), this);
+            Bala nueva = new Bala(dir, (int)(getAtk()*2), (int)(getAtk()*2), (int)getAtk(), this);
             getWorld().addObject(nueva, this.getX()+80, this.getY()-60);
         }
     }

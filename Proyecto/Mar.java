@@ -2,10 +2,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 import java.util.ArrayList;
 /**
- * Write a description of class MarScroll here.
+ * Hace que el entorno sea como un mar. Prepara el entonrno para que dependiendo del nivel del usuario, tenga mas barcos a los cuales vencer.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Daniel Wong
+ * @version 1.8
  */
 
 public class Mar extends SWorld
@@ -14,6 +14,11 @@ public class Mar extends SWorld
     private int numBarcosEnemigos;
     private List<Barco> enemigos;
     private boolean acceso;
+    
+    /**
+     * Constructor principal de la clase Mar
+     * @param princ- Es un mundo principal del cual se mando a llamar este escenario
+     */
     public Mar(Principal princ)
     {
         super(640, 480, 1, 3400);
@@ -34,6 +39,10 @@ public class Mar extends SWorld
         acceso = false;
     }
 
+    /**
+     * Como los demas mundos, este tiene la obligacion de controlar el entorno, los proyectiles y los enemigos.
+     * Ademas de darse cuenta si se ha llegado a un fin.
+     */
     public void act() 
     {
        super.act();
@@ -57,10 +66,12 @@ public class Mar extends SWorld
            {
                principal.getBarco().mover(5);
                super.act();
+               repaint();
            }
            int i=0;
            addObject(new Label("Pasando al siguiente Nivel", 30), getHeight()/2, getWidth()/2, false);
-           while(i<200) 
+           repaint();
+           while(i<2000) 
            {
                i++;
            }
@@ -103,6 +114,7 @@ public class Mar extends SWorld
             if(enemigos.get(i).getVida()==0)
             {
                 auxiliar=enemigos.get(i);
+                principal.setOroAcumulado((int) (enemigos.get(i).getExp()/2));
                 enemigos.remove(auxiliar);
                 removeObject(auxiliar);
             }
@@ -125,23 +137,4 @@ public class Mar extends SWorld
         super.act();
         //elimina pantalla de carga;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

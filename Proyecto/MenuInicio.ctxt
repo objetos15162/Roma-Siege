@@ -6,6 +6,7 @@ comment1.target=MenuInicio(int)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MenuInicio.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ LLEVA\ CONTROL\ TOTAL\ POR\ TECLADO\ DE\ LOS\ BOTONES\ DE\ ALGUNO\ DE\ LOS\ MUNDOS.\r\n\ SE\ ACTUALIZA\ CADA\ BOTON\ SI\ ES\ SELECCIONADO\ POR\ EL\ PUNTERO.\r\n
 comment3.params=actividad
 comment3.target=void\ cambiaImagen(boolean)
 comment3.text=\r\n\ \ Con\ este\ metodo\ se\ manda\ a\ cambiar\ la\ imagen\ de\ cada\ boton\r\n\ \ \r\n\ \ @param\ actividad\ Esta\ variable\ indica\ si\ la\ imagen\ del\ boton\ va\ a\ pasar\ a\ activo\ \u00F3\ a\ no\ activo\r\n

@@ -11,6 +11,10 @@ public class Barco extends Personaje
     private int capacidad;
     private int vel;
     private int cont;
+    
+    /**
+     * Constructor del barco generico. a partir del nivel que entra genera los estados base.
+     */
     public Barco(int nivel, boolean esEnemigo)
     {
         super(nivel, esEnemigo, "Barco InmovilD.gif","Barco InmovilD.gif", "Barco MovimientoD.gif", "Barco MovimientoD.gif", "Barco AtaqueD.gif", "Barco AtaqueD.gif");
@@ -91,16 +95,17 @@ public class Barco extends Personaje
         {
             actAutomatico();
         }
+        mueveConts();
     }
     
     /**
-     * 
+     * Otorga automaticamente acciones a los barcos enemigos.
      */
     private void actAutomatico()
     {
         if(!inAtk) 
         {
-            if(cont<=50)
+            if(cont<=75)
             {
                 cont++;
                 mover(0);
@@ -112,7 +117,7 @@ public class Barco extends Personaje
                 {
                     if(p != null && !p.getisEnemy())
                     {
-                        if(p.getX() - this.getX() < -80)
+                        if(p.getX() - this.getX() < -80 - (int)(this.getAtk()/2))
                         {
                             inAtk=true;                       
                         }
@@ -166,10 +171,24 @@ public class Barco extends Personaje
     
     
     /**
-     * este metodo regresa la capacidad maxima de soldados que posee
+     * este metodo regresa la capacidad maxima de soldados que posee o puede poseer el usuario en juego... por el momento no es util.
+     * @return capacidad- Num maximo de soldados que pueden subir al barco.
      */
     public int getCapacidad()
     {
         return capacidad;
     }
+    
+    /**
+     * 
+     * En este metodo se llama al toString de la superclase, ademas de agrefarle los atributos del heroe
+     * al final. El orden de los datod quedaria en el siguiente:
+     * Nombre, nivel, ataque, defensa, Vida Maxima, Aguante Maximo, Capacidad.
+     * @override
+     * @return caracteristicas Es la compilacion de cada atributo, separado por espacios, de la clase barco.
+     */
+     public String toString()
+     {
+         return super.toString() + " " + capacidad;
+     }
 }
