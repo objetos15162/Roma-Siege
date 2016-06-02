@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 /**
  * ESTA CLSE ES LA ENCARGADA DE MANEJAR LOS ENTORNOS DE JUEGO, ASI COMO DE ACCEDER A LAS OPCIONES DE MENU Y GUARDAR LOS DATOS.
  * COMO SU NOMBRE LO INDICA, ES LA CLASE PRINCIPAL DEL PROGRAMA.
@@ -40,6 +40,7 @@ public class Principal extends MenuInicio
         super.act();
         if(!impresion)
         {
+            eliminaImpresiones();
             imprime();
             impresion=true;
         }
@@ -50,7 +51,7 @@ public class Principal extends MenuInicio
      */
     public void imprime()
     {
-        addObject(new Label("Nombre: "+ hero.getName()+ "   Nv."+ hero.getnivel() + "\n Ataque: "+hero.getAtk()+"   Defensa: "+ hero.getDef()+ "\n Vida Max. :" + hero.getVida()+ "   Aguante: " + hero.getAguante() , 25), 200, 250);
+        addObject(new Label("Nombre: "+ hero.getName()+ "   Nv."+ hero.getnivel() + "\n Ataque: "+hero.getAtk()+"   Defensa: "+ hero.getDef()+ "\n Vida Max. :" + hero.getVida()+ "   Aguante: " + hero.getAguante() , 25), 250, 75);
     }
     
     
@@ -116,6 +117,7 @@ public class Principal extends MenuInicio
     public void setTienda(MTienda nuevo)
     {
         tienda=nuevo;
+        impresion = false;
     }
     
     /**
@@ -133,5 +135,29 @@ public class Principal extends MenuInicio
     public int getOroAcumulado()
     {
         return oroAcumulado;
+    }
+    
+    /**
+     * Este metodo elimina todo el texto en el mundo
+     */
+    public void eliminaImpresiones()
+    {
+        List<Label> txt = getObjects(Label.class);
+        if(txt != null)
+        {
+            for(Label l: txt)
+            {
+                removeObject(l);
+            }
+        }
+    }
+    
+    /**
+     * Este metodo recibe un barco, el cualsera el reemplazo de el barco de este objeto
+     * @param barc- Objeto barco con nuevas caracteristicas.
+     */
+    public void setBarco(Barco barc)
+    {
+        barco=barc;
     }
 }

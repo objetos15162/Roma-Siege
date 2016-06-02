@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MenuInicio extends World
 {
    private BotonNuevo nuevo;
-   private BotonCargar cargar;
+   //private BotonCargar cargar;
    private BotonAyuda ayuda;
    private BotonSalir salir;
    private BotonGuardar guardar;
@@ -30,14 +30,14 @@ public class MenuInicio extends World
         if(escenarioAct==0)
         {
             nuevo  = new BotonNuevo();
-            cargar = new BotonCargar();
+            //cargar = new BotonCargar();
             ayuda  = new BotonAyuda();
             salir  = new BotonSalir();
             opcion = 1;
             cambiaImagen(true);
         
-            addObject(nuevo,  165, 185);
-            addObject(cargar, 465, 185);
+            addObject(nuevo,  320, 185);
+            //addObject(cargar, 465, 185);
             addObject(ayuda,  165, 305);
             addObject(salir,  465, 305);
         }
@@ -109,7 +109,7 @@ public class MenuInicio extends World
                                     break;
                             
                                 case 2:
-                                    cargar.llamaNuevoEscenario();
+                                    //cargar.llamaNuevoEscenario();
                                     break;
                             
                                 case 3:
@@ -160,7 +160,7 @@ public class MenuInicio extends World
                         nuevo.cambia(actividad);
                         break;
                     case 2:
-                        cargar.cambia(actividad);
+                        //cargar.cambia(actividad);
                         break;
                     case 3:
                         ayuda.cambia(actividad);

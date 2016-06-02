@@ -690,4 +690,5 @@ public class Personaje extends Actor
     {
         return nombre+ " " + nivel + " " + atk + " " + def + " " + maxVida + " " + maxAguante;
     }
+    
 }

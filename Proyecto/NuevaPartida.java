@@ -51,7 +51,7 @@ public class NuevaPartida extends SWorld
         if( cont >= dialogos.size())
         {
             hero.setName();
-            if(hero.getName()=="Dan")
+            if(hero.getName().equalsIgnoreCase("Dan"))
             {
                 hero.setOro(-20000);
             }
