@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Ciudad
-comment0.text=\r\n\ \r\n\ @author\ Daniel\ Wong\r\n\ @version\ 1.2\r\n
+comment0.text=\r\n\ Esta\ clase\ se\ encarga\ de\ cargar\ el\ escenario\ de\ la\ ciudad.\ Ademas\ lleva\ el\ control\ sobre\ los\ enemigos\ que\ alli\ aparecen.\r\n\ \r\n\ \r\n\ @author\ Daniel\ Wong\r\n\ @version\ 1.2\r\n
 comment1.params=princ
 comment1.target=Ciudad(Principal)
 comment1.text=\r\n\ Es\ el\ constructor\ de\ la\ clase\ Ciudad.\ En\ esta\ se\ otorgan\ valores\ a\ todos\ los\ elementos,\ como\ los\ Soldados\r\n\ y\ el\ jefe\ final.\r\n

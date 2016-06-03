@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 import java.util.ArrayList;
 /**
- * Hace que el entorno sea como un mar. Prepara el entonrno para que dependiendo del nivel del usuario, tenga mas barcos a los cuales vencer.
+ * Hace que el entorno sea como un mar. Prepara el entorno para que, dependiendo del nivel del usuario, tenga mas barcos a los cuales vencer.
  * 
  * @author Daniel Wong
  * @version 1.8
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class Mar extends SWorld
 {
-    public Principal principal;
+    private Principal principal;
     private Barco barco;
     private int numBarcosEnemigos;
     private List<Barco> enemigos;

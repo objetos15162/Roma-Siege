@@ -1,8 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Boton here.
- * 
+ * Superclase de todos los botones. En esta se encuentran los metodos basicos para que cada boton funcione.
+ * Hereda un metodo abstracto que varia de contenido dependiendo del boton.
  * @author Daniel Wong 
  * @version 2.1
  */

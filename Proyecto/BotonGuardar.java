@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BotonGuardar here.
+ * Guarda los datos del jugador. Si es un archivo nuevo, los guarda en la ranura que este vacia.
+ * Actualmente no se usa.
  * 
  * @author Daniel Wong 
  * @version 0.1
@@ -16,6 +17,6 @@ public class BotonGuardar extends Boton
     
     public void llamaNuevoEscenario()
     {
-        World world= getWorld();
+        //World world= getWorld();
     }
 }

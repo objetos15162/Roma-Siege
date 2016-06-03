@@ -29,13 +29,13 @@ public class Soldado extends Personaje
     public void act() 
     {
         // se movera de manera automatica.
-        if(!añadido)
+        if(!getAñadido())
         {
             añadeConts();
-            añadido=true;
+            setAñadido(true);
         }
         String key = actAutomatico();
-        if(!inAtk)
+        if(!getInAtk())
         {
             if(key != null)
             {
@@ -73,7 +73,7 @@ public class Soldado extends Personaje
                     }
                     else
                     {
-                        if( p.getX() - this.getX() <= -20)
+                        if( p.getX() - this.getX() <= -20 && timer.millisElapsed() >= 50)
                         {
                             timer.mark();
                             return "a";
@@ -91,7 +91,7 @@ public class Soldado extends Personaje
                     }
                     else
                     {
-                        if(p.getX() - this.getX() >= 10)
+                        if(p.getX() - this.getX() >= 10 && timer.millisElapsed() >= 50)
                         {
                             timer.mark();
                             return "d";

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Boton
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Boton\ here.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 2.1\r\n
+comment0.text=\r\n\ Superclase\ de\ todos\ los\ botones.\ En\ esta\ se\ encuentran\ los\ metodos\ basicos\ para\ que\ cada\ boton\ funcione.\r\n\ Hereda\ un\ metodo\ abstracto\ que\ varia\ de\ contenido\ dependiendo\ del\ boton.\r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 2.1\r\n
 comment1.params=act\ ina\ num
 comment1.target=Boton(java.lang.String,\ java.lang.String,\ int)
 comment1.text=\r\n\ Este\ es\ el\ Constructor.\ Inicializa\ las\ varibles\ de\ instancia\ del\ objeto.\r\n\ \r\n\ @param\ act\ Es\ una\ cadena\ en\ la\ que\ contiene\ el\ nobre\ de\ la\ imagen\ cuando\ esta\ "encendida".\r\n\ @param\ ina\ Es\ una\ cadena\ con\ el\ nombre\ de\ la\ imagen\ del\ objeto\ cuando\ esta\ "Apagado".\r\n\ @param\ num\ Es\ una\ varible\ de\ tipo\ entero\ la\ cual\ representa\ que\ tipo\ de\ Boton\ es.\r\n

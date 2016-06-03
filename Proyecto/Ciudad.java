@@ -3,6 +3,8 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
+ * Esta clase se encarga de cargar el escenario de la ciudad. Ademas lleva el control sobre los enemigos que alli aparecen.
+ * Cuando termina de hacer su labor, regresa a el menu principal.
  * 
  * @author Daniel Wong
  * @version 1.2
@@ -10,7 +12,7 @@ import java.util.ArrayList;
 public class Ciudad extends SWorld
 {
     
-    public Principal principal;
+    private Principal principal;
     private int numEnemigos;
     private List<Soldado> enemigos;
     private int numAmigos;

@@ -35,7 +35,7 @@ public class Base extends Personaje
      */
     public void act()
     {
-        if(!añadido)
+        if(!getAñadido())
         {
             añadeConts(200, 150);
         }

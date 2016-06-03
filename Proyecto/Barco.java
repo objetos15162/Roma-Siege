@@ -42,15 +42,15 @@ public class Barco extends Personaje
      */
     public void act() 
     {
-        if(!añadido)
+        if(!getAñadido())
         {
             añadeConts();
-            añadido=true;
+            setAñadido(true);
         }
         
         if(!getisEnemy())
         {
-            if(!inAtk)
+            if(!getInAtk())
             {
                 String key = Greenfoot.getKey();
                 if(key != null)
@@ -71,7 +71,7 @@ public class Barco extends Personaje
                             }
                             break;
                         case "n":
-                            inAtk=true;
+                            setInAtk(true);
                             break;
                     }
                 }
@@ -103,7 +103,7 @@ public class Barco extends Personaje
      */
     private void actAutomatico()
     {
-        if(!inAtk) 
+        if(!getInAtk()) 
         {
             if(cont<=75)
             {
@@ -119,7 +119,7 @@ public class Barco extends Personaje
                     {
                         if(p.getX() - this.getX() < -80 - (int)(this.getAtk()/2))
                         {
-                            inAtk=true;                       
+                            setInAtk(true);                       
                         }
                         else
                         {
@@ -141,8 +141,8 @@ public class Barco extends Personaje
      */
     private void completeAtk()
     {
-        inAtk=atacar(1);
-        if(!inAtk)
+        setInAtk(atacar(1));
+        if(!getInAtk())
         {
             int dir;
             if(!getisEnemy())
@@ -157,13 +157,13 @@ public class Barco extends Personaje
             getWorld().addObject(nueva, this.getX()+dir*80, this.getY()-80);
             if(vel > 4)
             {
-                vel-=5;
+                vel-=3;
             }
             else
             {
                 if(vel < 0 && vel > -10)
                 {
-                    vel -=2 ;
+                    vel -- ;
                 }
             }
         }

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=BotonJugar
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ BotonJugar\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Se\ encarga\ de\ iniciar\ una\ partida\ nueva,\ e\ invoca\ un\ escenario\ para\ ello.\ \r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.0\r\n
 comment1.params=
 comment1.target=BotonJugar()
 comment1.text=\r\n\ \r\n

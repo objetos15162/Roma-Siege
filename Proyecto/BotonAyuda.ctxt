@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=BotonAyuda
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ BotonAyuda\ here.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.4\r\n
+comment0.text=\r\n\ Esta\ clase\ es\ la\ encargada\ de\ mostrar\ la\ ayuda\ en\ pantalla.\ Solo\ a\u00F1ade\ un\ objeto\ e\ impide\ que\ \r\n\ se\ muevan\ otros\ actores\ en\ el\ mundo\ hasta\ que\ se\ presione\ una\ de\ las\ teclas\ para\ salir.\r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.4\r\n
 comment1.params=
 comment1.target=BotonAyuda()
 comment1.text=\r\n\ Constructor\ de\ la\ clase\ BotonAyuda.\r\n

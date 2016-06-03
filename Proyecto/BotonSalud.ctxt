@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=BotonSalud
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ BotonSalud\ here.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.1\r\n
+comment0.text=\r\n\ Esta\ clase\ manda\ a\ llamar\ que\ se\ suba\ la\ salud\ del\ heroe\ del\ usuario.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.1\r\n
 comment1.params=
 comment1.target=BotonSalud()
 comment1.text=\r\n\ Constructor\ de\ la\ clase\ BotonSalud.\r\n

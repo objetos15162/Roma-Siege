@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BotonSalir here.
+ * Regresa al Inicio. NO hace ninguna otra cosa que regresar al inicio del juego.
  * 
  * @author Daniel Wong 
  * @version 1.0

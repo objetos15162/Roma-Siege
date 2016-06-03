@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BotonNuevo here.
+ * Invoca un escenario nuevo, de la clase NuevaPartida.
  * 
  * @author Daniel Wong 
  * @version 1.1

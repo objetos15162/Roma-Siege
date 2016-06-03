@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Ayuda here.
+ * Esta clase se dedica a atrapar los botones que el usuario presiona mientras que pone en pantalla un imagen
+ * donde se tienen las instrucciones sobre el control de los personajes.
  * 
  * @author Daniel Wong 
  * @version 1.3
@@ -27,8 +28,8 @@ public class Ayuda extends Actor
     }
     
     /**
-     * Act - do whatever the Ayuda wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Act - do whatever the Ayuda wants to do. TEste metodo detecta que tecla se presiono por el usuario, y hace algo
+     * dependiendo de cual se presiono.
      */
     public void act() 
     {

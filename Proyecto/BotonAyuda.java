@@ -1,8 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BotonAyuda here.
- * 
+ * Esta clase es la encargada de mostrar la ayuda en pantalla. Solo añade un objeto e impide que 
+ * se muevan otros actores en el mundo hasta que se presione una de las teclas para salir.
  * @author Daniel Wong 
  * @version 1.4
  */

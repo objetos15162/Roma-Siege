@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BotonCargar here.
+ * Manda a llamar un escenario que se va a dedicar a cargar los datos del usuario.
+ * Actualmente no se usa.
  * 
  * @author Daniel Wong 
  * @version 1.1

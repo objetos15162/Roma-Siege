@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Mar
-comment0.text=\r\n\ Hace\ que\ el\ entorno\ sea\ como\ un\ mar.\ Prepara\ el\ entonrno\ para\ que\ dependiendo\ del\ nivel\ del\ usuario,\ tenga\ mas\ barcos\ a\ los\ cuales\ vencer.\r\n\ \r\n\ @author\ Daniel\ Wong\r\n\ @version\ 1.8\r\n
+comment0.text=\r\n\ Hace\ que\ el\ entorno\ sea\ como\ un\ mar.\ Prepara\ el\ entorno\ para\ que,\ dependiendo\ del\ nivel\ del\ usuario,\ tenga\ mas\ barcos\ a\ los\ cuales\ vencer.\r\n\ \r\n\ @author\ Daniel\ Wong\r\n\ @version\ 1.8\r\n
 comment1.params=princ
 comment1.target=Mar(Principal)
 comment1.text=\r\n\ Constructor\ principal\ de\ la\ clase\ Mar\r\n\ @param\ princ-\ Es\ un\ mundo\ principal\ del\ cual\ se\ mando\ a\ llamar\ este\ escenario\r\n

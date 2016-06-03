@@ -10,8 +10,8 @@ import java.util.List;
 public class Personaje extends Actor
 {
     private int nivel;       // Como es obvio es el nivel de la unidad
-    private float atk;       // Es el daño basico que una unidad puede hacer. 
-    private float def;       // Es la cantidad de resistencia que puede oponer al daño.
+    private float atk;       // Es el daño basico que una unidad puede hacer. Es el ataque.
+    private float def;       // Es la cantidad de resistencia que puede oponer al daño. Es la defensa.
     private float aguante;   // Esta es la cantidad de daño que puede recibir una unidad antes que su vida empieze a reducir.
     private float maxAguante;// Varible auxiliar para el aguante
     private int vida;        // Es la cantidad de daño que puede recibir una unidad antes de quedar KO o muerta...
@@ -23,11 +23,11 @@ public class Personaje extends Actor
     
     private Counter vitalidad;
     private Counter resistencia;
-    public boolean añadido;
+    private boolean añadido;
     
     private int control;     // Esta varible es para controlar las acciones automaticas de los personajes.
     private int direccion;   // Con esta varible se representa la direccion. 1 es a la derecha, -1 a la izquierda.
-    public boolean inAtk;   // Esta varible indica si esta en medio de un ataque. Si es asi solo se apagara hasta que la animacion de ataque termine.
+    private boolean inAtk;   // Esta varible indica si esta en medio de un ataque. Si es asi solo se apagara hasta que la animacion de ataque termine.
     private GifImage inmovilDerecha;
     private GifImage inmovilIzquierda;
     private GifImage movimientoDerecha;
@@ -351,6 +351,9 @@ public class Personaje extends Actor
         }
     }
     
+    /**
+     * Este metodo de atacar solo es usado por el barco y la catapulta
+     */
     public boolean atacar(int identificador)
     {   
         gif = ataqueImgI.getImages();
@@ -472,7 +475,8 @@ public class Personaje extends Actor
     }
     
     /**
-     * este metodo mover solo funciona para el barco y la catapulta
+     * Este metodo mover solo funciona para el barco y la catapulta
+     * 
      */
     public void mover(int vel)
     {
@@ -691,4 +695,37 @@ public class Personaje extends Actor
         return nombre+ " " + nivel + " " + atk + " " + def + " " + maxVida + " " + maxAguante;
     }
     
+    /**
+     * Regresa una variable booleana que es la que indica si los contadores de aguante y vida ya se añadieron al mundo.
+     * @return añadido-Varible de control sobre los contadores de aguante y vida
+     */
+    public boolean getAñadido()
+    {
+        return añadido;
+    }
+    
+    /**
+     * Modifica la variable añadido (bandera para saber si aun no se añaden los contadores al mundo)
+     * @param cambio- varibable booleana con la que se va a cambiar la bandera de añadido
+     */
+    public void setAñadido(boolean cambio)
+    {
+        añadido=cambio;
+    }
+    
+    /**
+     * Este metodo regresa la bandera que indica si se encuentra completando la animacion de ataque
+     */
+    public boolean getInAtk()
+    {
+        return inAtk;
+    }
+    
+    /**
+     * Modifica la varible que indica si esta en ataque
+     */
+    public void setInAtk(boolean nuevo)
+    {
+        inAtk = nuevo;
+    }
 }

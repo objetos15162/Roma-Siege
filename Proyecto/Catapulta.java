@@ -23,13 +23,13 @@ public class Catapulta extends Personaje
      */
     public void act()
     {
-        if(!añadido)
+        if(!getAñadido())
         {
             añadeConts();
-            añadido=true;
+            setAñadido(true);
         }
         
-        if(!inAtk)
+        if(!getInAtk())
             {
                 String key = Greenfoot.getKey();
                 if(key != null)
@@ -44,7 +44,7 @@ public class Catapulta extends Personaje
                             mover(-10);
                             break;
                         case "n":
-                            inAtk=true;
+                            setInAtk(true);
                             break;
                     }
                 }
@@ -64,8 +64,8 @@ public class Catapulta extends Personaje
      */
     private void completeAtk()
     {
-        inAtk=atacar(1);
-        if(!inAtk)
+        setInAtk(atacar(1));
+        if(!getInAtk())
         {
             int dir=1;
             Bala nueva = new Bala(dir, (int)(getAtk()*2), (int)(getAtk()*2), (int)getAtk(), this);

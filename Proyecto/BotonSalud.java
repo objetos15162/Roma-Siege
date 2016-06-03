@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BotonSalud here.
+ * Esta clase manda a llamar que se suba la salud del heroe del usuario.
  * 
  * @author Daniel Wong 
  * @version 1.1

@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BotonJugar here.
+ * Se encarga de iniciar una partida nueva, e invoca un escenario para ello. 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Daniel Wong 
+ * @version 1.0
  */
 public class BotonJugar extends Boton
 {
