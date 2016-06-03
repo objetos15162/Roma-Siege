@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=BotonCargar
-comment0.text=\r\n\ Manda\ a\ llamar\ un\ escenario\ que\ se\ va\ a\ dedicar\ a\ cargar\ los\ datos\ del\ usuario.\r\n\ \r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.1\r\n
+comment0.text=\r\n\ Manda\ a\ llamar\ un\ escenario\ que\ se\ va\ a\ dedicar\ a\ cargar\ los\ datos\ del\ usuario.\r\n\ Actualmente\ no\ se\ usa.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 1.1\r\n
 comment1.params=
 comment1.target=BotonCargar()
 comment1.text=\r\n\ \r\n

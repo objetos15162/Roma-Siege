@@ -103,6 +103,7 @@ public class Personaje extends Actor
         // Add your action code here.
         if(!añadido)
         {
+            reiniciaConts();
             añadeConts();
             añadido=true;
         }
@@ -143,6 +144,15 @@ public class Personaje extends Actor
             atacar();
         }
         mueveConts();
+    }
+    
+    /**
+     * este metodo reinicia el valor de los contadores graficos de la vida y el aguante
+     */
+    public void reiniciaConts()
+    {
+        vitalidad.setValue(vida);
+        resistencia.setValue((int)aguante);
     }
     
     /**
@@ -294,7 +304,7 @@ public class Personaje extends Actor
     
     /**
      * Este metodo se encarga de poner la animacion de ataque hasta que acabe la animacion.
-     * Al acabar, verifica que actores esta tocando. Si alguno es enemigo, le reduce la vida.
+     * Al acabar, verifica que actores esta tocando. Si alguno es enemigo, le reduce la vida. Esta ultima accino la delega a otro metodo
      */
     public void atacar()
     { 
@@ -318,37 +328,45 @@ public class Personaje extends Actor
         else
         {
             gif=null;
-            World world = getWorld();
-            List<Personaje> actores = getIntersectingObjects(Personaje.class);
-            for(Personaje p: actores)
-            {
-                if(isEnemy)
-                {
-                    if(!p.getisEnemy())
-                    {
-                        p.reduceVida(atk);
-                        if(p.getVida() == 0)
-                        {
-                            world.removeObject(p);
-                        }
-                    }
-                }
-                else
-                {
-                    if(p.getisEnemy())
-                    {
-                        p.reduceVida(atk);
-                        if(p.getVida() == 0)
-                        {
-                            aumentaExp(p.getExp());
-                            world.removeObject(p);
-                        }
-                    }
-                }
-            }
+            generaDaño();
             positionList=0;
             inAtk=false;
         }
+    }
+    
+    /**
+     * En este metodo se clacula el daño (si se hizo alguno) despues de la animacion de dar el ataque.
+     */
+    public void generaDaño()
+    {
+         World world = getWorld();
+         List<Personaje> actores = getIntersectingObjects(Personaje.class);
+         for(Personaje p: actores)
+         {
+             if(isEnemy)
+             {
+                 if(!p.getisEnemy())
+                 {
+                     p.reduceVida(atk);
+                     if(p.getVida() == 0)
+                     {
+                         world.removeObject(p);
+                     }
+                 }
+             }
+             else
+             {
+                 if(p.getisEnemy())
+                 {
+                     p.reduceVida(atk);
+                     if(p.getVida() == 0)
+                     {
+                         aumentaExp(p.getExp());
+                         world.removeObject(p);
+                     }
+                 }
+             }
+         }
     }
     
     /**
@@ -404,16 +422,8 @@ public class Personaje extends Actor
         aguante=maxAguante;
         exp = 0;
         nextLevel += nextLevel *0.2;
-        if(resistencia==null)
-        {
-            resistencia = new Counter("Aguante: ");
-            resistencia.setValue((int)aguante); 
-            getWorld().addObject(resistencia, this.getX(), this.getY()-120);
-        }
-        else
-        {
-           resistencia.setValue((int)aguante);
-        }
+        
+        resistencia.setValue((int)aguante); 
         vitalidad.setValue(vida);
     }
     
@@ -433,7 +443,7 @@ public class Personaje extends Actor
             {
                 aguante=0;
                 resistencia.setValue((int)aguante);
-                getWorld().removeObject(resistencia);
+                //getWorld().removeObject(resistencia);
             }
             
         }
@@ -453,7 +463,7 @@ public class Personaje extends Actor
             {
                 vida=0;
                 vitalidad.setValue(vida);
-                getWorld().removeObject(vitalidad);
+                //getWorld().removeObject(vitalidad);
             }
         }
     }
@@ -476,7 +486,7 @@ public class Personaje extends Actor
     
     /**
      * Este metodo mover solo funciona para el barco y la catapulta
-     * 
+     * @param vel- La velocidad con la que se va a mover el personaje en cuestion.
      */
     public void mover(int vel)
     {
@@ -629,7 +639,7 @@ public class Personaje extends Actor
     }
     
     /**
-     * Este metodo es para la base. Cambia todos los stats del personaje y deja en 0 el ataque. En cambio aumenta la defensa, la vida, y el aguante.
+     * Este metodo es para la BAS. Cambia todos los stats del personaje y deja en 0 el ataque. En cambio aumenta la defensa, la vida, y el aguante.
      */
     public void cambiaStats()
     {

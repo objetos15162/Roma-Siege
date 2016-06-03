@@ -9,21 +9,21 @@ import java.util.List;
 public class Barco extends Personaje
 {
     private int capacidad;
-    private int vel;
-    private int cont;
+    private int vel; // Velocidad con la que el barco avanza
+    private int contadorCiclos;
     
     /**
      * Constructor del barco generico. a partir del nivel que entra genera los estados base.
      */
     public Barco(int nivel, boolean esEnemigo)
     {
-        super(nivel, esEnemigo, "Barco InmovilD.gif","Barco InmovilD.gif", "Barco MovimientoD.gif", "Barco MovimientoD.gif", "Barco AtaqueD.gif", "Barco AtaqueD.gif");
+        super(nivel, esEnemigo, "barcoinmovilD.gif","barcoinmovilD.gif", "barcomovimientoD.gif", "barcomovimientoD.gif", "barcoataqueD.gif", "barcoataqueD.gif");
         capacidad = 5 + Greenfoot.getRandomNumber(4+nivel);
         vel = 0;
-        cont = 0;
+        contadorCiclos = 0;
         if(esEnemigo)
         {
-            setGifs("Barco AtaqueI.gif","Barco MovimientoI.gif", "Barco InmovilI.gif");
+            setGifs("barcoataqueI.gif","barcomovimientoI.gif", "barcoinmovilI.gif");
         }
     }
     
@@ -76,13 +76,13 @@ public class Barco extends Personaje
                     }
                 }
                 
-                if(cont <= 5)
+                if(contadorCiclos <= 5)
                 {
-                    cont++;
+                    contadorCiclos++;
                 }
                 else
                 {
-                    cont=0;
+                    contadorCiclos=0;
                     mover(vel);
                 }
             }
@@ -105,9 +105,9 @@ public class Barco extends Personaje
     {
         if(!getInAtk()) 
         {
-            if(cont<=75)
+            if(contadorCiclos<=75)
             {
-                cont++;
+                contadorCiclos++;
                 mover(0);
             }
             else
@@ -127,7 +127,7 @@ public class Barco extends Personaje
                         }
                     }
                 }
-                cont=0;
+                contadorCiclos=0;
             }
         }
         else

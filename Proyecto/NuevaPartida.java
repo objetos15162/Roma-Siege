@@ -11,7 +11,7 @@ public class NuevaPartida extends SWorld
 {
     private Heroe hero;
     private ArrayList<Label> dialogos;
-    private int cont;
+    private int contadorCiclos;
     private boolean actividad;
     
     /**
@@ -27,13 +27,12 @@ public class NuevaPartida extends SWorld
         setScrollingBackground(new GreenfootImage("Inicio.png"));
         addObject(new Ground("Ground.png"), 320, 420);
         //addObject(new Heroe(2, 100, true), 100, 300);
-        cont=0;
+        contadorCiclos=0;
         actividad=false;
         dialogos= new ArrayList();
         dialogos.add(0, new Label(hero.getName() + ": pero que... ¿pasó?", 24));
         dialogos.add(1, new Label(hero.getName() + ": toda mi familia... ¿muerta?", 28));
-        dialogos.add(2, new Label(hero.getName() + ": ¡Juro que encontrare al responsable¡", 28));
-        
+        dialogos.add(2, new Label(hero.getName() + ": ¡Juro que encontadorCiclosrare al responsable¡", 28));
     }
     
     /**
@@ -42,13 +41,13 @@ public class NuevaPartida extends SWorld
     public void act()
     {
         super.act();
-        if(hero.getX()>= super.getWidth() / 2 - 10 + cont * 70 && hero.getX() <= super.getWidth() / 2 + 10 + cont * 70 && cont < dialogos.size())
+        if(hero.getX()>= super.getWidth() / 2 - 10 + contadorCiclos * 70 && hero.getX() <= super.getWidth() / 2 + 10 + contadorCiclos * 70 && contadorCiclos < dialogos.size())
         {
-            addObject(dialogos.get(cont), hero.getX()- (30 * cont), hero.getY()-100 - (20 * cont));
-            cont++;
+            addObject(dialogos.get(contadorCiclos), hero.getX()- (30 * contadorCiclos), hero.getY()-100 - (20 * contadorCiclos));
+            contadorCiclos++;
         }
         
-        if( cont >= dialogos.size())
+        if( contadorCiclos >= dialogos.size())
         {
             hero.setName();
             if(hero.getName().equalsIgnoreCase("Dan"))

@@ -20,14 +20,14 @@ public class MTienda extends World
     private BotonSalud salud;
     private BotonDef defensa;
     
-    private int contador;
+    private int contador; //Solo es un contador ... sirve para eso. cuenta el numreo de ciclos
     /**
      * Constructor for objects of class MTienda. Otorga valores iniciales predefinidos.
      * Solo se llama cuando se genera una nueva partida.
      * 
      */
     public MTienda()
-    {    
+    {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(640, 480, 1);
         precioAtk = 200;

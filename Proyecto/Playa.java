@@ -14,10 +14,11 @@ public class Playa extends SWorld
     public Principal principal;
     private Base base;
     private boolean acceso;
-    private Counter contador;
+    private Counter contadorTiempo;
     /**
      * Constructor for objects of class Playa.
      * No solo de manera logica, si no tambien de manera grafica. Aqui mismo se preparan ambas cosas.
+     * @param princ- varible que guarda el mundo principal.
      */
     public Playa(Principal prin)
     {
@@ -33,8 +34,8 @@ public class Playa extends SWorld
         principal.getCatapulta().move(-235);
         super.act();
         reloj = new SimpleTimer();
-        contador= new Counter("Time: ");
-        addObject(contador, 100, 100, false);
+        contadorTiempo= new Counter("Time: ");
+        addObject(contadorTiempo, 100, 100, false);
         acceso=false;
         reloj.mark();
         addObject(new Label("Tienes 45s para destruir \nla base. Suerte.", 30), 200, 150);
@@ -42,16 +43,16 @@ public class Playa extends SWorld
     
     /**
      * En este metodo se procura actualizar y controlar el entorno; es decir
-     * las balas, el jugador, y el contador del tiempo.
+     * las balas, el jugador, y el contadorTiempo del tiempo.
      */
     public void act()
     {
-       actualizaContador();
+       actualizacontadorTiempo();
        controlaBalas();
        super.act();
        if(!acceso)
        {
-           if(contador.getValue()<=45)
+           if(contadorTiempo.getValue()<=45)
            {
                if(base.getVida()==0)
                {
@@ -86,13 +87,13 @@ public class Playa extends SWorld
     }
     
     /**
-     * Actualiza cada segundo que pasa el contador.
+     * Actualiza cada segundo que pasa el contadorTiempo.
      */
-    private void actualizaContador()
+    private void actualizacontadorTiempo()
     {
         if(reloj.millisElapsed()>=1000)
         {
-            contador.add(reloj.millisElapsed()/1000);
+            contadorTiempo.add(reloj.millisElapsed()/1000);
             reloj.mark();
         }
     }

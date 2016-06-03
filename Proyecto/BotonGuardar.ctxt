@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=BotonGuardar
-comment0.text=\r\n\ Guarda\ los\ datos\ del\ jugador.\ Si\ es\ un\ archivo\ nuevo,\ los\ guarda\ en\ la\ ranura\ que\ este\ vacia.\r\n\ \r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 0.1\r\n
+comment0.text=\r\n\ Guarda\ los\ datos\ del\ jugador.\ Si\ es\ un\ archivo\ nuevo,\ los\ guarda\ en\ la\ ranura\ que\ este\ vacia.\r\n\ Actualmente\ no\ se\ usa.\r\n\ \r\n\ @author\ Daniel\ Wong\ \r\n\ @version\ 0.1\r\n
 comment1.params=
 comment1.target=BotonGuardar()
 comment2.params=

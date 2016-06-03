@@ -13,10 +13,10 @@ public class Soldado extends Personaje
     
     public Soldado(int niv, boolean enemy)
     {
-        super(niv, enemy, "Soldado InmovilD.gif", "Soldado InmovilI.gif", "Soldado CorriendoD.gif", "Soldado CorriendoI.gif", "Soldado AtaqueD.gif", "Soldado AtaqueI.gif");
+        super(niv, enemy, "soldadoinmovilD.gif", "soldadoinmovilI.gif", "soldadocorriendoD.gif", "soldadocorriendoI.gif", "soldadoataqueD.gif", "soldadoataqueI.gif");
         if(enemy)
         {
-            setGifs("SoldadoE InmovilD.gif", "SoldadoE InmovilI.gif", "SoldadoE CorriendoD.gif", "SoldadoE CorriendoI.gif", "SoldadoE AtaqueD.gif", "SoldadoE AtaqueI.gif");
+            setGifs("soldadoeinmovilD.gif", "soldadoeinmovilI.gif", "soldadoecorriendoD.gif", "soldadoecorriendoI.gif", "soldadoeataqueD.gif", "soldadoeataqueI.gif");
         }
         timer= new SimpleTimer();
         timer.mark();

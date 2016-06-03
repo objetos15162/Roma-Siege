@@ -44,13 +44,13 @@ public class MenuInicio extends World
         else
         {
             jugar = new BotonJugar();
-            guardar = new BotonGuardar();
+            //guardar = new BotonGuardar();
             tienda = new BotonTienda();
             salir = new BotonSalir();
             
             opcion=1;
-            addObject(jugar,  165, 185);
-            addObject(guardar, 465, 185);
+            addObject(jugar,  310, 185);
+            //addObject(guardar, 465, 185);
             addObject(tienda,  165, 305);
             addObject(salir,  465, 305);
         }
@@ -129,7 +129,7 @@ public class MenuInicio extends World
                                     jugar.llamaNuevoEscenario();
                                     break;
                                 case 2:
-                                    guardar.llamaNuevoEscenario();
+                                    //guardar.llamaNuevoEscenario();
                                     break;
                                 case 3:
                                     tienda.llamaNuevoEscenario();
@@ -177,7 +177,7 @@ public class MenuInicio extends World
                         jugar.cambia(actividad);
                         break;
                     case 2:
-                        guardar.cambia(actividad);
+                        //guardar.cambia(actividad);
                         break;
                     case 3:
                         tienda.cambia(actividad);

@@ -18,12 +18,12 @@ public class Base extends Personaje
     public Base(int niv)
     {
         super(niv, true, null, null, null, null, null , null);
-        base100= new GreenfootImage("Base 100.png");
-        base90= new GreenfootImage("Base 90.png");
-        base70= new GreenfootImage("Base 70.png");
-        base50= new GreenfootImage("Base 50.png");
-        base20= new GreenfootImage("Base 20.png");
-        base00= new GreenfootImage("Base 00.png");
+        base100= new GreenfootImage("base100.png");
+        base90= new GreenfootImage("base90.png");
+        base70= new GreenfootImage("base70.png");
+        base50= new GreenfootImage("base50.png");
+        base20= new GreenfootImage("base20.png");
+        base00= new GreenfootImage("base00.png");
         cambiaStats();
         setImage(base100);
         anterior= getMaxVida();

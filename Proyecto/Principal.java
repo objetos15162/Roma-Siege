@@ -40,6 +40,7 @@ public class Principal extends MenuInicio
         super.act();
         if(!impresion)
         {
+            reset();
             eliminaImpresiones();
             imprime();
             impresion=true;
