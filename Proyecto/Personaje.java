@@ -443,7 +443,7 @@ public class Personaje extends Actor
             {
                 aguante=0;
                 resistencia.setValue((int)aguante);
-                //getWorld().removeObject(resistencia);
+                getWorld().removeObject(resistencia);
             }
             
         }
@@ -463,7 +463,7 @@ public class Personaje extends Actor
             {
                 vida=0;
                 vitalidad.setValue(vida);
-                //getWorld().removeObject(vitalidad);
+                getWorld().removeObject(vitalidad);
             }
         }
     }
